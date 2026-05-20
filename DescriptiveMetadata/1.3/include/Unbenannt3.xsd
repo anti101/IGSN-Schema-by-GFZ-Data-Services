@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von Tatjana Antipanova (GFZ) -->
+<xs:schema xmlns="https://dataservices.gfz-potsdam.de/IGSN_Schema2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://dataservices.gfz-potsdam.de/IGSN_Schema2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="resource">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element/>
+			</xs:sequence>
+			<xs:attribute name="type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Feature"/>
+						<xs:enumeration value="Sample"/>
+						<xs:enumeration value="Collection"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
