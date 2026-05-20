@@ -73,7 +73,7 @@
                     </xs:element>
                     <xs:element name="givenName" minOccurs="0" />
                     <xs:element name="familyName" minOccurs="0" />
-                    <xs:element name="nameIdentifier" xsi:type="nameIdentifier" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element name="nameIdentifier" xs:type="nameIdentifier" minOccurs="0" maxOccurs="unbounded" />
                     <xs:element name="affiliation" xsi:type="affiliation" minOccurs="0" maxOccurs="unbounded" />
                   </xs:sequence>
                 </xs:complexType>
