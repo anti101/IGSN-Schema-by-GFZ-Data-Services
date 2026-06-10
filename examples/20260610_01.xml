@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML-Beispieldatei von XMLSpy generiert v2026 (x64) (http://www.altova.com)-->
+<igsn:resource xmlns:daci="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:igsn="http://pmd.gfz-potsdam.de/igsn/schemas/description-ext/1.3" xsi:schemaLocation="http://pmd.gfz-potsdam.de/igsn/schemas/description-ext/1.3 IGSN_Core_testAnpassungenMeeting.xsd">
+	<igsn:identifier identifierType="DOI">String</igsn:identifier>
+	<igsn:access accessType="public"/>
+	<igsn:archive>
+		<igsn:archiveName lang="en">
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+		</igsn:archiveName>
+		<igsn:geoLocationPlace lang="en">
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+		</igsn:geoLocationPlace>
+		<igsn:geoLocationPlace lang="en">
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+		</igsn:geoLocationPlace>
+		<igsn:geoLocationPoint>
+			<daci:pointLongitude>-180</daci:pointLongitude>
+			<daci:pointLatitude>-90</daci:pointLatitude>
+		</igsn:geoLocationPoint>
+		<igsn:contributor contributorType="ContactPerson">
+			<igsn:contributorName nameType="Personal" lang="en">String</igsn:contributorName>
+			<igsn:givenName>String</igsn:givenName>
+			<igsn:familyName>String</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+		</igsn:contributor>
+		<igsn:contributor contributorType="ContactPerson">
+			<igsn:contributorName nameType="Personal" lang="en">String</igsn:contributorName>
+			<igsn:givenName>String</igsn:givenName>
+			<igsn:familyName>String</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+		</igsn:contributor>
+	</igsn:archive>
+	<igsn:archive>
+		<igsn:archiveName lang="en">
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+		</igsn:archiveName>
+		<igsn:geoLocationPlace lang="en">
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+		</igsn:geoLocationPlace>
+		<igsn:geoLocationPlace lang="en">
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+		</igsn:geoLocationPlace>
+		<igsn:geoLocationPoint>
+			<daci:pointLongitude>-180</daci:pointLongitude>
+			<daci:pointLatitude>-90</daci:pointLatitude>
+		</igsn:geoLocationPoint>
+		<igsn:contributor contributorType="ContactPerson">
+			<igsn:contributorName nameType="Personal" lang="en">String</igsn:contributorName>
+			<igsn:givenName>String</igsn:givenName>
+			<igsn:familyName>String</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+		</igsn:contributor>
+		<igsn:contributor contributorType="ContactPerson">
+			<igsn:contributorName nameType="Personal" lang="en">String</igsn:contributorName>
+			<igsn:givenName>String</igsn:givenName>
+			<igsn:familyName>String</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+		</igsn:contributor>
+	</igsn:archive>
+	<igsn:language>en</igsn:language>
+	<igsn:name titleType="AlternativeTitle" lang="en">String</igsn:name>
+	<igsn:name titleType="Subtitle" lang="en">String</igsn:name>
+	<igsn:relationshipIdentifiers>
+		<igsn:alternateIdentifier alternateIdentifierType="String">String</igsn:alternateIdentifier>
+		<igsn:alternateIdentifier alternateIdentifierType="String">String</igsn:alternateIdentifier>
+		<igsn:parentIdentifier identifierType="IGSN" relationType="IsPartOf">http://www.altova.com/</igsn:parentIdentifier>
+		<igsn:relatedIdentifier identifierType="CSTR" relationType="Compiles">String</igsn:relatedIdentifier>
+		<igsn:relatedIdentifier identifierType="ISSN" relationType="Describes">String</igsn:relatedIdentifier>
+	</igsn:relationshipIdentifiers>
+	<igsn:agents>
+		<igsn:creator creatorType="creator">
+			<igsn:creatorName nameType="Organizational" lang="en">String</igsn:creatorName>
+			<igsn:givenName>String</igsn:givenName>
+			<igsn:familyName>String</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+		</igsn:creator>
+		<igsn:creator creatorType="collector">
+			<igsn:creatorName nameType="Personal" lang="en">String</igsn:creatorName>
+			<igsn:givenName>String</igsn:givenName>
+			<igsn:familyName>String</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+		</igsn:creator>
+		<igsn:contributor contributorType="RelatedPerson">
+			<igsn:contributorName nameType="Organizational" lang="en">String</igsn:contributorName>
+			<igsn:givenName>String</igsn:givenName>
+			<igsn:familyName>String</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+		</igsn:contributor>
+		<igsn:contributor contributorType="Distributor">
+			<igsn:contributorName nameType="Personal" lang="en">String</igsn:contributorName>
+			<igsn:givenName>String</igsn:givenName>
+			<igsn:familyName>String</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+		</igsn:contributor>
+		<igsn:publisher publisherIdentifier="http://www.altova.com/" publisherIdentifierScheme="Wikidata" schemeURI="http://www.altova.com/" lang="en">String</igsn:publisher>
+	</igsn:agents>
+	<igsn:geoLocations>
+		<igsn:geoLocationPlace lang="en">String</igsn:geoLocationPlace>
+		<igsn:geoLocationPlace lang="en">String</igsn:geoLocationPlace>
+		<igsn:geoLocationPoint coordinateSystem="WGS84">
+			<daci:pointLongitude>-180</daci:pointLongitude>
+			<daci:pointLatitude>-90</daci:pointLatitude>
+		</igsn:geoLocationPoint>
+		<igsn:geoLocationBox coordinateSystem="WGS84">
+			<daci:westBoundLongitude>-180</daci:westBoundLongitude>
+			<daci:eastBoundLongitude>-180</daci:eastBoundLongitude>
+			<daci:southBoundLatitude>-90</daci:southBoundLatitude>
+			<daci:northBoundLatitude>-90</daci:northBoundLatitude>
+		</igsn:geoLocationBox>
+		<igsn:geoLocationPolygon>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:polygonPoint>
+		</igsn:geoLocationPolygon>
+	</igsn:geoLocations>
+	<igsn:entityTypeClassifications>
+		<igsn:resourceType resourceTypeGeneral="PhysicalObject">Sample</igsn:resourceType>
+		<igsn:sampleTypeClassificationPlaceholder>text</igsn:sampleTypeClassificationPlaceholder>
+		<igsn:material subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:material>
+		<igsn:material subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:material>
+		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
+		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
+		<igsn:description descriptionType="TableOfContents" lang="en">String</igsn:description>
+		<igsn:description descriptionType="Abstract" lang="en">String</igsn:description>
+	</igsn:entityTypeClassifications>
+	<igsn:dates>
+		<igsn:date dateType="Submitted" dateInformation="String">String</igsn:date>
+		<igsn:date dateType="Issued" dateInformation="String">String</igsn:date>
+		<igsn:publicationYear>0000</igsn:publicationYear>
+	</igsn:dates>
+	<igsn:fundingReferences>
+		<igsn:fundingReference>
+			<igsn:funderName>String</igsn:funderName>
+			<igsn:funderIdentifier funderIdentifierType="GRID" schemeURI="http://www.altova.com/">String</igsn:funderIdentifier>
+			<igsn:awardNumber awardURI="http://www.altova.com/">String</igsn:awardNumber>
+			<igsn:awardTitle>String</igsn:awardTitle>
+		</igsn:fundingReference>
+		<igsn:fundingReference>
+			<igsn:funderName>String</igsn:funderName>
+			<igsn:funderIdentifier funderIdentifierType="Other" schemeURI="http://www.altova.com/">String</igsn:funderIdentifier>
+			<igsn:awardNumber awardURI="http://www.altova.com/">String</igsn:awardNumber>
+			<igsn:awardTitle>String</igsn:awardTitle>
+		</igsn:fundingReference>
+	</igsn:fundingReferences>
+</igsn:resource>
