@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>
+			Shared enumeration types used across the IGSN schema.
+			This file defines reusable enumeration restrictions to avoid duplication.
+		</xs:documentation>
+	</xs:annotation>
+
+	<!-- Enumeration for publisherIdentifierScheme -->
+	<xs:simpleType name="publisherIdentifierScheme">
+		<xs:annotation>
+			<xs:documentation>Allowed schemes for publisher identifiers</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ROR"/>
+			<xs:enumeration value="re3data"/>
+			<xs:enumeration value="VIAF"/>
+			<xs:enumeration value="Wikidata"/>
+			<xs:enumeration value="Crossref Funder ID"/>
+			<xs:enumeration value="ISNI"/>
+			<xs:enumeration value="OpenDOAR"/>
+			<xs:enumeration value="FAIRsharing"/>
+			<xs:enumeration value="ISSN"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for descriptionType -->
+	<xs:simpleType name="descriptionType">
+		<xs:annotation>
+			<xs:documentation>Allowed types for descriptions</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Abstract"/>
+			<xs:enumeration value="Methods"/>
+			<xs:enumeration value="SeriesInformation"/>
+			<xs:enumeration value="TableOfContents"/>
+			<xs:enumeration value="TechnicalInfo"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for UnitOfMeasurement (UoM) -->
+	<xs:simpleType name="unitOfMeasurement">
+		<xs:annotation>
+			<xs:documentation>Standard units of measurement</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="mm"/>
+			<xs:enumeration value="cm"/>
+			<xs:enumeration value="m"/>
+			<xs:enumeration value="km"/>
+			<xs:enumeration value="m²"/>
+			<xs:enumeration value="km²"/>
+			<xs:enumeration value="m³"/>
+			<xs:enumeration value="l"/>
+			<xs:enumeration value="g"/>
+			<xs:enumeration value="kg"/>
+			<xs:enumeration value="t"/>
+			<xs:enumeration value="g/cm³"/>
+			<xs:enumeration value="a"/>
+			<xs:enumeration value="ka"/>
+			<xs:enumeration value="Pa"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for rangeBound -->
+	<xs:simpleType name="rangeBound">
+		<xs:annotation>
+			<xs:documentation>Range boundary indicators</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="min"/>
+			<xs:enumeration value="max"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for sizeUnit -->
+	<xs:simpleType name="sizeUnit">
+		<xs:annotation>
+			<xs:documentation>Units for size measurements</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="mass"/>
+			<xs:enumeration value="diameter"/>
+			<xs:enumeration value="length"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for language (en/de) -->
+	<xs:simpleType name="supportedLanguage">
+		<xs:annotation>
+			<xs:documentation>Supported language codes</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:language">
+			<xs:enumeration value="en"/>
+			<xs:enumeration value="de"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for English language only -->
+	<xs:simpleType name="englishLanguage">
+		<xs:annotation>
+			<xs:documentation>English language code</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:language">
+			<xs:enumeration value="en"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for accessType -->
+	<xs:simpleType name="accessType">
+		<xs:annotation>
+			<xs:documentation>Resource access types</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="public"/>
+			<xs:enumeration value="restricted"/>
+			<xs:enumeration value="non-reuseable"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for creatorType -->
+	<xs:simpleType name="creatorType">
+		<xs:annotation>
+			<xs:documentation>Creator role types</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="collector"/>
+			<xs:enumeration value="creator"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for WGS84 coordinate system -->
+	<xs:simpleType name="coordinateSystem">
+		<xs:annotation>
+			<xs:documentation>Coordinate system identifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="WGS84"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
