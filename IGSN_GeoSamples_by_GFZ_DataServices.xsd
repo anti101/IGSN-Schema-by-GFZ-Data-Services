@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:igsn="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/4512baa54ed047140ff47dd8b834f6e6eaa9ca50/IGSN_GeoSamples_by_GFZ_DataServices.xsd" xmlns:daci="http://datacite.org/schema/kernel-4" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/4512baa54ed047140ff47dd8b834f6e6eaa9ca50/IGSN_GeoSamples_by_GFZ_DataServices.xsd" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:igsn="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/4512baa54ed047140ff47dd8b834f6e6eaa9ca50/IGSN_GeoSamples_by_GFZ_DataServices.xsd">
+	<xs:include schemaLocation="enumerations.xsd"/>
 	<xs:import namespace="http://datacite.org/schema/kernel-4" schemaLocation="DataCite4.7/20260316_schema_annotation.xsd"/>
 	<xs:element name="resource">
 		<xs:annotation>
@@ -37,17 +38,10 @@
 									<xs:documentation>Indicates whether this resource is available for reuse beyond the original contributor.</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
-									<xs:attribute name="accessType">
+									<xs:attribute name="accessType" type="accessType">
 										<xs:annotation>
 											<xs:documentation>Indicates the type of access</xs:documentation>
 										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:string">
-												<xs:enumeration value="public"/>
-												<xs:enumeration value="restricted"/>
-												<xs:enumeration value="non-reuseable"/>
-											</xs:restriction>
-										</xs:simpleType>
 									</xs:attribute>
 								</xs:complexType>
 							</xs:element>
@@ -74,15 +68,10 @@
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute name="lang" fixed="en">
+												<xs:attribute name="lang" fixed="en" type="englishLanguage">
 													<xs:annotation>
 														<xs:documentation>distinguishes the language</xs:documentation>
 													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
@@ -103,15 +92,10 @@
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute name="lang" fixed="en">
+												<xs:attribute name="lang" fixed="en" type="englishLanguage">
 													<xs:annotation>
 														<xs:documentation>distinguishes the language</xs:documentation>
 													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
@@ -122,15 +106,10 @@
 											<xs:complexType>
 												<xs:complexContent>
 													<xs:extension base="daci:point">
-														<xs:attribute name="coordinateSystem" use="required" fixed="WGS84">
+														<xs:attribute name="coordinateSystem" use="required" fixed="WGS84" type="coordinateSystem">
 															<xs:annotation>
 																<xs:documentation>This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. </xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="xs:string">
-																	<xs:enumeration value="WGS84"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
 													</xs:extension>
 												</xs:complexContent>
@@ -138,8 +117,7 @@
 										</xs:element>
 										<xs:element name="contributor" minOccurs="0" maxOccurs="unbounded">
 											<xs:annotation>
-												<xs:documentation>Contact person regarding the sample. This person is authorised to decide whether the sample can be processed further and how it is to be retrieved from the archive.
-</xs:documentation>
+												<xs:documentation>Contact person regarding the sample. This person is authorised to decide whether the sample can be processed further and how it is to be retrieved from the archive.</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
@@ -155,15 +133,10 @@
 																			<xs:documentation>type of the contributer. Contributers may be persons or institutions.</xs:documentation>
 																		</xs:annotation>
 																	</xs:attribute>
-																	<xs:attribute name="lang" fixed="en">
+																	<xs:attribute name="lang" fixed="en" type="englishLanguage">
 																		<xs:annotation>
 																			<xs:documentation>distinguishes the language</xs:documentation>
 																		</xs:annotation>
-																		<xs:simpleType>
-																			<xs:restriction base="xs:language">
-																				<xs:enumeration value="en"/>
-																			</xs:restriction>
-																		</xs:simpleType>
 																	</xs:attribute>
 																</xs:extension>
 															</xs:simpleContent>
@@ -186,7 +159,7 @@
 													</xs:element>
 													<xs:element name="affiliation" type="daci:affiliation" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>The contributor’s nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the institution to which that organization belongs.</xs:documentation>
+															<xs:documentation>The contributor's nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the group.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 												</xs:sequence>
@@ -215,8 +188,7 @@
 													<xs:extension base="xs:string">
 														<xs:attribute name="dateType" type="daci:dateType" use="required">
 															<xs:annotation>
-																<xs:documentation>This attribute is used to provide a more detailed description of the 'date' element in order to unambiguously identify what the 'date' element refers to
-</xs:documentation>
+																<xs:documentation>This attribute is used to provide a more detailed description of the 'date' element in order to unambiguously identify what the 'date' element refers to</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
 														<xs:attribute name="dateInformation" type="xs:string" use="optional">
@@ -238,8 +210,7 @@
 							</xs:element>
 							<xs:element name="name" maxOccurs="unbounded">
 								<xs:annotation>
-									<xs:documentation>This element is used to name and identify a resource in a technical and linguistic context. It refers to the resource by its common name and is designed to be readable by humans. The name element should be used when the common name of the resource must be specified. The primary name of the resource should be entered. Variant spellings, abbreviated forms or alternative names should only be used if they correspond to the officially used or technically authoritative name. The element does not need to be unique and may occur multiple times.</xs:documentation>
-									<xs:documentation>Collector's or contributor's local/field name used to name the specimen; not globally unique but typically unique within a set of specimens</xs:documentation>
+									<xs:documentation>This element is used to name and identify a resource in a technical and linguistic context. It refers to the resource by its common name and is designed to be readable by humans. Collector's or contributor's local/field name used to name the specimen; not globally unique but typically unique within a set of specimens</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
 									<xs:simpleContent>
@@ -249,29 +220,19 @@
 													<xs:documentation>This attribute is used to specify the type of entry contained within the "name" element.</xs:documentation>
 												</xs:annotation>
 											</xs:attribute>
-											<xs:attribute name="lang" fixed="en">
+											<xs:attribute name="lang" fixed="en" type="englishLanguage">
 												<xs:annotation>
 													<xs:documentation>distinguishes the language</xs:documentation>
 												</xs:annotation>
-												<xs:simpleType>
-													<xs:restriction base="xs:language">
-														<xs:enumeration value="en"/>
-													</xs:restriction>
-												</xs:simpleType>
 											</xs:attribute>
 										</xs:extension>
 									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="language" default="en" minOccurs="0">
+							<xs:element name="language" default="en" minOccurs="0" type="englishLanguage">
 								<xs:annotation>
-									<xs:documentation>Primary language of the resource. Allowed values are taken from  IETF BCP 47, ISO 639-1 language codes. will continue to enable the language of the metadata record to be stored and processed in a unambiguous and machine-readable format</xs:documentation>
+									<xs:documentation>Primary language of the resource. Allowed values are taken from  IETF BCP 47, ISO 639-1 language codes. will continue to enable the language of the metadata record to be stored.</xs:documentation>
 								</xs:annotation>
-								<xs:simpleType>
-									<xs:restriction base="xs:language">
-										<xs:enumeration value="en"/>
-									</xs:restriction>
-								</xs:simpleType>
 							</xs:element>
 							<xs:element name="relationshipIdentifiers" minOccurs="0">
 								<xs:annotation>
@@ -281,7 +242,7 @@
 									<xs:sequence>
 										<xs:element name="alternateIdentifier" minOccurs="0" maxOccurs="unbounded">
 											<xs:annotation>
-												<xs:documentation>Identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of use. May be used for local identifiers. AlternateIdentifier should be used for another identifier of the same instance (same location, same file).</xs:documentation>
+												<xs:documentation>Identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of use. May be used to record an equivalend Identifier used in a local system.</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -309,7 +270,7 @@
 														</xs:attribute>
 														<xs:attribute name="relationType" type="daci:relationType" use="required" fixed="IsPartOf">
 															<xs:annotation>
-																<xs:documentation>This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described here.</xs:documentation>
+																<xs:documentation>This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described in the relatedIdentifier element.</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
 													</xs:extension>
@@ -330,7 +291,7 @@
 														</xs:attribute>
 														<xs:attribute name="relationType" type="daci:relationType" use="required">
 															<xs:annotation>
-																<xs:documentation>This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described here.</xs:documentation>
+																<xs:documentation>This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described in the relatedIdentifier element.</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
 													</xs:extension>
@@ -348,7 +309,7 @@
 									<xs:sequence>
 										<xs:element name="creator" minOccurs="1" maxOccurs="unbounded">
 											<xs:annotation>
-												<xs:documentation>This element is required for registering the sample with DataCite; it contains all the information needed to uniquely identify the collector and/or creator of the resource</xs:documentation>
+												<xs:documentation>This element is required for registering the sample with DataCite; it contains all the information needed to uniquely identify the collector and/or creator of the resource.</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
@@ -364,15 +325,10 @@
 																			<xs:documentation>Type of creator or contributer, "personal" for persons or "organiszational" for Institutions</xs:documentation>
 																		</xs:annotation>
 																	</xs:attribute>
-																	<xs:attribute name="lang" fixed="en">
+																	<xs:attribute name="lang" fixed="en" type="englishLanguage">
 																		<xs:annotation>
 																			<xs:documentation>distinguishes the language</xs:documentation>
 																		</xs:annotation>
-																		<xs:simpleType>
-																			<xs:restriction base="xs:language">
-																				<xs:enumeration value="en"/>
-																			</xs:restriction>
-																		</xs:simpleType>
 																	</xs:attribute>
 																</xs:extension>
 															</xs:simpleContent>
@@ -385,7 +341,7 @@
 													</xs:element>
 													<xs:element name="familyName" type="xs:string">
 														<xs:annotation>
-															<xs:documentation>This element is used to retrieve the person’s surname from the 'creator' or 'contributor' element in normalised form</xs:documentation>
+															<xs:documentation>This element is used to retrieve the person's surname from the 'creator' or 'contributor' element in normalised form</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="nameIdentifier" type="daci:nameIdentifier" minOccurs="0">
@@ -399,16 +355,10 @@
 														</xs:annotation>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute name="creatorType" use="required">
+												<xs:attribute name="creatorType" type="creatorType" use="required">
 													<xs:annotation>
 														<xs:documentation>This type attribute is used to build the landingpages and credit the persons according to they´re function</xs:documentation>
 													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="collector"/>
-															<xs:enumeration value="creator"/>
-														</xs:restriction>
-													</xs:simpleType>
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
@@ -420,7 +370,7 @@
 												<xs:sequence>
 													<xs:element name="contributorName">
 														<xs:annotation>
-															<xs:documentation>The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.</xs:documentation>
+															<xs:documentation>The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this element.</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -430,15 +380,10 @@
 																			<xs:documentation>type of the contributer. Contributers may be persons or institutions.</xs:documentation>
 																		</xs:annotation>
 																	</xs:attribute>
-																	<xs:attribute name="lang" fixed="en">
+																	<xs:attribute name="lang" fixed="en" type="englishLanguage">
 																		<xs:annotation>
 																			<xs:documentation>distinguishes the language</xs:documentation>
 																		</xs:annotation>
-																		<xs:simpleType>
-																			<xs:restriction base="xs:language">
-																				<xs:enumeration value="en"/>
-																			</xs:restriction>
-																		</xs:simpleType>
 																	</xs:attribute>
 																</xs:extension>
 															</xs:simpleContent>
@@ -461,7 +406,7 @@
 													</xs:element>
 													<xs:element name="affiliation" type="daci:affiliation">
 														<xs:annotation>
-															<xs:documentation>The contributor’s nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the institution to which that organization belongs.</xs:documentation>
+															<xs:documentation>The contributor's nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the group.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 												</xs:sequence>
@@ -484,31 +429,20 @@
 																<xs:documentation>Uniquely identifies the publisher, according to various schemes.</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
-														<xs:attribute name="publisherIdentifierScheme" use="required">
-															<xs:simpleType>
-																<xs:restriction base="xs:string">
-																	<xs:enumeration value="ROR"/>
-																	<xs:enumeration value="re3data"/>
-																	<xs:enumeration value="VIAF"/>
-																	<xs:enumeration value="Wikidata"/>
-																	<xs:enumeration value="Crossref Funder ID"/>
-																	<xs:enumeration value="ISNI"/>
-																	<xs:enumeration value="OpenDOAR"/>
-																	<xs:enumeration value="FAIRsharing"/>
-																	<xs:enumeration value="ISSN"/>
-																</xs:restriction>
-															</xs:simpleType>
+														<xs:attribute name="publisherIdentifierScheme" type="publisherIdentifierScheme" use="required">
+															<xs:annotation>
+																<xs:documentation>The scheme used for the publisher identifier</xs:documentation>
+															</xs:annotation>
 														</xs:attribute>
-														<xs:attribute name="schemeURI" type="xs:anyURI" use="required"/>
-														<xs:attribute name="lang" fixed="en">
+														<xs:attribute name="schemeURI" type="xs:anyURI" use="required">
+															<xs:annotation>
+																<xs:documentation>The URI of the scheme</xs:documentation>
+															</xs:annotation>
+														</xs:attribute>
+														<xs:attribute name="lang" fixed="en" type="englishLanguage">
 															<xs:annotation>
 																<xs:documentation>distinguishes the language</xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="xs:language">
-																	<xs:enumeration value="en"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
 													</xs:extension>
 												</xs:simpleContent>
@@ -530,15 +464,10 @@
 											<xs:complexType>
 												<xs:simpleContent>
 													<xs:extension base="xs:string">
-														<xs:attribute name="lang" fixed="en">
+														<xs:attribute name="lang" fixed="en" type="englishLanguage">
 															<xs:annotation>
 																<xs:documentation>distinguishes the language</xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="xs:language">
-																	<xs:enumeration value="en"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
 													</xs:extension>
 												</xs:simpleContent>
@@ -551,15 +480,10 @@
 											<xs:complexType>
 												<xs:complexContent>
 													<xs:extension base="daci:point">
-														<xs:attribute name="coordinateSystem" use="required" fixed="WGS84">
+														<xs:attribute name="coordinateSystem" use="required" fixed="WGS84" type="coordinateSystem">
 															<xs:annotation>
 																<xs:documentation>This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. </xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="xs:string">
-																	<xs:enumeration value="WGS84"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
 													</xs:extension>
 												</xs:complexContent>
@@ -567,20 +491,15 @@
 										</xs:element>
 										<xs:element name="geoLocationBox" minOccurs="0" maxOccurs="1">
 											<xs:annotation>
-												<xs:documentation>This element is used to define a geographical area as a rectangle. It is useful if you want to capture the location where the sample was collected, or to which it relates, as a general area rather than an exact position. This allows geographical references in metadata to be represented more precisely, whilst also making them easier to search, display and filter.</xs:documentation>
+												<xs:documentation>This element is used to define a geographical area as a rectangle. It is useful if you want to capture the location where the sample was collected, or to which it relates, without giving an exact location. This is done by setting the bounds using corners of a bounding box.</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:complexContent>
 													<xs:extension base="daci:box">
-														<xs:attribute name="coordinateSystem" use="required" fixed="WGS84">
+														<xs:attribute name="coordinateSystem" use="required" fixed="WGS84" type="coordinateSystem">
 															<xs:annotation>
 																<xs:documentation>This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. </xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="xs:string">
-																	<xs:enumeration value="WGS84"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
 													</xs:extension>
 												</xs:complexContent>
@@ -588,23 +507,21 @@
 										</xs:element>
 										<xs:element name="geoLocationPolygon" minOccurs="0">
 											<xs:annotation>
-												<xs:documentation>enables the precise representation of administrative boundaries, natural areas, research areas or other non-rectangular areas. Whilst a 'geoLocationBox' always describes a square area, a polygon can, for example, accurately represent the boundaries of a national park, a river catchment area or an administrative unit.</xs:documentation>
+												<xs:documentation>enables the precise representation of administrative boundaries, natural areas, research areas or other non-rectangular areas. Whilst a 'geoLocationBox' always describes a rectangle, a polygon can have any shape. Polygons are useful for the representation of cultural areas and for sampling areas (e.g. oil rigs), so they are far more precise than the geoLocationBox.</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="polygonPoint" minOccurs="4" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>A point in the polygon, described by latitude and longitude coordinates. A polygon is closed when the last point coincides with the first point.</xs:documentation>
+														</xs:annotation>
 														<xs:complexType>
 															<xs:complexContent>
 																<xs:extension base="daci:point">
-																	<xs:attribute name="coordinateSystem" use="required" fixed="WGS84">
+																	<xs:attribute name="coordinateSystem" use="required" fixed="WGS84" type="coordinateSystem">
 																		<xs:annotation>
 																			<xs:documentation>This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. </xs:documentation>
 																		</xs:annotation>
-																		<xs:simpleType>
-																			<xs:restriction base="xs:string">
-																				<xs:enumeration value="WGS84"/>
-																			</xs:restriction>
-																		</xs:simpleType>
 																	</xs:attribute>
 																</xs:extension>
 															</xs:complexContent>
@@ -618,9 +535,7 @@
 							</xs:element>
 							<xs:element name="entityTypeClassifications">
 								<xs:annotation>
-									<xs:documentation>
-							Wrapper to hold all material and classification information about the resource
-						</xs:documentation>
+									<xs:documentation>Wrapper to hold all material and classification information about the resource</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
@@ -674,15 +589,10 @@
 																<xs:documentation>The classification code used for the subject term in the subject scheme.</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
-														<xs:attribute name="lang" fixed="en">
+														<xs:attribute name="lang" fixed="en" type="englishLanguage">
 															<xs:annotation>
 																<xs:documentation>distinguishes the language</xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="xs:language">
-																	<xs:enumeration value="en"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
 													</xs:extension>
 												</xs:simpleContent>
@@ -715,15 +625,10 @@
 																<xs:documentation>The classification code used for the subject term in the subject scheme.</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
-														<xs:attribute name="lang" fixed="en">
+														<xs:attribute name="lang" fixed="en" type="englishLanguage">
 															<xs:annotation>
 																<xs:documentation>distinguishes the language</xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="xs:language">
-																	<xs:enumeration value="en"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
 													</xs:extension>
 												</xs:simpleContent>
@@ -731,36 +636,20 @@
 										</xs:element>
 										<xs:element name="description" minOccurs="0" maxOccurs="unbounded">
 											<xs:annotation>
-												<xs:documentation>This element is used to provide further details about the resource to be registered. All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with</xs:documentation>
+												<xs:documentation>This element is used to provide further details about the resource to be registered. All additional information that does not fit in any of the other categories. May be used for technical information.</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
 													<xs:extension base="xs:string">
-														<xs:attribute name="descriptionType" use="required">
+														<xs:attribute name="descriptionType" type="descriptionType" use="required">
 															<xs:annotation>
 																<xs:documentation>This attribute ensures that the description can be explicitly assigned.</xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="daci:descriptionType">
-																	<xs:enumeration value="Abstract"/>
-																	<xs:enumeration value="Methods"/>
-																	<xs:enumeration value="SeriesInformation"/>
-																	<xs:enumeration value="TableOfContents"/>
-																	<xs:enumeration value="TechnicalInfo"/>
-																	<xs:enumeration value="Other"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
-														<xs:attribute name="lang" use="required">
+														<xs:attribute name="lang" type="supportedLanguage" use="required">
 															<xs:annotation>
 																<xs:documentation>distinguishes the language</xs:documentation>
 															</xs:annotation>
-															<xs:simpleType>
-																<xs:restriction base="xs:language">
-																	<xs:enumeration value="en"/>
-																	<xs:enumeration value="de"/>
-																</xs:restriction>
-															</xs:simpleType>
 														</xs:attribute>
 													</xs:extension>
 												</xs:simpleContent>
@@ -798,7 +687,11 @@
 																			<xs:documentation>The type of the funderIdentifier.</xs:documentation>
 																		</xs:annotation>
 																	</xs:attribute>
-																	<xs:attribute name="schemeURI" type="xs:anyURI" use="optional"/>
+																	<xs:attribute name="schemeURI" type="xs:anyURI" use="optional">
+																		<xs:annotation>
+																			<xs:documentation>The URI of the scheme</xs:documentation>
+																		</xs:annotation>
+																	</xs:attribute>
 																</xs:extension>
 															</xs:simpleContent>
 														</xs:complexType>
@@ -846,34 +739,15 @@
 											<xs:complexType>
 												<xs:simpleContent>
 													<xs:extension base="xs:decimal">
-														<xs:attribute name="UoM">
-															<xs:simpleType>
-																<xs:restriction base="xs:string">
-																	<xs:enumeration value="mm"/>
-																	<xs:enumeration value="cm"/>
-																	<xs:enumeration value="m"/>
-																	<xs:enumeration value="km"/>
-																	<xs:enumeration value="m²"/>
-																	<xs:enumeration value="km²"/>
-																	<xs:enumeration value="m³"/>
-																	<xs:enumeration value="l"/>
-																	<xs:enumeration value="g"/>
-																	<xs:enumeration value="kg"/>
-																	<xs:enumeration value="t"/>
-																	<xs:enumeration value="g/cm³"/>
-																	<xs:enumeration value="a"/>
-																	<xs:enumeration value="ka"/>
-																	<xs:enumeration value="Pa"/>
-																</xs:restriction>
-															</xs:simpleType>
+														<xs:attribute name="UoM" type="unitOfMeasurement">
+															<xs:annotation>
+																<xs:documentation>Unit of Measurement</xs:documentation>
+															</xs:annotation>
 														</xs:attribute>
-														<xs:attribute name="rangeBound">
-															<xs:simpleType>
-																<xs:restriction base="xs:string">
-																	<xs:enumeration value="min"/>
-																	<xs:enumeration value="max"/>
-																</xs:restriction>
-															</xs:simpleType>
+														<xs:attribute name="rangeBound" type="rangeBound">
+															<xs:annotation>
+																<xs:documentation>Indicates if this is a minimum or maximum value</xs:documentation>
+															</xs:annotation>
 														</xs:attribute>
 													</xs:extension>
 												</xs:simpleContent>
@@ -881,245 +755,58 @@
 										</xs:element>
 										<xs:element name="size" maxOccurs="unbounded">
 											<xs:complexType>
-												<xs:attribute name="sizeUnit">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mass"/>
-															<xs:enumeration value="diameter"/>
-															<xs:enumeration value="length"/>
-														</xs:restriction>
-													</xs:simpleType>
+												<xs:attribute name="sizeUnit" type="sizeUnit">
+													<xs:annotation>
+														<xs:documentation>Type of size measurement</xs:documentation>
+													</xs:annotation>
 												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-														</xs:restriction>
-													</xs:simpleType>
+												<xs:attribute name="UoM" type="unitOfMeasurement">
+													<xs:annotation>
+														<xs:documentation>Unit of Measurement</xs:documentation>
+													</xs:annotation>
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="depth">
 											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
+												<xs:attribute name="rangeBound" type="rangeBound">
+													<xs:annotation>
+														<xs:documentation>Indicates if this is a minimum or maximum value</xs:documentation>
+													</xs:annotation>
 												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-														</xs:restriction>
-													</xs:simpleType>
+												<xs:attribute name="UoM" type="unitOfMeasurement">
+													<xs:annotation>
+														<xs:documentation>Unit of Measurement</xs:documentation>
+													</xs:annotation>
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="age">
 											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
+												<xs:attribute name="rangeBound" type="rangeBound">
+													<xs:annotation>
+														<xs:documentation>Indicates if this is a minimum or maximum value</xs:documentation>
+													</xs:annotation>
 												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-														</xs:restriction>
-													</xs:simpleType>
+												<xs:attribute name="UoM" type="unitOfMeasurement">
+													<xs:annotation>
+														<xs:documentation>Unit of Measurement</xs:documentation>
+													</xs:annotation>
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="geologicalAge">
 											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
+												<xs:attribute name="rangeBound" type="rangeBound">
+													<xs:annotation>
+														<xs:documentation>Indicates if this is a minimum or maximum value</xs:documentation>
+													</xs:annotation>
 												</xs:attribute>
-												<xs:attribute name="lang" fixed="en">
+												<xs:attribute name="lang" fixed="en" type="englishLanguage">
 													<xs:annotation>
 														<xs:documentation>distinguishes the language</xs:documentation>
 													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
 												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="Classifications">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="primaryLocationType"/>
-										<xs:element name="classification"/>
-										<xs:element name="method">
-											<xs:complexType>
-												<xs:attribute name="methodScheme"/>
-												<xs:attribute name="schemeURI"/>
-												<xs:attribute name="lang" fixed="en">
-													<xs:annotation>
-														<xs:documentation>distinguishes the language</xs:documentation>
-													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="geologicalUnit"/>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="org">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="samplePurpose"/>
-										<xs:element name="Expedition">
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="expeditionName">
-														<xs:complexType>
-															<xs:attribute name="lang" fixed="en">
-																<xs:annotation>
-																	<xs:documentation>distinguishes the language</xs:documentation>
-																</xs:annotation>
-																<xs:simpleType>
-																	<xs:restriction base="xs:language">
-																		<xs:enumeration value="en"/>
-																	</xs:restriction>
-																</xs:simpleType>
-															</xs:attribute>
-														</xs:complexType>
-													</xs:element>
-													<xs:element name="expeditionIdentifier">
-														<xs:complexType>
-															<xs:attribute name="identifierScheme"/>
-															<xs:attribute name="schemeURI" type="xs:anyURI" use="optional">
-																<xs:annotation>
-																	<xs:documentation>This attribute enables the origin of the vocabulary to be traced. </xs:documentation>
-																</xs:annotation>
-															</xs:attribute>
-														</xs:complexType>
-													</xs:element>
-													<xs:element name="platformType"/>
-													<xs:element name="platformName"/>
-													<xs:element name="operator">
-														<xs:complexType>
-															<xs:sequence>
-																<xs:element name="operatorName">
-																	<xs:annotation>
-																		<xs:documentation>The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.</xs:documentation>
-																	</xs:annotation>
-																	<xs:complexType>
-																		<xs:simpleContent>
-																			<xs:extension base="xs:string">
-																				<xs:attribute name="nameType" type="daci:nameType" use="required">
-																					<xs:annotation>
-																						<xs:documentation>type of the contributer. Contributers may be persons or institutions.</xs:documentation>
-																					</xs:annotation>
-																				</xs:attribute>
-																				<xs:attribute name="lang" fixed="en">
-																					<xs:annotation>
-																						<xs:documentation>distinguishes the language</xs:documentation>
-																					</xs:annotation>
-																					<xs:simpleType>
-																						<xs:restriction base="xs:language">
-																							<xs:enumeration value="en"/>
-																						</xs:restriction>
-																					</xs:simpleType>
-																				</xs:attribute>
-																			</xs:extension>
-																		</xs:simpleContent>
-																	</xs:complexType>
-																</xs:element>
-																<xs:element name="givenName" type="xs:string">
-																	<xs:annotation>
-																		<xs:documentation>Given Name of the Person</xs:documentation>
-																	</xs:annotation>
-																</xs:element>
-																<xs:element name="familyName" type="xs:string">
-																	<xs:annotation>
-																		<xs:documentation>Family Name of the Person</xs:documentation>
-																	</xs:annotation>
-																</xs:element>
-																<xs:element name="nameIdentifier" type="daci:nameIdentifier" minOccurs="0">
-																	<xs:annotation>
-																		<xs:documentation>Uniquely identifies an individual or legal entity, according to various schemes.</xs:documentation>
-																	</xs:annotation>
-																</xs:element>
-																<xs:element name="affiliation" type="daci:affiliation">
-																	<xs:annotation>
-																		<xs:documentation>The contributor’s nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the institution to which that organization belongs.</xs:documentation>
-																	</xs:annotation>
-																</xs:element>
-															</xs:sequence>
-														</xs:complexType>
-													</xs:element>
-												</xs:sequence>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="SampleImg">
-											<xs:complexType>
-												<xs:attribute name="imgURI"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
@@ -1131,9 +818,4 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="resourceType">
-		<xs:simpleContent>
-			<xs:extension base="xs:string"/>
-		</xs:simpleContent>
-	</xs:complexType>
 </xs:schema>
