@@ -4,8 +4,236 @@
 		<xs:documentation>
 			Shared enumeration types used across the IGSN schema.
 			This file defines reusable enumeration restrictions to avoid duplication.
+			These enumerations are extracted from the DataCite 4.7 schema.
 		</xs:documentation>
 	</xs:annotation>
+
+	<!-- Enumeration for titleType -->
+	<xs:simpleType name="titleType">
+		<xs:annotation>
+			<xs:documentation>Allowed types for titles</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AlternativeTitle"/>
+			<xs:enumeration value="Subtitle"/>
+			<xs:enumeration value="TranslatedTitle"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for contributorType -->
+	<xs:simpleType name="contributorType">
+		<xs:annotation>
+			<xs:documentation>The type of contributor of the resource</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ContactPerson"/>
+			<xs:enumeration value="DataCollector"/>
+			<xs:enumeration value="DataCurator"/>
+			<xs:enumeration value="DataManager"/>
+			<xs:enumeration value="Distributor"/>
+			<xs:enumeration value="Editor"/>
+			<xs:enumeration value="HostingInstitution"/>
+			<xs:enumeration value="Other"/>
+			<xs:enumeration value="Producer"/>
+			<xs:enumeration value="ProjectLeader"/>
+			<xs:enumeration value="ProjectManager"/>
+			<xs:enumeration value="ProjectMember"/>
+			<xs:enumeration value="RegistrationAgency"/>
+			<xs:enumeration value="RegistrationAuthority"/>
+			<xs:enumeration value="RelatedPerson"/>
+			<xs:enumeration value="ResearchGroup"/>
+			<xs:enumeration value="RightsHolder"/>
+			<xs:enumeration value="Researcher"/>
+			<xs:enumeration value="Sponsor"/>
+			<xs:enumeration value="Supervisor"/>
+			<xs:enumeration value="Translator"/>
+			<xs:enumeration value="WorkPackageLeader"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for dateType -->
+	<xs:simpleType name="dateType">
+		<xs:annotation>
+			<xs:documentation>The type of date</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Accepted"/>
+			<xs:enumeration value="Available"/>
+			<xs:enumeration value="Collected"/>
+			<xs:enumeration value="Copyrighted"/>
+			<xs:enumeration value="Coverage"/>
+			<xs:enumeration value="Created"/>
+			<xs:enumeration value="Issued"/>
+			<xs:enumeration value="Other"/>
+			<xs:enumeration value="Submitted"/>
+			<xs:enumeration value="Updated"/>
+			<xs:enumeration value="Valid"/>
+			<xs:enumeration value="Withdrawn"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for resourceType -->
+	<xs:simpleType name="resourceType">
+		<xs:annotation>
+			<xs:documentation>The general type of a resource</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Audiovisual"/>
+			<xs:enumeration value="Award"/>
+			<xs:enumeration value="Book"/>
+			<xs:enumeration value="BookChapter"/>
+			<xs:enumeration value="Collection"/>
+			<xs:enumeration value="ComputationalNotebook"/>
+			<xs:enumeration value="ConferencePaper"/>
+			<xs:enumeration value="ConferenceProceeding"/>
+			<xs:enumeration value="DataPaper"/>
+			<xs:enumeration value="Dataset"/>
+			<xs:enumeration value="Dissertation"/>
+			<xs:enumeration value="Event"/>
+			<xs:enumeration value="Image"/>
+			<xs:enumeration value="Instrument"/>
+			<xs:enumeration value="InteractiveResource"/>
+			<xs:enumeration value="Journal"/>
+			<xs:enumeration value="JournalArticle"/>
+			<xs:enumeration value="Model"/>
+			<xs:enumeration value="OutputManagementPlan"/>
+			<xs:enumeration value="PeerReview"/>
+			<xs:enumeration value="PhysicalObject"/>
+			<xs:enumeration value="Poster"/>
+			<xs:enumeration value="Preprint"/>
+			<xs:enumeration value="Presentation"/>
+			<xs:enumeration value="Project"/>
+			<xs:enumeration value="Report"/>
+			<xs:enumeration value="Service"/>
+			<xs:enumeration value="Software"/>
+			<xs:enumeration value="Sound"/>
+			<xs:enumeration value="Standard"/>
+			<xs:enumeration value="StudyRegistration"/>
+			<xs:enumeration value="Text"/>
+			<xs:enumeration value="Workflow"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for relationType -->
+	<xs:simpleType name="relationType">
+		<xs:annotation>
+			<xs:documentation>Description of the relationship of the resource</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IsCitedBy"/>
+			<xs:enumeration value="Cites"/>
+			<xs:enumeration value="IsSupplementTo"/>
+			<xs:enumeration value="IsSupplementedBy"/>
+			<xs:enumeration value="IsContinuedBy"/>
+			<xs:enumeration value="Continues"/>
+			<xs:enumeration value="IsNewVersionOf"/>
+			<xs:enumeration value="IsPreviousVersionOf"/>
+			<xs:enumeration value="IsPartOf"/>
+			<xs:enumeration value="HasPart"/>
+			<xs:enumeration value="IsPublishedIn"/>
+			<xs:enumeration value="IsReferencedBy"/>
+			<xs:enumeration value="References"/>
+			<xs:enumeration value="IsDocumentedBy"/>
+			<xs:enumeration value="Documents"/>
+			<xs:enumeration value="IsCompiledBy"/>
+			<xs:enumeration value="Compiles"/>
+			<xs:enumeration value="IsVariantFormOf"/>
+			<xs:enumeration value="IsOriginalFormOf"/>
+			<xs:enumeration value="IsIdenticalTo"/>
+			<xs:enumeration value="HasMetadata"/>
+			<xs:enumeration value="IsMetadataFor"/>
+			<xs:enumeration value="Reviews"/>
+			<xs:enumeration value="IsReviewedBy"/>
+			<xs:enumeration value="IsDerivedFrom"/>
+			<xs:enumeration value="IsSourceOf"/>
+			<xs:enumeration value="Describes"/>
+			<xs:enumeration value="IsDescribedBy"/>
+			<xs:enumeration value="HasVersion"/>
+			<xs:enumeration value="IsVersionOf"/>
+			<xs:enumeration value="Requires"/>
+			<xs:enumeration value="IsRequiredBy"/>
+			<xs:enumeration value="Obsoletes"/>
+			<xs:enumeration value="IsObsoletedBy"/>
+			<xs:enumeration value="Collects"/>
+			<xs:enumeration value="IsCollectedBy"/>
+			<xs:enumeration value="HasTranslation"/>
+			<xs:enumeration value="IsTranslationOf"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for relatedIdentifierType -->
+	<xs:simpleType name="relatedIdentifierType">
+		<xs:annotation>
+			<xs:documentation>The type of the RelatedIdentifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ARK"/>
+			<xs:enumeration value="arXiv"/>
+			<xs:enumeration value="bibcode"/>
+			<xs:enumeration value="CSTR"/>
+			<xs:enumeration value="DOI"/>
+			<xs:enumeration value="EAN13"/>
+			<xs:enumeration value="EISSN"/>
+			<xs:enumeration value="Handle"/>
+			<xs:enumeration value="IGSN"/>
+			<xs:enumeration value="ISBN"/>
+			<xs:enumeration value="ISSN"/>
+			<xs:enumeration value="ISTC"/>
+			<xs:enumeration value="LISSN"/>
+			<xs:enumeration value="LSID"/>
+			<xs:enumeration value="PMID"/>
+			<xs:enumeration value="PURL"/>
+			<xs:enumeration value="RAiD"/>
+			<xs:enumeration value="RRID"/>
+			<xs:enumeration value="SWHID"/>
+			<xs:enumeration value="UPC"/>
+			<xs:enumeration value="URL"/>
+			<xs:enumeration value="URN"/>
+			<xs:enumeration value="w3id"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for funderIdentifierType -->
+	<xs:simpleType name="funderIdentifierType">
+		<xs:annotation>
+			<xs:documentation>The type of the funderIdentifier</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ISNI"/>
+			<xs:enumeration value="GRID"/>
+			<xs:enumeration value="ROR"/>
+			<xs:enumeration value="Crossref Funder ID"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for nameType -->
+	<xs:simpleType name="nameType">
+		<xs:annotation>
+			<xs:documentation>Type of name (Personal or Organizational)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Organizational"/>
+			<xs:enumeration value="Personal"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Enumeration for descriptionType -->
+	<xs:simpleType name="descriptionType">
+		<xs:annotation>
+			<xs:documentation>Allowed types for descriptions</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Abstract"/>
+			<xs:enumeration value="Methods"/>
+			<xs:enumeration value="SeriesInformation"/>
+			<xs:enumeration value="TableOfContents"/>
+			<xs:enumeration value="TechnicalInfo"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
 
 	<!-- Enumeration for publisherIdentifierScheme -->
 	<xs:simpleType name="publisherIdentifierScheme">
@@ -22,21 +250,6 @@
 			<xs:enumeration value="OpenDOAR"/>
 			<xs:enumeration value="FAIRsharing"/>
 			<xs:enumeration value="ISSN"/>
-		</xs:restriction>
-	</xs:simpleType>
-
-	<!-- Enumeration for descriptionType -->
-	<xs:simpleType name="descriptionType">
-		<xs:annotation>
-			<xs:documentation>Allowed types for descriptions</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Abstract"/>
-			<xs:enumeration value="Methods"/>
-			<xs:enumeration value="SeriesInformation"/>
-			<xs:enumeration value="TableOfContents"/>
-			<xs:enumeration value="TechnicalInfo"/>
-			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -140,5 +353,102 @@
 			<xs:enumeration value="WGS84"/>
 		</xs:restriction>
 	</xs:simpleType>
+
+	<!-- Complex Types from DataCite (these are defined here instead of imported from daci) -->
+	
+	<!-- nameIdentifier complexType -->
+	<xs:complexType name="nameIdentifier">
+		<xs:annotation>
+			<xs:documentation>Uniquely identifies an individual or legal entity, according to various schemes</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="nameIdentifierScheme" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>The name of the scheme (e.g., ORCID)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="schemeURI" type="xs:anyURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>The URI of the name scheme</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!-- affiliation complexType -->
+	<xs:complexType name="affiliation">
+		<xs:annotation>
+			<xs:documentation>The organizational or institutional affiliation</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="affiliationIdentifier" type="xs:anyURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>Uniquely identifies an affiliation</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="affiliationIdentifierScheme" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>The name of the scheme</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="schemeURI" type="xs:anyURI" use="optional">
+					<xs:annotation>
+						<xs:documentation>The URI of the scheme</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!-- point complexType (latitude and longitude) -->
+	<xs:complexType name="point">
+		<xs:annotation>
+			<xs:documentation>A point location with latitude and longitude</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="pointLongitude" type="xs:float">
+				<xs:annotation>
+					<xs:documentation>Longitude of the point</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="pointLatitude" type="xs:float">
+				<xs:annotation>
+					<xs:documentation>Latitude of the point</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- box complexType (bounding box with two coordinate pairs) -->
+	<xs:complexType name="box">
+		<xs:annotation>
+			<xs:documentation>A bounding box with lower and upper corner coordinates</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="westBoundLongitude" type="xs:float">
+				<xs:annotation>
+					<xs:documentation>Western boundary longitude</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="eastBoundLongitude" type="xs:float">
+				<xs:annotation>
+					<xs:documentation>Eastern boundary longitude</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="southBoundLatitude" type="xs:float">
+				<xs:annotation>
+					<xs:documentation>Southern boundary latitude</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="northBoundLatitude" type="xs:float">
+				<xs:annotation>
+					<xs:documentation>Northern boundary latitude</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 
 </xs:schema>
