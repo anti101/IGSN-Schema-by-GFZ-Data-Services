@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://pmd.gfz-potsdam.de/igsn/enumerations" xmlns:enum="http://pmd.gfz-potsdam.de/igsn/enumerations" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation>
 			Shared enumeration types used across the IGSN schema.
 			This file defines reusable enumeration restrictions to avoid duplication.
-			These enumerations are extracted from the DataCite 4.7 schema.
+			These enumerations are extracted from the DataCite 4.7 schema and IGSN-specific types.
 		</xs:documentation>
 	</xs:annotation>
 
