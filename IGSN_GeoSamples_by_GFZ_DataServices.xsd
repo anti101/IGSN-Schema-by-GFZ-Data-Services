@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:igsn="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/4512baa54ed047140ff47dd8b834f6e6eaa9ca50/IGSN_GeoSamples_by_GFZ_DataServices.xsd">
+<!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von Tanja (Fachhochschule Potsdam) -->
+<xs:schema xmlns:igsn="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/03bd1138c07fbd82e77865d598339d21173c8a00/IGSN_GeoSamples_by_GFZ_DataServices.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:daci="http://datacite.org/schema/kernel-4" targetNamespace="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/03bd1138c07fbd82e77865d598339d21173c8a00/IGSN_GeoSamples_by_GFZ_DataServices.xsd">
 	<xs:include schemaLocation="enumerations.xsd"/>
 	<xs:import namespace="http://datacite.org/schema/kernel-4" schemaLocation="DataCite4.7/20260316_schema_annotation.xsd"/>
 	<xs:element name="resource">
@@ -24,7 +25,7 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
-											<xs:attribute name="identifierType" type="relatedIdentifierType" use="required" fixed="DOI">
+											<xs:attribute name="identifierType" type="igsn:relatedIdentifierType" use="required" fixed="DOI">
 												<xs:annotation>
 													<xs:documentation>The type of Identifier. Mandatory for registration with DataCite</xs:documentation>
 												</xs:annotation>
@@ -38,7 +39,7 @@
 									<xs:documentation>Indicates whether this resource is available for reuse beyond the original contributor.</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
-									<xs:attribute name="accessType" type="accessType">
+									<xs:attribute name="accessType" type="igsn:accessType">
 										<xs:annotation>
 											<xs:documentation>Indicates the type of access</xs:documentation>
 										</xs:annotation>
@@ -63,12 +64,12 @@
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
-																<xs:extension base="nameIdentifier"/>
+																<xs:extension base="igsn:nameIdentifier"/>
 															</xs:simpleContent>
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute name="lang" fixed="en" type="englishLanguage">
+												<xs:attribute name="lang" type="igsn:englishLanguage" fixed="en">
 													<xs:annotation>
 														<xs:documentation>distinguishes the language</xs:documentation>
 													</xs:annotation>
@@ -87,12 +88,12 @@
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
-																<xs:extension base="nameIdentifier"/>
+																<xs:extension base="igsn:nameIdentifier"/>
 															</xs:simpleContent>
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute name="lang" fixed="en" type="englishLanguage">
+												<xs:attribute name="lang" type="igsn:englishLanguage" fixed="en">
 													<xs:annotation>
 														<xs:documentation>distinguishes the language</xs:documentation>
 													</xs:annotation>
@@ -105,8 +106,8 @@
 											</xs:annotation>
 											<xs:complexType>
 												<xs:complexContent>
-													<xs:extension base="point">
-														<xs:attribute name="coordinateSystem" use="required" fixed="WGS84" type="coordinateSystem">
+													<xs:extension base="igsn:point">
+														<xs:attribute name="coordinateSystem" type="igsn:coordinateSystem" use="required" fixed="WGS84">
 															<xs:annotation>
 																<xs:documentation>This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. </xs:documentation>
 															</xs:annotation>
@@ -128,12 +129,12 @@
 														<xs:complexType>
 															<xs:simpleContent>
 																<xs:extension base="xs:string">
-																	<xs:attribute name="nameType" type="nameType" use="required" fixed="Personal">
+																	<xs:attribute name="nameType" type="igsn:nameType" use="required" fixed="Personal">
 																		<xs:annotation>
 																			<xs:documentation>type of the contributer. Contributers may be persons or institutions.</xs:documentation>
 																		</xs:annotation>
 																	</xs:attribute>
-																	<xs:attribute name="lang" fixed="en" type="englishLanguage">
+																	<xs:attribute name="lang" type="igsn:englishLanguage" fixed="en">
 																		<xs:annotation>
 																			<xs:documentation>distinguishes the language</xs:documentation>
 																		</xs:annotation>
@@ -152,18 +153,18 @@
 															<xs:documentation>Family Name of the Person</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="nameIdentifier" type="nameIdentifier" minOccurs="0">
+													<xs:element name="nameIdentifier" type="igsn:nameIdentifier" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Uniquely identifies an individual or legal entity, according to various schemes.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="affiliation" type="affiliation" minOccurs="0">
+													<xs:element name="affiliation" type="igsn:affiliation" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>The contributor's nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the institution to which that organization belongs.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute name="contributorType" type="contributorType" fixed="ContactPerson">
+												<xs:attribute name="contributorType" type="igsn:contributorType" fixed="ContactPerson">
 													<xs:annotation>
 														<xs:documentation>The type of contributor of the resource.</xs:documentation>
 													</xs:annotation>
@@ -186,7 +187,7 @@
 											<xs:complexType>
 												<xs:simpleContent>
 													<xs:extension base="xs:string">
-														<xs:attribute name="dateType" type="dateType" use="required">
+														<xs:attribute name="dateType" type="igsn:dateType" use="required">
 															<xs:annotation>
 																<xs:documentation>This attribute is used to provide a more detailed description of the 'date' element in order to unambiguously identify what the 'date' element refers to</xs:documentation>
 															</xs:annotation>

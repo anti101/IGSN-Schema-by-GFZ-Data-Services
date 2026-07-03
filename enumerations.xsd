@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://pmd.gfz-potsdam.de/igsn/enumerations" xmlns:enum="http://pmd.gfz-potsdam.de/igsn/enumerations" elementFormDefault="qualified">
+<!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von Tanja (Fachhochschule Potsdam) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/03bd1138c07fbd82e77865d598339d21173c8a00/IGSN_GeoSamples_by_GFZ_DataServices.xsd" targetNamespace="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/03bd1138c07fbd82e77865d598339d21173c8a00/IGSN_GeoSamples_by_GFZ_DataServices.xsd" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation>
 			Shared enumeration types used across the IGSN schema.
@@ -7,7 +8,6 @@
 			These enumerations are extracted from the DataCite 4.7 schema and IGSN-specific types.
 		</xs:documentation>
 	</xs:annotation>
-
 	<!-- Enumeration for titleType -->
 	<xs:simpleType name="titleType">
 		<xs:annotation>
@@ -20,7 +20,6 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for contributorType -->
 	<xs:simpleType name="contributorType">
 		<xs:annotation>
@@ -51,7 +50,6 @@
 			<xs:enumeration value="WorkPackageLeader"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for dateType -->
 	<xs:simpleType name="dateType">
 		<xs:annotation>
@@ -72,7 +70,6 @@
 			<xs:enumeration value="Withdrawn"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for resourceType -->
 	<xs:simpleType name="resourceType">
 		<xs:annotation>
@@ -114,7 +111,6 @@
 			<xs:enumeration value="Workflow"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for relationType -->
 	<xs:simpleType name="relationType">
 		<xs:annotation>
@@ -162,7 +158,6 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for relatedIdentifierType -->
 	<xs:simpleType name="relatedIdentifierType">
 		<xs:annotation>
@@ -194,7 +189,6 @@
 			<xs:enumeration value="w3id"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for funderIdentifierType -->
 	<xs:simpleType name="funderIdentifierType">
 		<xs:annotation>
@@ -208,7 +202,6 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for nameType -->
 	<xs:simpleType name="nameType">
 		<xs:annotation>
@@ -219,7 +212,6 @@
 			<xs:enumeration value="Personal"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for descriptionType -->
 	<xs:simpleType name="descriptionType">
 		<xs:annotation>
@@ -234,7 +226,6 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for publisherIdentifierScheme -->
 	<xs:simpleType name="publisherIdentifierScheme">
 		<xs:annotation>
@@ -252,7 +243,6 @@
 			<xs:enumeration value="ISSN"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for UnitOfMeasurement (UoM) -->
 	<xs:simpleType name="unitOfMeasurement">
 		<xs:annotation>
@@ -276,7 +266,6 @@
 			<xs:enumeration value="Pa"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for rangeBound -->
 	<xs:simpleType name="rangeBound">
 		<xs:annotation>
@@ -287,7 +276,6 @@
 			<xs:enumeration value="max"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for sizeUnit -->
 	<xs:simpleType name="sizeUnit">
 		<xs:annotation>
@@ -299,7 +287,6 @@
 			<xs:enumeration value="length"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for language (en/de) -->
 	<xs:simpleType name="supportedLanguage">
 		<xs:annotation>
@@ -310,7 +297,6 @@
 			<xs:enumeration value="de"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for English language only -->
 	<xs:simpleType name="englishLanguage">
 		<xs:annotation>
@@ -320,7 +306,6 @@
 			<xs:enumeration value="en"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for accessType -->
 	<xs:simpleType name="accessType">
 		<xs:annotation>
@@ -332,7 +317,6 @@
 			<xs:enumeration value="non-reuseable"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for creatorType -->
 	<xs:simpleType name="creatorType">
 		<xs:annotation>
@@ -343,7 +327,6 @@
 			<xs:enumeration value="creator"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Enumeration for WGS84 coordinate system -->
 	<xs:simpleType name="coordinateSystem">
 		<xs:annotation>
@@ -353,9 +336,7 @@
 			<xs:enumeration value="WGS84"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	<!-- Complex Types from DataCite (these are defined here instead of imported from daci) -->
-	
 	<!-- nameIdentifier complexType -->
 	<xs:complexType name="nameIdentifier">
 		<xs:annotation>
@@ -376,7 +357,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-
 	<!-- affiliation complexType -->
 	<xs:complexType name="affiliation">
 		<xs:annotation>
@@ -402,7 +382,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-
 	<!-- point complexType (latitude and longitude) -->
 	<xs:complexType name="point">
 		<xs:annotation>
@@ -421,7 +400,6 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-
 	<!-- box complexType (bounding box with two coordinate pairs) -->
 	<xs:complexType name="box">
 		<xs:annotation>
@@ -450,5 +428,4 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-
 </xs:schema>
