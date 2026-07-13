@@ -918,64 +918,72 @@ Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Ta
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="age">
+										<xs:element name="age" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-															<xs:enumeration value="kaBP"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="errow"/>
+												<xs:simpleContent>
+													<xs:extension base="xs:integer">
+														<xs:attribute name="rangeBound">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="min"/>
+																	<xs:enumeration value="max"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="UoM">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="mm"/>
+																	<xs:enumeration value="cm"/>
+																	<xs:enumeration value="m"/>
+																	<xs:enumeration value="km"/>
+																	<xs:enumeration value="m²"/>
+																	<xs:enumeration value="km²"/>
+																	<xs:enumeration value="m³"/>
+																	<xs:enumeration value="l"/>
+																	<xs:enumeration value="g"/>
+																	<xs:enumeration value="kg"/>
+																	<xs:enumeration value="t"/>
+																	<xs:enumeration value="g/cm³"/>
+																	<xs:enumeration value="a"/>
+																	<xs:enumeration value="ka"/>
+																	<xs:enumeration value="Pa"/>
+																	<xs:enumeration value="kaBP"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="errow"/>
+													</xs:extension>
+												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="geologicalAge">
+										<xs:element name="geologicalAge" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="lang" fixed="en">
-													<xs:annotation>
-														<xs:documentation>distinguishes the language</xs:documentation>
-													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="rangeBound">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="min"/>
+																	<xs:enumeration value="max"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="lang" fixed="en">
+															<xs:annotation>
+																<xs:documentation>distinguishes the language</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:language">
+																	<xs:enumeration value="en"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="SampleImg">
+										<xs:element name="sampleImg" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:attribute name="imgURI"/>
 											</xs:complexType>
@@ -989,87 +997,99 @@ Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Ta
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="depth">
+										<xs:element name="depth" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
+												<xs:simpleContent>
+													<xs:extension base="xs:float">
+														<xs:attribute name="rangeBound">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="min"/>
+																	<xs:enumeration value="max"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="UoM">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="mm"/>
+																	<xs:enumeration value="cm"/>
+																	<xs:enumeration value="m"/>
+																	<xs:enumeration value="km"/>
+																	<xs:enumeration value="m²"/>
+																	<xs:enumeration value="km²"/>
+																	<xs:enumeration value="m³"/>
+																	<xs:enumeration value="l"/>
+																	<xs:enumeration value="g"/>
+																	<xs:enumeration value="kg"/>
+																	<xs:enumeration value="t"/>
+																	<xs:enumeration value="g/cm³"/>
+																	<xs:enumeration value="a"/>
+																	<xs:enumeration value="ka"/>
+																	<xs:enumeration value="Pa"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="height">
+										<xs:element name="height" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
+												<xs:simpleContent>
+													<xs:extension base="xs:float">
+														<xs:attribute name="rangeBound">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="min"/>
+																	<xs:enumeration value="max"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="UoM">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="mm"/>
+																	<xs:enumeration value="cm"/>
+																	<xs:enumeration value="m"/>
+																	<xs:enumeration value="km"/>
+																	<xs:enumeration value="m²"/>
+																	<xs:enumeration value="km²"/>
+																	<xs:enumeration value="m³"/>
+																	<xs:enumeration value="l"/>
+																	<xs:enumeration value="g"/>
+																	<xs:enumeration value="kg"/>
+																	<xs:enumeration value="t"/>
+																	<xs:enumeration value="g/cm³"/>
+																	<xs:enumeration value="a"/>
+																	<xs:enumeration value="ka"/>
+																	<xs:enumeration value="Pa"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="samplePurpose" minOccurs="0" maxOccurs="unbounded"/>
-										<xs:element name="method">
+										<xs:element name="samplePurpose" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="method" minOccurs="0" maxOccurs="unbounded">
 											<xs:complexType>
-												<xs:attribute name="methodScheme"/>
-												<xs:attribute name="schemeURI"/>
-												<xs:attribute name="lang" fixed="en">
-													<xs:annotation>
-														<xs:documentation>distinguishes the language</xs:documentation>
-													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="methodScheme"/>
+														<xs:attribute name="schemeURI"/>
+														<xs:attribute name="lang" fixed="en">
+															<xs:annotation>
+																<xs:documentation>distinguishes the language</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:language">
+																	<xs:enumeration value="en"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="Campain">
@@ -1077,36 +1097,44 @@ Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Ta
 												<xs:sequence>
 													<xs:element name="expeditionName">
 														<xs:complexType>
-															<xs:attribute name="lang" fixed="en">
-																<xs:annotation>
-																	<xs:documentation>distinguishes the language</xs:documentation>
-																</xs:annotation>
-																<xs:simpleType>
-																	<xs:restriction base="xs:language">
-																		<xs:enumeration value="en"/>
-																	</xs:restriction>
-																</xs:simpleType>
-															</xs:attribute>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="lang" fixed="en">
+																		<xs:annotation>
+																			<xs:documentation>distinguishes the language</xs:documentation>
+																		</xs:annotation>
+																		<xs:simpleType>
+																			<xs:restriction base="xs:language">
+																				<xs:enumeration value="en"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+																	</xs:attribute>
+																</xs:extension>
+															</xs:simpleContent>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="expeditionIdentifier">
+													<xs:element name="expeditionIdentifier" minOccurs="0">
 														<xs:complexType>
-															<xs:attribute name="identifierScheme"/>
-															<xs:attribute name="schemeURI" type="xs:anyURI" use="optional">
-																<xs:annotation>
-																	<xs:documentation>This attribute enables the origin of the vocabulary to be traced. </xs:documentation>
-																</xs:annotation>
-															</xs:attribute>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attribute name="identifierScheme"/>
+																	<xs:attribute name="schemeURI" type="xs:anyURI" use="optional">
+																		<xs:annotation>
+																			<xs:documentation>This attribute enables the origin of the vocabulary to be traced. </xs:documentation>
+																		</xs:annotation>
+																	</xs:attribute>
+																</xs:extension>
+															</xs:simpleContent>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="platformType" minOccurs="0"/>
-													<xs:element name="platformName" minOccurs="0"/>
-													<xs:element name="operator">
+													<xs:element name="platformType" type="xs:string" minOccurs="0"/>
+													<xs:element name="platformName" type="xs:string" minOccurs="0"/>
+													<xs:element name="operator" minOccurs="0" maxOccurs="unbounded">
 														<xs:complexType>
 															<xs:sequence>
 																<xs:element name="operatorName">
 																	<xs:annotation>
-																		<xs:documentation>The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.</xs:documentation>
+																		<xs:documentation>The institution or person responsible for operating the platform</xs:documentation>
 																	</xs:annotation>
 																	<xs:complexType>
 																		<xs:simpleContent>
@@ -1118,7 +1146,7 @@ Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Ta
 																				</xs:attribute>
 																				<xs:attribute name="lang" fixed="en">
 																					<xs:annotation>
-																						<xs:documentation>distinguishes the language</xs:documentation>
+																						<xs:documentation>distinguishes the language, only mif nameType is organizational</xs:documentation>
 																					</xs:annotation>
 																					<xs:simpleType>
 																						<xs:restriction base="xs:language">
@@ -1130,14 +1158,14 @@ Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Ta
 																		</xs:simpleContent>
 																	</xs:complexType>
 																</xs:element>
-																<xs:element name="givenName" type="xs:string">
+																<xs:element name="givenName" type="xs:string" minOccurs="0">
 																	<xs:annotation>
-																		<xs:documentation>Given Name of the Person</xs:documentation>
+																		<xs:documentation>Given Name of the Person, only mif nameType is personal</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
-																<xs:element name="familyName" type="xs:string">
+																<xs:element name="familyName" type="xs:string" minOccurs="0">
 																	<xs:annotation>
-																		<xs:documentation>Family Name of the Person</xs:documentation>
+																		<xs:documentation>Family Name of the Person, only mif nameType is personal</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 																<xs:element name="nameIdentifier" type="daci:nameIdentifier" minOccurs="0">
@@ -1147,7 +1175,7 @@ Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Ta
 																</xs:element>
 																<xs:element name="affiliation" type="daci:affiliation">
 																	<xs:annotation>
-																		<xs:documentation>The contributor’s nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the institution to which that organization belongs.</xs:documentation>
+																		<xs:documentation>The operator nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the institution to which that organization belongs.</xs:documentation>
 																	</xs:annotation>
 																</xs:element>
 															</xs:sequence>
@@ -1165,7 +1193,7 @@ Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Ta
 										<xs:element name="elevation" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:simpleContent>
-													<xs:extension base="xs:decimal">
+													<xs:extension base="xs:float">
 														<xs:attribute name="UoM">
 															<xs:simpleType>
 																<xs:restriction base="xs:string">
@@ -1199,14 +1227,56 @@ Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Ta
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="landform"/>
-										<xs:element name="biome"/>
-										<xs:element name="primaryLocationType">
+										<xs:element name="landform">
+											<xs:annotation>
+												<xs:documentation>Type of physical feature that the sample was collected from. Geosamples Voc: Physiographic Feature</xs:documentation>
+											</xs:annotation>
 											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="geologicalUnit"/>
-												</xs:sequence>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="landformScheme"/>
+														<xs:attribute name="schemeURI"/>
+														<xs:attribute name="lang" fixed="en">
+															<xs:annotation>
+																<xs:documentation>distinguishes the language</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:language">
+																	<xs:enumeration value="en"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
 											</xs:complexType>
+										</xs:element>
+										<xs:element name="biome">
+											<xs:annotation>
+												<xs:documentation>Name of the biome, the sample was taken in. According to Olson et al. (2001) https://doi.org/10.1641/0006-3568(2001)051[0933:TEOTWA]2.0.CO;2</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="biomeScheme"/>
+														<xs:attribute name="schemeURI"/>
+														<xs:attribute name="lang" fixed="en">
+															<xs:annotation>
+																<xs:documentation>distinguishes the language</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:language">
+																	<xs:enumeration value="en"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="geologicalUnit" type="xs:string" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>A body of rock established as a distinct entity in the classification of the Earth's rocks (stratigraphic unit)</xs:documentation>
+											</xs:annotation>
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
