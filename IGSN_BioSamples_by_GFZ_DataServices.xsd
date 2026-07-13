@@ -840,9 +840,39 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="PH-classifications">
+							<xs:element name="sample">
+								<xs:annotation>
+									<xs:documentation>wrapper konzept ähnlich sampling wrapper</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
+										<xs:element name="SampleImg">
+											<xs:complexType>
+												<xs:attribute name="imgURI"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="geologicalAge">
+											<xs:complexType>
+												<xs:attribute name="rangeBound">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="min"/>
+															<xs:enumeration value="max"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="lang" fixed="en">
+													<xs:annotation>
+														<xs:documentation>distinguishes the language</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:language">
+															<xs:enumeration value="en"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
 										<xs:element name="taxonomie">
 											<xs:simpleType>
 												<xs:restriction base="xs:string">
@@ -854,59 +884,86 @@
 												</xs:restriction>
 											</xs:simpleType>
 										</xs:element>
-										<xs:element name="primaryLocationType">
+										<xs:element name="species"/>
+										<xs:element name="age">
 											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="landform"/>
-													<xs:element name="geologicalUnit"/>
-													<xs:element name="biome"/>
-												</xs:sequence>
+												<xs:attribute name="rangeBound">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="min"/>
+															<xs:enumeration value="max"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="UoM">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="mm"/>
+															<xs:enumeration value="cm"/>
+															<xs:enumeration value="m"/>
+															<xs:enumeration value="km"/>
+															<xs:enumeration value="m²"/>
+															<xs:enumeration value="km²"/>
+															<xs:enumeration value="m³"/>
+															<xs:enumeration value="l"/>
+															<xs:enumeration value="g"/>
+															<xs:enumeration value="kg"/>
+															<xs:enumeration value="t"/>
+															<xs:enumeration value="g/cm³"/>
+															<xs:enumeration value="a"/>
+															<xs:enumeration value="ka"/>
+															<xs:enumeration value="Pa"/>
+															<xs:enumeration value="kaBP"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="species"/>
+										<xs:element name="size" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="sizeUnit">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="mass"/>
+															<xs:enumeration value="diameter"/>
+															<xs:enumeration value="length"/>
+															<xs:enumeration value="area"/>
+															<xs:enumeration value="volume"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="UoM">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="mm"/>
+															<xs:enumeration value="cm"/>
+															<xs:enumeration value="m"/>
+															<xs:enumeration value="km"/>
+															<xs:enumeration value="m²"/>
+															<xs:enumeration value="km²"/>
+															<xs:enumeration value="m³"/>
+															<xs:enumeration value="l"/>
+															<xs:enumeration value="g"/>
+															<xs:enumeration value="kg"/>
+															<xs:enumeration value="t"/>
+															<xs:enumeration value="g/cm³"/>
+															<xs:enumeration value="a"/>
+															<xs:enumeration value="ka"/>
+															<xs:enumeration value="Pa"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="PH-dimensions">
+							<xs:element name="sampling">
+								<xs:annotation>
+									<xs:documentation>Wrapper um alle Informationen zum Prozess der Probensammlung zusammen zu stellen, dieser Wrapper entspricht semantisch der Übersicht aus dem Tamplete</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="elevation" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:simpleContent>
-													<xs:extension base="xs:decimal">
-														<xs:attribute name="UoM">
-															<xs:simpleType>
-																<xs:restriction base="xs:string">
-																	<xs:enumeration value="mm"/>
-																	<xs:enumeration value="cm"/>
-																	<xs:enumeration value="m"/>
-																	<xs:enumeration value="km"/>
-																	<xs:enumeration value="m²"/>
-																	<xs:enumeration value="km²"/>
-																	<xs:enumeration value="m³"/>
-																	<xs:enumeration value="l"/>
-																	<xs:enumeration value="g"/>
-																	<xs:enumeration value="kg"/>
-																	<xs:enumeration value="t"/>
-																	<xs:enumeration value="g/cm³"/>
-																	<xs:enumeration value="a"/>
-																	<xs:enumeration value="ka"/>
-																	<xs:enumeration value="Pa"/>
-																</xs:restriction>
-															</xs:simpleType>
-														</xs:attribute>
-														<xs:attribute name="rangeBound">
-															<xs:simpleType>
-																<xs:restriction base="xs:string">
-																	<xs:enumeration value="min"/>
-																	<xs:enumeration value="max"/>
-																</xs:restriction>
-															</xs:simpleType>
-														</xs:attribute>
-													</xs:extension>
-												</xs:simpleContent>
-											</xs:complexType>
-										</xs:element>
 										<xs:element name="depth">
 											<xs:complexType>
 												<xs:attribute name="rangeBound">
@@ -973,104 +1030,6 @@
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="size" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:attribute name="sizeUnit">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mass"/>
-															<xs:enumeration value="diameter"/>
-															<xs:enumeration value="length"/>
-															<xs:enumeration value="area"/>
-															<xs:enumeration value="volume"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="age">
-											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-															<xs:enumeration value="kaBP"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="geologicalAge">
-											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="lang" fixed="en">
-													<xs:annotation>
-														<xs:documentation>distinguishes the language</xs:documentation>
-													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="PH-org">
-								<xs:complexType>
-									<xs:sequence>
 										<xs:element name="samplePurpose" minOccurs="0" maxOccurs="unbounded"/>
 										<xs:element name="method">
 											<xs:complexType>
@@ -1172,9 +1131,56 @@
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="SampleImg">
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="location">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="elevation" maxOccurs="unbounded">
 											<xs:complexType>
-												<xs:attribute name="imgURI"/>
+												<xs:simpleContent>
+													<xs:extension base="xs:decimal">
+														<xs:attribute name="UoM">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="mm"/>
+																	<xs:enumeration value="cm"/>
+																	<xs:enumeration value="m"/>
+																	<xs:enumeration value="km"/>
+																	<xs:enumeration value="m²"/>
+																	<xs:enumeration value="km²"/>
+																	<xs:enumeration value="m³"/>
+																	<xs:enumeration value="l"/>
+																	<xs:enumeration value="g"/>
+																	<xs:enumeration value="kg"/>
+																	<xs:enumeration value="t"/>
+																	<xs:enumeration value="g/cm³"/>
+																	<xs:enumeration value="a"/>
+																	<xs:enumeration value="ka"/>
+																	<xs:enumeration value="Pa"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="rangeBound">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="min"/>
+																	<xs:enumeration value="max"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="landform"/>
+										<xs:element name="biome"/>
+										<xs:element name="primaryLocationType">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="geologicalUnit"/>
+												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
