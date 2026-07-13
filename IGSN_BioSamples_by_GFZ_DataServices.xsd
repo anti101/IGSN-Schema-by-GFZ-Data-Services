@@ -650,7 +650,8 @@
 										<xs:element name="sampleTypeClassificationPlaceholder"/>
 										<xs:element name="material" minOccurs="0" maxOccurs="unbounded">
 											<xs:annotation>
-												<xs:documentation>Subject, keyword, classification code, or key phrase describing the resource.</xs:documentation>
+												<xs:documentation>Subject, keyword, classification code, or key phrase describing the resource.
+Im fall von BioSamples wird hier auch das Vocabular aus ClassificationBiology Tab aus dem Template eingetragen </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -846,79 +847,6 @@
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="SampleImg">
-											<xs:complexType>
-												<xs:attribute name="imgURI"/>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="geologicalAge">
-											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="lang" fixed="en">
-													<xs:annotation>
-														<xs:documentation>distinguishes the language</xs:documentation>
-													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="taxonomie">
-											<xs:simpleType>
-												<xs:restriction base="xs:string">
-													<xs:enumeration value="animalia"/>
-													<xs:enumeration value="plantae"/>
-													<xs:enumeration value="fungi"/>
-													<xs:enumeration value="protista"/>
-													<xs:enumeration value="prokaryota"/>
-												</xs:restriction>
-											</xs:simpleType>
-										</xs:element>
-										<xs:element name="species"/>
-										<xs:element name="age">
-											<xs:complexType>
-												<xs:attribute name="rangeBound">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="min"/>
-															<xs:enumeration value="max"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-												<xs:attribute name="UoM">
-													<xs:simpleType>
-														<xs:restriction base="xs:string">
-															<xs:enumeration value="mm"/>
-															<xs:enumeration value="cm"/>
-															<xs:enumeration value="m"/>
-															<xs:enumeration value="km"/>
-															<xs:enumeration value="m²"/>
-															<xs:enumeration value="km²"/>
-															<xs:enumeration value="m³"/>
-															<xs:enumeration value="l"/>
-															<xs:enumeration value="g"/>
-															<xs:enumeration value="kg"/>
-															<xs:enumeration value="t"/>
-															<xs:enumeration value="g/cm³"/>
-															<xs:enumeration value="a"/>
-															<xs:enumeration value="ka"/>
-															<xs:enumeration value="Pa"/>
-															<xs:enumeration value="kaBP"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
-											</xs:complexType>
-										</xs:element>
 										<xs:element name="size" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:attribute name="sizeUnit">
@@ -953,6 +881,103 @@
 														</xs:restriction>
 													</xs:simpleType>
 												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="taxonomie">
+											<xs:complexType>
+												<xs:attribute name="taxonomieScheme"/>
+												<xs:attribute name="schemeURI"/>
+												<xs:attribute name="lang" fixed="en">
+													<xs:annotation>
+														<xs:documentation>distinguishes the language</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:language">
+															<xs:enumeration value="en"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="species">
+											<xs:annotation>
+												<xs:documentation>entspricht classification Species Tab aus Template</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="speciesScheme"/>
+												<xs:attribute name="schemeURI"/>
+												<xs:attribute name="lang" fixed="en">
+													<xs:annotation>
+														<xs:documentation>distinguishes the language</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:language">
+															<xs:enumeration value="en"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="age">
+											<xs:complexType>
+												<xs:attribute name="rangeBound">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="min"/>
+															<xs:enumeration value="max"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="UoM">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="mm"/>
+															<xs:enumeration value="cm"/>
+															<xs:enumeration value="m"/>
+															<xs:enumeration value="km"/>
+															<xs:enumeration value="m²"/>
+															<xs:enumeration value="km²"/>
+															<xs:enumeration value="m³"/>
+															<xs:enumeration value="l"/>
+															<xs:enumeration value="g"/>
+															<xs:enumeration value="kg"/>
+															<xs:enumeration value="t"/>
+															<xs:enumeration value="g/cm³"/>
+															<xs:enumeration value="a"/>
+															<xs:enumeration value="ka"/>
+															<xs:enumeration value="Pa"/>
+															<xs:enumeration value="kaBP"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="errow"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="geologicalAge">
+											<xs:complexType>
+												<xs:attribute name="rangeBound">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="min"/>
+															<xs:enumeration value="max"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="lang" fixed="en">
+													<xs:annotation>
+														<xs:documentation>distinguishes the language</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:language">
+															<xs:enumeration value="en"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="SampleImg">
+											<xs:complexType>
+												<xs:attribute name="imgURI"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
