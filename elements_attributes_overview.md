@@ -42,10 +42,10 @@ The Position column is not part of the schema and serves only to illustrate how 
 | 3.3.2  |                                       | `@publisherIdentifierScheme`   | mandatory  | 1..1      |
 | 3.3.3  |                                       | `@schemeURI`                   | mandatory  | 1..1      |
 | 3.3.4  |                                       | `@lang`                        | optional   | 0..1      |
-| 4  | `<entityType`Classifications>`           |                              | mandatory  | 1..1      |
-| 4.1  | `<resourceType`>`                        |                              | mandatory  | 1..1      |
+| 4  | `<entityTypeClassifications>`           |                              | mandatory  | 1..1      |
+| 4.1  | `<resourceType>`                        |                              | mandatory  | 1..1      |
 | 4.1.1  |                                       | `@resourceTypeGeneral`         | mandatory  | 1..1      |
-| 4.2  | `<sampleType`ClassificationPlaceHolder>` |                              | optional   | 0..1      |
+| 4.2  | `<sampleTypeClassificationPlaceHolder>` |                              | optional   | 0..1      |
 | 4.3  | `<material>`                            |                              | optional   | 0..n      |
 | 4.3.1  |                                       | `@subjectScheme `              | optional   | 0..1      |
 | 4.3.2  |                                       | `@schemeURI`                   | optional   | 0..1      |
@@ -133,4 +133,4 @@ The Position column is not part of the schema and serves only to illustrate how 
 | 10.1.3 | `<awardNumber>`                         |                              | optional   | 0..1      |
 | 10.1.3.1 |                                       | `@awardURI`                    | optional   | 0..1      |
 | 10.1.4 | `<awardTitle>`                          |                              | optional   | 0..1      |
-| 11 | `<lang`uage>`                            |                              | optional   | 0..1      |
+| 11 | `<language>`                            |                              | optional   | 0..1      |
