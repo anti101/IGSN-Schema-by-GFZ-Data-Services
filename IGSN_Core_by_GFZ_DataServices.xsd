@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von TTanja (Schule) -->
+<!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von Tanja (Fachhochschule Potsdam) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:igsn="http://pmd.gfz-potsdam.de/igsn/schemas/description-ext/1.3" xmlns:daci="http://datacite.org/schema/kernel-4" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://pmd.gfz-potsdam.de/igsn/schemas/description-ext/1.3" elementFormDefault="qualified">
 	<xs:import namespace="http://datacite.org/schema/kernel-4" schemaLocation="X:\IGSN\DataCiteSchema4-7\kernel-4.7\metadata.xsd"/>
 	<xs:element name="resource">
@@ -57,28 +57,20 @@
 									<xs:documentation>This element allows the storage location of the sample to be specified by name</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="nameIdentifier" minOccurs="0">
-											<xs:annotation>
-												<xs:documentation>This element contains the identifier, which is used to uniquely identify the archive the Sample is stored at</xs:documentation>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:simpleContent>
-													<xs:extension base="daci:nameIdentifier"/>
-												</xs:simpleContent>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-									<xs:attribute name="lang" fixed="en">
-										<xs:annotation>
-											<xs:documentation>distinguishes the language</xs:documentation>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:language">
-												<xs:enumeration value="en"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="lang" fixed="en">
+												<xs:annotation>
+													<xs:documentation>distinguishes the language</xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:language">
+														<xs:enumeration value="en"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="geoLocationPlace" minOccurs="0" maxOccurs="unbounded">
@@ -86,28 +78,20 @@
 									<xs:documentation>option to specify a location without providing coordinates; this feature allows you to enter a location without specifying coordinates, whilst still establishing a geographical reference</xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="nameIdentifier" minOccurs="0">
-											<xs:annotation>
-												<xs:documentation>This element contains the identifier, which is used to uniquely identify the person or organization given in the parentelement e.g. the Contributer or the Archive</xs:documentation>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:simpleContent>
-													<xs:extension base="daci:nameIdentifier"/>
-												</xs:simpleContent>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-									<xs:attribute name="lang" fixed="en">
-										<xs:annotation>
-											<xs:documentation>distinguishes the language</xs:documentation>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:language">
-												<xs:enumeration value="en"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="lang" fixed="en">
+												<xs:annotation>
+													<xs:documentation>distinguishes the language</xs:documentation>
+												</xs:annotation>
+												<xs:simpleType>
+													<xs:restriction base="xs:language">
+														<xs:enumeration value="en"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:extension>
+									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="geoLocationPoint" minOccurs="0" maxOccurs="1">
@@ -131,7 +115,7 @@
 									</xs:complexContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="contributor" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="contactPerson" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Contact person regarding the sample. This person is authorised to decide whether the sample can be processed further and how it is to be retrieved from the archive.
 </xs:documentation>
