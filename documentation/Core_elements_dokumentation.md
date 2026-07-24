@@ -1,13 +1,15 @@
 # IGSN Core Dokumentation
 
-## <identifier>
+## `<identifier>`
 - **Element Type**: element
-- **Definition**: The Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number) registered by an IGSN member.
-- **Purpose and meaning**: This element is used to store the identifier of the resource, thereby ensuring that the resource can be uniquely identified
 - **Obligation**: mandatory
 - **Data type**: xs:string
 - **Content**: free text
-_ **Occurence**: 1..1
+- **Occurence**: 1..1
+- **Definition**: The Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number) registered by an IGSN member.
+- **Purpose and meaning**: This element is used to store the identifier of the resource, thereby ensuring that the resource can be uniquely identified
+- **Example**
+- 
 
 
 ## @identifierType
