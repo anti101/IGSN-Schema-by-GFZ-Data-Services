@@ -8,11 +8,13 @@
 - **Occurence**: 1..1
 - **Definition**: The Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number) registered by an IGSN member.
 - **Purpose and meaning**: This element is used to store the identifier of the resource, thereby ensuring that the resource can be uniquely identified
-- **Example**: <br> ``` xml <?xml version="1.0" encoding="UTF-8"?>
-<root xmlns:daci="http://example.com/daci">
-  <daci:identifier identifierType="DOI">GFBNO7002EXH4001</daci:identifier>
-</root> ```
-- 
+- **Example**: <br> 
+``` xml 
+
+  <daci:identifier identifierType="DOI"> GFBNO7002EXH4001 </daci:identifier>
+
+```
+
 
 
 ## `@identifierType`
