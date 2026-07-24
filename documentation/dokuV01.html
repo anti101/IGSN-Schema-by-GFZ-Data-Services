@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Metadata Element Dokumentation</title>
+</head>
+
+<body>
+
+    <h1>Metadata Element Dokumentation</h1>
+
+    <!-- Hauptelement: identifier -->
+    <section id="identifier">
+        <h2>
+            <a href="#identifier"> Element</a>
+            <code>&lt;identifier&gt;</code>
+        </h2>
+        <p>Occurence: 1..1</p>
+        <p>Obligation: mandatory </p>
+        <p>Data type: xs:string </p>
+        <p>Content: free text </p>
+        <p>Attributes provided: <a href="#identifier-identifierType">@identifierType </a> </p>
+        <p>Available child elements: none </p>
+
+        <details>
+            <summary>Definition</summary>
+            <p>The Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number)
+                registered by an IGSN member.</p>
+        </details>
+
+        <details>
+            <summary>Purpose and meaning</summary>
+            <p>This element is used to store the identifier of the resource, thereby ensuring that the resource can be
+                uniquely identified.</p>
+        </details>
+        <p> Example <br>
+            <code>&lt;igsn:identifier identifierType="DOI"&gt;GFBNO7002EXH4001&lt;/igsn:identifier&gt;</code>
+        </p>
+                <details>
+            <summary>Rules for how to fill in the entry</summary>
+            <p>This field is either pre-filled by ELN and similar programmes (mDIS) or populated on a project-by-project
+                basis by the GFZ DataServices curation team.</p>
+        </details>
+
+            <summary>Mappings</summary>
+            <ul>
+                <li>
+                    <strong>DataCite</strong>:
+                    <a href="https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/identifier/#id1"
+                        target="_blank" rel="noopener">
+                        &lt;identifier&gt;
+                    </a>
+                </li>
+                <li>
+                    <strong>IGSN Descriptive V1.3</strong>:
+                    <a href="#mapping-igsn-descriptive-identifier" target="_blank">
+                        &lt;identifier&gt; (ID 1)
+                    </a>
+                </li>
+                <li>
+                    <strong>IGSN Supplementary V1.3</strong>:
+                    <a href="#mapping-igsn-supplementary-igsn" target="_blank">
+                        &lt;igsn&gt; (ID 4)
+                    </a>
+                </li>
+                <li>
+                    <strong>IGSN Registration V1.3</strong>:
+                    <a href="#mapping-igsn-registration-sampleNumber" target="_blank">
+                        &lt;sampleNumber&gt; (ID 1)
+                    </a>
+                </li>
+            </ul>
+
+
+
+        <details>
+            <summary>Other comments</summary>
+            <p></p>
+        </details>
+
+        <!-- Untergeordnetes Attribut -->
+        <section id="identifier-identifierType">
+            <h2>
+                <a href="#identifier-identifierType">Attribute</a>
+                <code>@identifierType</code>
+            </h2>
+
+            <details>
+                <summary>Element Type</summary>
+                <p>attribute</p>
+            </details>
+
+            <details>
+                <summary>Definition</summary>
+                <p>The type of Identifier.</p>
+            </details>
+
+            <details>
+                <summary>Purpose and meaning</summary>
+                <p>Mandatory for registration with DataCite. This attribute ensures that the type of the identifier can
+                    be specified correctly. This is necessary to ensure error-free machine processing.</p>
+            </details>
+
+            <details>
+                <summary>Obligation</summary>
+                <p>mandatory</p>
+            </details>
+
+            <details>
+                <summary>Occurence</summary>
+                <p>1..1</p>
+            </details>
+
+            <details>
+                <summary>Data type</summary>
+                <p>daci:relatedIdentifierType</p>
+            </details>
+
+            <details>
+                <summary>Content</summary>
+                <p>enumeration list</p>
+            </details>
+
+            <details>
+                <summary>Rules for how to fill in the entry</summary>
+                <ul>
+                    <li>Mandatory for registration with Datacite;</li>
+                    <li>for <code>&lt;identifier&gt;</code> set to the value 'DOI',</li>
+                    <li>for <code>&lt;parentIdentifier&gt;</code> set to the value 'IGSN',</li>
+                    <li>for <code>&lt;relatedIdentifier&gt;</code> select freely from the enumeration list.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Examples</summary>
+                <p>DOI</p>
+            </details>
+
+            <details>
+                <summary>Mappings</summary>
+                <ul>
+                    <li>
+                        <strong>DataCite</strong>:
+                        <a href="https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/identifier/#a-identifiertype"
+                            target="_blank" rel="noopener">
+                            @identifierType
+                        </a>;
+                        <a href="https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/relatedidentifier/#a-relatedidentifiertype"
+                            target="_blank" rel="noopener">
+                            @relatedIdentifierType
+                        </a>
+                    </li>
+                    <li>
+                        <strong>IGSN Descriptive V1.3</strong>:
+                        <a href="#mapping-igsn-descriptive-type" target="_blank">
+                            @type (ID 1.1), @type (ID 4.1), @type (ID 6.1.1)
+                        </a>
+                    </li>
+                    <li>
+                        <strong>IGSN Supplementary V1.3</strong>:
+                        <a href="#mapping-igsn-supplementary-relatedIdentifierType" target="_blank">
+                            @relatedIdentifierType (ID 78.2)
+                        </a>
+                    </li>
+                    <li>
+                        <strong>IGSN Registration V1.3</strong>:
+                        <a href="#mapping-igsn-registration-identifierType" target="_blank">
+                            &lt;identifierType&gt; (ID 1.1), @relatedIdentifierType (ID 3.1)
+                        </a>
+                    </li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Elements using this attribute</summary>
+                <p><code>&lt;identifier&gt;</code>, <code>&lt;parentIdentifier&gt;</code>,
+                    <code>&lt;relatedIdentifier&gt;</code>
+                </p>
+            </details>
+
+            <details>
+                <summary>Other comments</summary>
+                <p>This attribute is used by three elements. These have different rules regarding the possible values
+                    for this attribute. Please note the rules for how to fill in the entry.</p>
+            </details>
+        </section>
+    </section>
+
+    <!-- Platzhalter für weitere Elemente -->
+    <section id="parentIdentifier">
+        <h2>
+            <a href="#parentIdentifier">Metadata Element</a>
+            <code>&lt;parentIdentifier&gt;</code>
+        </h2>
+        <p>Dokumentation hier ergänzen…</p>
+    </section>
+
+    <section id="relatedIdentifier">
+        <h2>
+            <a href="#relatedIdentifier">Metadata Element</a>
+            <code>&lt;relatedIdentifier&gt;</code>
+        </h2>
+        <p>Dokumentation hier ergänzen…</p>
+    </section>
+
+    <!-- Mapping-Referenzen (optional ausfüllbar) -->
+    <section id="mappings">
+        <h2><a href="#mappings">Mapping-Referenzen</a></h2>
+        <ul>
+            <li id="mapping-igsn-descriptive-identifier">IGSN Descriptive V1.3: &lt;identifier&gt; (ID 1) – <em>Link
+                    oder Details hier ergänzen</em></li>
+            <li id="mapping-igsn-supplementary-igsn">IGSN Supplementary V1.3: &lt;igsn&gt; (ID 4) – <em>Link oder
+                    Details hier ergänzen</em></li>
+            <li id="mapping-igsn-registration-sampleNumber">IGSN Registration V1.3: &lt;sampleNumber&gt; (ID 1) –
+                <em>Link oder Details hier ergänzen</em>
+            </li>
+            <li id="mapping-igsn-descriptive-type">IGSN Descriptive V1.3: @type (ID 1.1, 4.1, 6.1.1) – <em>Link oder
+                    Details hier ergänzen</em></li>
+            <li id="mapping-igsn-supplementary-relatedIdentifierType">IGSN Supplementary V1.3: @relatedIdentifierType
+                (ID 78.2) – <em>Link oder Details hier ergänzen</em></li>
+            <li id="mapping-igsn-registration-identifierType">IGSN Registration V1.3: &lt;identifierType&gt; (ID 1.1),
+                @relatedIdentifierType (ID 3.1) – <em>Link oder Details hier ergänzen</em></li>
+        </ul>
+    </section>
+
+</body>
+
+</html>
