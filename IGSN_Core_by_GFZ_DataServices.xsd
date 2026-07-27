@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von TTanja (Schule) -->
+<!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von Tanja (Fachhochschule Potsdam) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:igsn="http://pmd.gfz-potsdam.de/igsn/schemas/description-ext/1.3" xmlns:daci="http://datacite.org/schema/kernel-4" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://pmd.gfz-potsdam.de/igsn/schemas/description-ext/1.3" elementFormDefault="qualified">
 	<xs:import namespace="http://datacite.org/schema/kernel-4" schemaLocation="X:\IGSN\DataCiteSchema4-7\kernel-4.7\metadata.xsd"/>
 	<xs:element name="resource">
@@ -337,12 +337,12 @@
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="givenName" type="xs:string">
+										<xs:element name="givenName" type="xs:string" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>This element is used to retrieve the first name of the person from the Crator element in normalised format.</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="familyName" type="xs:string">
+										<xs:element name="familyName" type="xs:string" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>This element is used to retrieve the person’s surname from the 'creator' or 'contributor' element in normalised form</xs:documentation>
 											</xs:annotation>
@@ -352,7 +352,7 @@
 												<xs:documentation>This element contains the identifier, which is used to uniquely identify the person or organization given in the parentelement e.g. the Contributer or the Archive</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="affiliation" type="daci:affiliation">
+										<xs:element name="affiliation" type="daci:affiliation" minOccurs="0" maxOccurs="unbounded">
 											<xs:annotation>
 												<xs:documentation>The organizational or institutional affiliation of the creator.</xs:documentation>
 											</xs:annotation>
@@ -403,12 +403,12 @@
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="givenName" type="xs:string">
+										<xs:element name="givenName" type="xs:string" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Given Name of the Person</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="familyName" type="xs:string">
+										<xs:element name="familyName" type="xs:string" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Family Name of the Person</xs:documentation>
 											</xs:annotation>
@@ -418,7 +418,7 @@
 												<xs:documentation>Uniquely identifies an individual or legal entity, according to various schemes.</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="affiliation" type="daci:affiliation">
+										<xs:element name="affiliation" type="daci:affiliation" minOccurs="0" maxOccurs="unbounded">
 											<xs:annotation>
 												<xs:documentation>The contributor’s nameType may be Organizational or Personal. In the case of an organizational contributor, e.g., a research group, this will often be the name of the institution to which that organization belongs.</xs:documentation>
 											</xs:annotation>
