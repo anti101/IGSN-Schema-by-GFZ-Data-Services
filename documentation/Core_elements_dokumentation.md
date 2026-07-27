@@ -68,3 +68,52 @@
 - **Elements using this attribute** [`<name>`](#name); [`<archiveName>`](#archiveName); [`<creatorName>`](#creatorName); [`<contributerName>`](#contributerName); [`<publisher>`](#publisher); [`<geoLocationPlace>`](#geoLocationPlace); [`<classification>`](#classification); [`<material>`](#material); [`<alternateMaterial>`](#alternateMaterial)
 - **Definition**: distinguishes the language
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language. This is listed as a required element only for the “Description” field, as a large amount of free text is entered there and it is therefore essential to specify the language used
+
+# [`<agents>`](#agents)
+- **Element Type**: wrapper
+- **Obligation**: mandatory
+- **Data type**: xs:complexType
+- **Content**: No entries expected
+- **Occurence**: 1..1
+- **Attributes provided**: none
+- **avalible child elements**: [`<creator>`](#creator), [`<contributor>`](#contributor), [`<publisher>`](#publisher)
+-  **Definition**: A wrapper element that bundles all elements relating to specific persons and organizations
+- **Purpose and meaning**: This wrapper is designed to group together all the agents (people and organizations) involved in the resource and make them available in a single location within the schema
+- **Example**: <br> 
+``` xml 
+<igsn:agents>
+		<igsn:creator creatorType="creator">
+			<igsn:creatorName nameType="Personal" lang="en">Antipanova, Tatjana </igsn:creatorName>
+			<igsn:givenName>Tatjana</igsn:givenName>
+			<igsn:familyName>Antipanova</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org">0000-0001-5140-8602</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="https://ror.org/04z8jg394" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org">GFZ Helmholtz Centre for Geosciences</igsn:affiliation>
+		</igsn:creator>
+		<igsn:creator creatorType="collector">
+			<igsn:creatorName nameType="Organizational" lang="en">GFZ Dataservices</igsn:creatorName>
+			<igsn:nameIdentifier nameIdentifierScheme="ROR" schemeURI="https://ror.org">https://ror.org/04z8jg394</igsn:nameIdentifier>
+		</igsn:creator>
+		<igsn:contributor contributorType="ContactPerson">
+			<igsn:contributorName nameType="Personal" lang="en">Antipanova, Tatjana</igsn:contributorName>
+			<igsn:givenName>Tatjana</igsn:givenName>
+			<igsn:familyName>Antipanova</igsn:familyName>
+            <igsn:nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org">0000-0001-5140-8602</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="https://ror.org/04z8jg394" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org">GFZ Helmholtz Centre for Geosciences</igsn:affiliation>
+		</igsn:contributor>
+		<igsn:contributor contributorType="RegistrationAuthority">
+			<igsn:contributorName nameType="Organizational" lang="en">GFZ Dataservices</igsn:contributorName>
+            <igsn:nameIdentifier nameIdentifierScheme="ROR" schemeURI="https://ror.org">https://ror.org/04z8jg394</igsn:nameIdentifier>
+		</igsn:contributor>
+		<publisher publisherIdentifier="https://doi.org/10.17616/R3VQ0S" publisherIdentifierScheme="re3data" schemeURI="https://re3data.org/" xml:lang="en">GFZ Data Services</publisher>
+	</igsn:agents>
+
+```
+### [`@titleType`](#titleType)
+- **Element Type**: attribute
+- **Obligation**: optional
+- **Data type**: daci:titleType
+- **Content**: enumeration list
+- **Occurence**: 0..1
+- **Elements using this attribute** [`<name>`](#name)
+- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#name) element.
+- **Purpose and meaning**: It is used to distinguish the title of the registered sample from the sample’s common names.
