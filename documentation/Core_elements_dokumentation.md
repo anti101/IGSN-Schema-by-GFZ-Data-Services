@@ -185,10 +185,10 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Definition**: Uniquely identifies the organizational affiliation of the creator or contributer
 - **Purpose and meaning**:This attribute is used to uniquely identify the affiliation
 
-#### 3.1.6.1 [`<affiliationIdentifierScheme>`](#affiliationIdentifierScheme) *mandatory Attribute*
+#### 3.1.6.1 [`<affiliationIdentifierScheme>`](#affiliationIdentifierScheme) *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
-- **Occurence**: 1..1
+- **Occurence**: 0..1
 - **Definition**: The name of the affiliation identifier scheme.
 - **Purpose and meaning**:This attribute enables the `@affilationIdentifier` attribute to be interpreted unambiguously and associated with a standardised identification system.
 
@@ -219,16 +219,16 @@ HIER
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 1..1
-- **Definition**: full Name of the creator
-- **Purpose and meaning**: This element stores the full name of the relevant creator. Full name in the format "family name, given name".
+- **Definition**:full name of the contributer
+- **Purpose and meaning**:The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.
 
 
-#### 3.2.2.1 [`@nameType`](#nameType) *mandatory Attribute*
-- **Data type**: daci:nameType
+#### 3.2.2.1 [`@contributorType`](#contributorType) *mandatory Attribute*
+- **Data type**: daci:contributorType
 - **Content**: enumeration list
 - **Occurence**: 1..1
-- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#name) element.
-- **Purpose and meaning**: It is used to distinguish the title of the registered sample from the sample’s common names.
+- **Definition**: The type of contributor of the resource.
+- **Purpose and meaning**: Select a suitable item from the enumeration list; if a person contributes in more than one way and is to be represented, a further contributor must be created with the appropriate @contributerType
 
 
 #### 3.2.2.2 [`@lang`](#lang) *optional Attribute*
@@ -243,8 +243,8 @@ HIER
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 0..1
-- **Definition**: full Name of the Person
-- **Purpose and meaning**: This element stores the full name of the relevant creator. full name in the format "family name, given name".
+- **Definition**: given Name of the Person
+- **Purpose and meaning**: This element is used to retrieve the first name of the person from the `<contributer>` element in normalised format.
 
 
 ### 3.2.4 [`<familyName>`](#familyName) *optional Element*
@@ -252,7 +252,7 @@ HIER
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: Family Name of the Person
-- **Purpose and meaning**:This element is used to retrieve the person’s surname from the `<creator>` or  `<contributor>` element in normalised form
+- **Purpose and meaning**:This element is used to retrieve the person’s surname from `<contributor>` element in normalised form
 
 
 ### 3.2.5 [`<nameIdentifier>`](#nameIdentifier) *optional Element*
@@ -260,14 +260,15 @@ HIER
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: Uniquely identifies an individual or legal entity, according to various schemes. ORCID is pref for Person ROR is pref for Organizations
-- **Purpose and meaning**:This element contains the identifier, which is used to uniquely identify the person or organization given in the parentelement e.g. the Contributer or the Archive. Only the identifier should be entered in this field; the full URL is taken from the @schemeURI attribute and processed, so only the identifier needs to be entered here
+- **Purpose and meaning**:This element contains the identifier, which is used to uniquely identify the person or organization given in the `<contributer>` Element. Only the identifier should be entered in this field; the full URL is taken from the 
+`@schemeURI` attribute and processed, so only the identifier needs to be entered here
 
 
 #### 3.2.5.1 [`<nameIdentifierScheme>`](#nameIdentifierScheme) *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 1..1
-- **Definition**: The name of the name identifier scheme.
+- **Definition**: The name of the name identifier scheme. Only Mandatory if [`<nameIdentifier>`](#nameIdentifier) is used.
 - **Purpose and meaning**:This attribute enables the `<nameIdentifier>` to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
 
 #### 3.2.5.2 [`<schemeURI>`](#schemeURI) *optional Attribute*
@@ -278,21 +279,21 @@ HIER
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
 
 
-### 3.2.6 [`<affiliation>`](#affiliation) *mandatory Element*
+### 3.2.6 [`<affiliation>`](#affiliation) *optional Element*
 - **Data type**: daci:affiliation
 - **Content**: free text
 - **Occurence**: 0..n
-- **Definition**: The organizational or institutional affiliation of the creator.
+- **Definition**: The organizational or institutional affiliation of the person.
 - **Purpose and meaning**:This element is used to indicate the organization or institution the agent is affiliated with
 
 #### 3.2.6.1 [`<affiliationIdentifier>`](#affiliationIdentifier) *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..1
-- **Definition**: Uniquely identifies the organizational affiliation of the creator or contributer
+- **Definition**: Uniquely identifies the organizational affiliation of the person
 - **Purpose and meaning**:This attribute is used to uniquely identify the affiliation
 
-#### 3.2.6.1 [`<affiliationIdentifierScheme>`](#affiliationIdentifierScheme) *optionla Attribute*
+#### 3.2.6.1 [`<affiliationIdentifierScheme>`](#affiliationIdentifierScheme) *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 1..1
@@ -305,3 +306,59 @@ HIER
 - **Occurence**: 0..1
 - **Definition**: The URI of the affilation identifier scheme.
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
+
+
+## 3.3 [`<publisher>`](#publisher) *mandatory Element*
+- **Data type**: xs:complexType
+- **Occurence**: 1..1
+- **Definition**:This is the organization that registered the IGSN for this resource. It is also the entity that minted and manages this IGSN record.
+- **Purpose and meaning**: necessary to provide a complete and DataCite-compliant statement identifying the publishing institution
+
+### 3.3.1 [`<publisherIdentifier>`](#publisherIdentifier) *mandatory Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurence**: 1..1
+- **Definition**: Uniquely identifies the publisher, according to various schemes.
+- **Purpose and meaning**:Similar to `<nameIdentifier>` or `<affiliationIdentifier>`, this attribute is used to store the persistent identifier.  Although [`<nameIdentifier>`](#nameIdentifier) is modelled as an element and this attribute corresponds to the same concept in terms of content, it has been defined here as an attribute because the DataCite `<publisher>` element is being reused. This does result in a conceptual inconsistency, but compliance with DataCite is maintained.
+
+### 3.3.2 [`<publisherIdentifierScheme>`](#publisherIdentifierScheme) *mandatory Attribute*
+- **Data type**: xs:string
+- **Content**: enumeration list
+- **Occurence**: 1..1
+- **Definition**:the name of the publisher identifier scheme.
+- **Purpose and meaning**:Unambiguous, machine-processable mapping of the identifier schema to enable further processing. 
+
+### 3.3.3 [`<schemeURI>`](#schemeURI) *mandatory Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurence**: 1..1
+- **Definition**: The URI of the name identifier scheme.
+- **Purpose and meaning**:This attribute is used to store the identifier's URI
+
+### 3.3.3 [`@lang`](#lang) *optional Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 0..1
+- **Definition**: distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+
+# 3 [`<entityTypeClassifications>`](#entityTypeClassifications) *mandatory Element*
+``` xml 
+<igsn:entityTypeClassifications>
+		<igsn:resourceType resourceTypeGeneral="PhysicalObject">SamplingFeature</igsn:resourceType>
+		<igsn:sampleTypeClassificationPlaceholder>PLACEHOLDER</igsn:sampleTypeClassificationPlaceholder>
+		<igsn:material subjectScheme="Medium Vocabulary" schemeURI="http://vocabulary.odm2.org/medium" valueURI="http://vocabulary.odm2.org/medium/liquidAqueous" lang="en">Liquid aqueous</igsn:material>
+		<igsn:material subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:material>
+		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
+		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
+		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
+		<igsn:description descriptionType="Methods" lang="de">String</igsn:description>
+		<igsn:description descriptionType="SeriesInformation" lang="de">String</igsn:description>
+		<igsn:description descriptionType="Methods" lang="de">String</igsn:description>
+	</igsn:entityTypeClassifications>
+```
+- **Data type**: xs:complexType
+- **Content**: No entries expected
+- **Occurence**: 1..1
+-  **Definition**: Contains elements that describe the basic form of the registered sample.
+- **Purpose and meaning**: Wrapper to hold all classification information about the resource
