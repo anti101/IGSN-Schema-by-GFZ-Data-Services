@@ -12,6 +12,7 @@
 -  **Definition**: The Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number) registered by an IGSN member.
 - **Purpose and meaning**: This element is used to store the identifier of the resource, thereby ensuring that the resource can be uniquely identified
 - **Mapping**:
+
 |source scheme | element name|
 |--|--|
 |DataCite | [`<identifier>`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/identifier/#)|
@@ -23,10 +24,10 @@
 - **Data type**: daci:relatedIdentifierType
 - **Content**: enumeration list
 - **Occurence**: 1..1
-- **Elements using this attribute** [`<identifier>`](#identifier); [`<parentIdentifier>`](#parentIdentifier);[`<relatedIdentifier>`](#relatedIdentifier) 
 - **Definition**: The type of Identifier.
 - **Purpose and meaning**: Mandatory for registration with DataCite.This attribute ensures that the type of the identifier can be specified correctly. This is necessary to ensure error-free machine processing
-- **Mapping**: <br>
+- **Mapping**:
+
 |source scheme | element name|
 |--|--|
 |DataCite | [`@identifierType`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/identifier/#a-identifiertype) or [`@relatedIdentifierType`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/relatedidentifier/#a-relatedidentifiertype)|
