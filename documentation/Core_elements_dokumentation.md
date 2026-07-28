@@ -342,14 +342,15 @@ HIER
 - **Definition**: distinguishes the language
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 
-# 3 [`<entityTypeClassifications>`](#entityTypeClassifications) *mandatory Element*
+# 4 [`<entityTypeClassifications>`](#entityTypeClassifications) *mandatory Element*
 ``` xml 
 <igsn:entityTypeClassifications>
 		<igsn:resourceType resourceTypeGeneral="PhysicalObject">SamplingFeature</igsn:resourceType>
 		<igsn:sampleTypeClassificationPlaceholder>PLACEHOLDER</igsn:sampleTypeClassificationPlaceholder>
 		<igsn:material subjectScheme="Medium Vocabulary" schemeURI="http://vocabulary.odm2.org/medium" valueURI="http://vocabulary.odm2.org/medium/liquidAqueous" lang="en">Liquid aqueous</igsn:material>
-		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
-		<igsn:description descriptionType="Methods" lang="de">String</igsn:description>
+		<igsn:alternateMaterial subjectScheme="Classification (Rock)" schemeURI="https://www.geosamples.org/vocabularies/classification-rock" lang="en">Igneous</igsn:alternateMaterial>
+		<igsn:description descriptionType="Methods" lang="de">Drill>Electric>Holesaw
+        </igsn:description>
 	</igsn:entityTypeClassifications>
 ```
 - **Data type**: xs:complexType
@@ -357,3 +358,251 @@ HIER
 - **Occurence**: 1..1
 -  **Definition**: Contains elements that describe the basic form of the registered sample.
 - **Purpose and meaning**: Wrapper to hold all classification information about the resource
+
+
+## 4.1 [`<resourceType>`](#resourceType) *mandatory Element*
+- **Data type**: xs:complexType
+- **Occurence**: 1..1
+- **Definition**:Describe the basic form of the object that is registered.
+- **Purpose and meaning**: An element declared as mandatory by DataCite.  A description of the resource. The resourceType property may be populated with resource types from external ontologies or shared vocabularies. In the absence of an agreed vocabulary, the use of the terms **material sample** or **feature-of-interest** are strongly recommended to at least distinguish between these sampling concepts. A material sample is a specialization of a larger feature-of-interest, which is typically the collection site. For example, in the Geosciences, a feature-of-interest might be a lake, tree, cross-section, transect, or borehole.
+
+## 4.1.1 [`<resourceTypeGeneral>`](#resourceTypeGeneral) *mandatory Attribute*
+- **Data type**: daci:resourceType 
+- **Occurence**: 1..1
+- **Definition**:The general type of a resource.
+- **Purpose and meaning**: This attribute is required for DataCite-compliant registration. Value is fixed to "PhysicalObject"
+
+
+## 4.2 [`<sampleTypeClassificationPlaceHolder>`](#sampleTypeClassificationPlaceHolder) *optional Element*
+- **Data type**: xs:sting
+- **Occurence**: 0..1
+- **Content**:placeholder for the values that will be adopted from the SampleType Classification vocabulary currently under development
+
+
+## 4.3 [`<material>`](#material) *optional Element*
+- **Data type**: xs:sting
+- **Occurence**: 0..n
+- **Definition**:Subject or keyword describing the resource.
+- **Content**: enumeration list
+- **Purpose and meaning**:If none of the materials available via the VOC are suitable, you can select ‘Other’ here to use the free-text field in ‘alternateMaterial’ for your entry
+- **additional information**:The elements `<material>`, `<classification>` and `<alternateMaterial>` are all mapped to the `<subject>` element in DataCite; however, to ensure that the elements can be correctly addressed for the creation of landing pages, they have been modelled in this schema version consistently with the element names of the previous versions. 
+
+
+### 4.3.1 [`<subjectScheme >`](#subjectScheme ) *optional Attribute*
+- **Data type**: xs:sting
+- **Occurence**: 0..1
+- **Definition**:The name of the subject scheme or authority if one is used.
+- **Content**: free text
+- **additional information**: To simplify reuse and mapping to DataCite, the attributes were not renamed; instead, they were reused in the form in which they appear in DataCite.
+
+### 4.3.2 [`<schemeURI>`](#schemeURI) *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurence**: 0..1
+- **Definition**: The URI of the name identifier scheme.
+- **Purpose and meaning**:This attribute is used to store the identifier's URI
+
+### 4.3.3 [`<valueURI>`](#valueURI) *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurence**: 0..1
+- **Definition**: The URI of the subject term.
+- **Purpose and meaning**:To unambiguously identify the term used in the element, the URI of the term can be stored in this attribute. If applicable, provide the direct URI or URL for the term used. If the vocabulary does not provide separate URIs for individual terms but instead uses IDs to identify them uniquely, the `@classificationCode` attribute can be used to provide this information.
+
+### 4.3.4 [`<classificationCode>`](#classificationCode) *optional Attribute*
+- **Data type**: sx:string
+- **Content**: free text
+- **Occurence**: 0..1
+- **Definition**: The classification code used for the subject term in the subject scheme.
+- **Purpose and meaning**:If applicable, provide the ID for the term used. If the vocabulary does not provide IDs for individual terms but they are presented on persistent URIs, use the @valueURI attribute to provide this information.
+- **additional information**: Different vocabularies use different identifiers for their classification codes. The information you are looking for may therefore be hidden behind the following terms: UUID, termID, vocab-term-identifier, itemNumber, conceptID, key
+
+### 4.3.5 [`@lang`](#lang) *optional Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 0..1
+- **Definition**: distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+
+
+## 4.4 [`<alternateMaterial>`](#alternateMaterial) *optional Element*
+- **Data type**: xs:sting
+- **Occurence**: 0..n
+- **Content**: enumeration list
+- **Definition**:Subject, keyword, classification code, or key phrase describing the resource.
+- **Purpose and meaning**:element to alow material classification for resources that do not match the availabel material vocabulrys.
+
+
+### 4.4.1 [`<subjectScheme >`](#subjectScheme ) *optional Attribute*
+- **Data type**: xs:sting
+- **Occurence**: 0..1
+- **Definition**:The name of the subject scheme or authority if one is used.
+- **Content**: free text
+- **additional information**: To simplify reuse and mapping to DataCite, the attributes were not renamed; instead, they were reused in the form in which they appear in DataCite.
+
+### 4.4.2 [`<schemeURI>`](#schemeURI) *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurence**: 0..1
+- **Definition**: The URI of the name identifier scheme.
+- **Purpose and meaning**:This attribute is used to store the identifier's URI
+
+### 4.4.3 [`<valueURI>`](#valueURI) *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurence**: 0..1
+- **Definition**: The URI of the subject term.
+- **Purpose and meaning**:To unambiguously identify the term used in the element, the URI of the term can be stored in this attribute. If applicable, provide the direct URI or URL for the term used. If the vocabulary does not provide separate URIs for individual terms but instead uses IDs to identify them uniquely, the `@classificationCode` attribute can be used to provide this information.
+
+### 4.4.4 [`<classificationCode>`](#classificationCode) *optional Attribute*
+- **Data type**: sx:string
+- **Content**: free text
+- **Occurence**: 0..1
+- **Definition**: The classification code used for the subject term in the subject scheme.
+- **Purpose and meaning**:If applicable, provide the ID for the term used. If the vocabulary does not provide IDs for individual terms but they are presented on persistent URIs, use the @valueURI attribute to provide this information.
+- **additional information**: Different vocabularies use different identifiers for their classification codes. The information you are looking for may therefore be hidden behind the following terms: UUID, termID, vocab-term-identifier, itemNumber, conceptID, key
+
+### 4.4.5 [`@lang`](#lang) *optional Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 0..1
+- **Definition**: distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+
+
+## 4.5 [`<description>`](#description) *optional Element*
+- **Data type**: xs:sting
+- **Occurence**: 0..n
+- **Content**: free text
+- **Definition**:Descriptive text about the sample. Free text, anything else that might be useful to know about the sample at its 'birth'. 
+- **Purpose and meaning**:This element is used to provide further details about the resource to be registered. All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with. use a diffrent description element for every description you like to add, eg abstract, thethods, technical information, locality, collection. It is a best practice to supply a description.
+
+
+### 4.5.1 [`@descriptionType`](#descriptionType) *mandatory Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 0..1
+- **Definition**: The type of the Description.
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+- **additional information**: If **other** is selected, the description must clearly state what it refers to, to ensure that it is processed correctly and appears in the right place on the landing page.
+
+### 4.5.2 [`@lang`](#lang) *manatory Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 0..1
+- **Definition**: distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+- **additional information**: As the [`<description>`](#description) can be repeated and contains the largest amount of natural language text this attribute is mandotory.
+
+## 5 [`<dates>`](#dates) *mandatory Element*
+``` xml
+    <igsn:dates>
+		<igsn:date dateType="Collected">2026-10-31</igsn:date>
+		<igsn:date dateType="Other" dateInformation="Destroyed">2026-11-11</igsn:date>
+		<igsn:date dateType="Available">2026-12-01</igsn:date>
+		<igsn:publicationYear>2026</igsn:publicationYear>
+	</igsn:dates>
+```
+- **Data type**: xs:complexType
+- **Occurence**: 1..1
+- **Definition**:contains all the dates, in regads to the sampel and the metadata
+- **Purpose and meaning**:The wrapper does not contain any content of its own, but simply bundles all elements which are necessary to describe dates regarding to the sample
+
+### 5.1 [`<date>`](#date) *optional Element*
+- **Data type**: xs:sting
+- **Content**: date in the format: YYYY, YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD
+- **Occurence**: 0..n
+- **Definition**: any date relevant for the samle or the metadata entry
+
+
+#### 5.1.1 [`@dateType`](#dateType) *mandatory Attribute*
+- **Data type**: daci:dateType
+- **Content**: enumeration list
+- **Occurence**: 1..1
+- **Definition**: enumeration list of possible dateTypes
+- **Purpose and meaning**: This attribute is used to provide a more detailed description of the `<date>` element in order to unambiguously identify what the `<date>` element refers to
+
+#### 5.1.1 [`@ladateInformationng`](#dateInformation) *optional Attribute*
+- **Data type**: xs:language
+- **Content**: free text
+- **Occurence**: 0..1
+- **Definition**: specific information about the date
+- **Purpose and meaning**: If you select **Other** for [`@dateType`](#dateType), please use this attribute specify the context of the date
+
+
+### 5.1 [`<publicationYear>`](#publicationYear) *mandatory Element*
+- **Data type**: daci:yearType
+- **Content**: Year of publikation in the format YYYY
+- **Occurence**: 1..1
+- **Definition**: year when the data was or will be made publicly availible, required for registration with Datatcite
+
+
+## 6 [`<access>`](#access) *Element*
+placeholder; final structure still under discussion
+
+## 7 [`<archives>`](#archives) *Element*
+placeholder; final structure still under discussion
+
+## 8 [`<relationshipIdentifiers>`](#relationshipIdentifiers) *optional Element*
+``` xml
+    <igsn:relationshipIdentifiers>
+		<igsn:alternateIdentifier alternateIdentifierType="LocalSampleName">E-GEOD-34814</igsn:alternateIdentifier>
+		<igsn:parentIdentifier identifierType="IGSN" relationType="IsPartOf">GFBNO7002EHG0001</igsn:parentIdentifier>
+		<igsn:relatedIdentifier identifierType="DOI" relationType="IsSourceOf">10.5880/gfz.khag.2025.006</igsn:relatedIdentifier>
+	</igsn:relationshipIdentifiers>
+```
+- **Data type**: xs:complexType
+- **Occurence**: 0..1
+- **Definition**:wrapper to sort all identifiers representing resources having a relation to the registed resource
+- **Purpose and meaning**:This wrapper is designed to collect and consolidate all information relating to resources associated with this resource, as well as the resource’s provenance
+- **additional information**: The term `relationships` was chosen to make it clear that this wrapper encompasses all elements that serve to group together resources related to the registered resource or that represent the properties of the resource.
+
+### 8.1 [`<alternateIdentifier>`](#alternateIdentifier) *optional Element*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurence**: 0..n
+- **Definition**:Identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of use. May be used for local identifiers. AlternateIdentifier should be used for another identifier of the same instance (same location, same file).
+- **Purpose and meaning**:[`<alternateIdentifier>`](#alternateIdentifier) is used to provide supplementary referencing of a resource. It enables the resource to be identified using alternative identifiers that exist alongside the actual name or a primary identification number.
+
+#### 8.1.1 [`<alternateIdentifierType>`](#alternateIdentifierType) *mandatory Attribute*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurence**: 0..n
+- **Definition**:The type of the  [`<alternateIdentifier>`](#alternateIdentifier) 
+- **Purpose and meaning**:Mandatory only if  [`<alternateIdentifier>`](#alternateIdentifier) is used. This attribute is necessary to better understand the context in which the alternative identifier is used and to understand where the identifier comes from. Unlike [`@identifierType`](@identifierType), this attribute can accept free-form text to allow users to specify the exact context in which this alternative identifier is used.
+
+### 8.2 [`<parentIdentifier>`](#parentIdentifier) *optional Element*
+- **Data type**: xs:anyURI
+- **Content**: IGSN of the parent resource
+- **Occurence**: 0..1
+- **Definition**:IGSN of a resource from which this resource derives
+- **Purpose and meaning**: enables the unambiguous hierarchical assignment of relationships for samples.For the sake of readability and to remain consistent with previous schemas, this element has not been renamed to ‘relatedIdentifier’ as in DataCite, even though it is mapped to it.
+
+#### 8.2.1 [`<relationType>`](#relationType) *mandatory Attribute*
+- **Data type**: daci:relationType
+- **Content**: enumeration list
+- **Occurence**: 1..1
+- **Definition**:This attribute is used to specify, in a machine-readable and standardised manner, the relationship.
+- **Purpose and meaning**:When used in the  [`<parentIdentifier>`](#parentIdentifier) element, this attribute is fixed to `IsPartOf`, as this element only permits this relationship type.
+
+### 8.3 [`<relatedIdentifier>`](#relatedIdentifier) *optional Element*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurence**: 0..n
+- **Definition**:Identifiers of related resources. These must be globally unique identifiers.
+- **Purpose and meaning**: This element is used to retrieve the ID so that resources related to this sample can be linked.
+
+#### 8.3.1 [`<relationType>`](#relationType) *mandatory Attribute*
+- **Data type**: daci:relationType
+- **Content**: enumeration list
+- **Occurence**: 1..1
+- **Definition**:This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described here.
+
+#### 8.3.2 [`<identifierType>`](#identifierType) *mandatory Attribute*
+- **Data type**: daci:relatedIdentifierType
+- **Content**: enumeration list
+- **Occurence**: 1..1
+- **Definition**:Type of identifier
+
+
+## 9 [`<geoLocations>`](#geoLocations) *mandatory Element*
