@@ -348,12 +348,7 @@ HIER
 		<igsn:resourceType resourceTypeGeneral="PhysicalObject">SamplingFeature</igsn:resourceType>
 		<igsn:sampleTypeClassificationPlaceholder>PLACEHOLDER</igsn:sampleTypeClassificationPlaceholder>
 		<igsn:material subjectScheme="Medium Vocabulary" schemeURI="http://vocabulary.odm2.org/medium" valueURI="http://vocabulary.odm2.org/medium/liquidAqueous" lang="en">Liquid aqueous</igsn:material>
-		<igsn:material subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:material>
 		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
-		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
-		<igsn:alternateMaterial subjectScheme="String" schemeURI="http://www.altova.com/" valueURI="http://www.altova.com/" classificationCode="String" lang="en">String</igsn:alternateMaterial>
-		<igsn:description descriptionType="Methods" lang="de">String</igsn:description>
-		<igsn:description descriptionType="SeriesInformation" lang="de">String</igsn:description>
 		<igsn:description descriptionType="Methods" lang="de">String</igsn:description>
 	</igsn:entityTypeClassifications>
 ```
