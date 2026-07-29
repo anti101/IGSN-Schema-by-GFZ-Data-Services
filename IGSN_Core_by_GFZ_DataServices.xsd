@@ -420,7 +420,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="archives" minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="archives" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>shows where the sample is currently located</xs:documentation>
 					</xs:annotation>
