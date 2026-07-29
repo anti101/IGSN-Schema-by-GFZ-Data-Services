@@ -61,7 +61,7 @@ The Position column is not part of the schema and serves only to illustrate how 
 | 4.5  | `<description>`                         |                              | optional   | 0..n      |
 | 4.5.1  |                                       | `@descriptionType`             | optional   | 0..1      |
 | 4.5.2  |                                       | `@lang`                        | optional   | 0..1      |
-| 5  | `<Dates>`                               |                              | mandatory  | 1..1      |
+| 5  | `<dates>`                               |                              | mandatory  | 1..1      |
 | 5.1  | `<date>`                                |                              | optional   | 0..n      |
 | 5.1.1  |                                       | `@dateType`                    | mandatory  | 1..1      |
 | 5.1.2  |                                       | `@dateInformation`             | optional   | 0..1      |
@@ -99,7 +99,7 @@ The Position column is not part of the schema and serves only to illustrate how 
 | 7.4.6.3  |                                       | `@schemeURI`                   | optional   | 0..1      |
 | 8  | `<relationshipIdentifiers>`             |                              | optional   | 0..1      |
 | 8.1  | `<alternateIdentifier>`                 |                              | optional   | 0..n      |
-| 8.1.1  |                                       | `@alternateIdentifierType`     | mandatory  | 0..1      |
+| 8.1.1  |                                       | `@alternateIdentifierType`     | mandatory  | 1..1      |
 | 8.2  | `<parentIdentifier>`                    |                              | optional   | 0..1      |
 | 8.2.1  |                                       | `@relationType`                | mandatory  | 1..1      |
 | 8.2.2 |                                       | `@identifierType`              | mandatory  | 1..1      |
