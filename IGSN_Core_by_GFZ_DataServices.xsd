@@ -35,12 +35,12 @@
 					<xs:complexType>
 						<xs:simpleContent>
 							<xs:extension base="xs:string">
-								<xs:attribute name="titleType" type="daci:titleType">
+								<xs:attribute name="titleType" type="daci:titleType" default="Other">
 									<xs:annotation>
 										<xs:documentation>This attribute is used to specify the type of entry contained within the "name" element.</xs:documentation>
 									</xs:annotation>
 								</xs:attribute>
-								<xs:attribute name="lang" fixed="en">
+								<xs:attribute name="lang" default="en">
 									<xs:annotation>
 										<xs:documentation>distinguishes the language</xs:documentation>
 									</xs:annotation>
@@ -78,7 +78,7 @@
 																<xs:documentation>Type of creator or contributer, "personal" for persons or "organiszational" for Institutions</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
-														<xs:attribute name="lang" fixed="en">
+														<xs:attribute name="lang" default="en">
 															<xs:annotation>
 																<xs:documentation>distinguishes the language</xs:documentation>
 															</xs:annotation>
@@ -144,7 +144,7 @@
 																<xs:documentation>type of the contributer. Contributers may be persons or institutions.</xs:documentation>
 															</xs:annotation>
 														</xs:attribute>
-														<xs:attribute name="lang" fixed="en">
+														<xs:attribute name="lang" default="en">
 															<xs:annotation>
 																<xs:documentation>distinguishes the language</xs:documentation>
 															</xs:annotation>
@@ -214,7 +214,7 @@
 												</xs:simpleType>
 											</xs:attribute>
 											<xs:attribute name="schemeURI" type="xs:anyURI" use="required"/>
-											<xs:attribute name="lang" fixed="en">
+											<xs:attribute name="lang" default="en">
 												<xs:annotation>
 													<xs:documentation>distinguishes the language</xs:documentation>
 												</xs:annotation>
@@ -252,7 +252,7 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
-											<xs:attribute name="resourceTypeGeneral" type="daci:resourceType" fixed="PhysicalObject">
+											<xs:attribute name="resourceTypeGeneral" type="daci:resourceType" default="PhysicalObject">
 												<xs:annotation>
 													<xs:documentation>This attribute is required for DataCite-compliant registration</xs:documentation>
 												</xs:annotation>
@@ -261,7 +261,7 @@
 									</xs:simpleContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="sampleTypeClassificationPlaceholder"/>
+							<xs:element name="sampleTypeClassificationPlaceholder" type="xs:string"/>
 							<xs:element name="material" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Subject, keyword, classification code, or key phrase describing the resource.</xs:documentation>
@@ -289,7 +289,7 @@
 													<xs:documentation>The classification code used for the subject term in the subject scheme.</xs:documentation>
 												</xs:annotation>
 											</xs:attribute>
-											<xs:attribute name="lang" fixed="en">
+											<xs:attribute name="lang" default="en">
 												<xs:annotation>
 													<xs:documentation>distinguishes the language</xs:documentation>
 												</xs:annotation>
@@ -330,7 +330,7 @@
 													<xs:documentation>The classification code used for the subject term in the subject scheme.</xs:documentation>
 												</xs:annotation>
 											</xs:attribute>
-											<xs:attribute name="lang" fixed="en">
+											<xs:attribute name="lang" default="en">
 												<xs:annotation>
 													<xs:documentation>distinguishes the language</xs:documentation>
 												</xs:annotation>
@@ -366,7 +366,7 @@
 													</xs:restriction>
 												</xs:simpleType>
 											</xs:attribute>
-											<xs:attribute name="lang" use="required">
+											<xs:attribute name="lang" default="en">
 												<xs:annotation>
 													<xs:documentation>distinguishes the language</xs:documentation>
 												</xs:annotation>
@@ -420,7 +420,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="archive" minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="archives" minOccurs="0" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>shows where the sample is currently located</xs:documentation>
 					</xs:annotation>
@@ -443,7 +443,7 @@
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="lang" fixed="en">
+									<xs:attribute name="lang" default="en">
 										<xs:annotation>
 											<xs:documentation>distinguishes the language</xs:documentation>
 										</xs:annotation>
@@ -505,7 +505,7 @@
 									</xs:complexContent>
 								</xs:complexType>
 							</xs:element>
-							<xs:element name="contributor" minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="contactPerson" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Contact person regarding the sample. This person is authorised to decide whether the sample can be processed further and how it is to be retrieved from the archive.
 </xs:documentation>
@@ -519,7 +519,7 @@
 											<xs:complexType>
 												<xs:simpleContent>
 													<xs:extension base="xs:string">
-														<xs:attribute name="nameType" type="daci:nameType" use="required" fixed="Personal">
+														<xs:attribute name="nameType" type="daci:nameType" default="Personal">
 															<xs:annotation>
 																<xs:documentation>type of the contributer. Contributers may be persons or institutions.</xs:documentation>
 															</xs:annotation>
@@ -538,12 +538,12 @@
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="givenName" type="xs:string">
+										<xs:element name="givenName" type="xs:string" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Given Name of the Person</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="familyName" type="xs:string">
+										<xs:element name="familyName" type="xs:string" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Family Name of the Person</xs:documentation>
 											</xs:annotation>
