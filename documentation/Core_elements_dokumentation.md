@@ -120,8 +120,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Data type**: daci:nameType
 - **Content**: enumeration list
 - **Occurence**: 1..1
-- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#name) element.
-- **Purpose and meaning**: It is used to distinguish the title of the registered sample from the sample’s common names.
+- **Definition**: Type of name
 
 
 #### 3.1.2.2 [`@lang`](#lang) *optional Attribute*
@@ -129,23 +128,23 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Content**: enumeration list
 - **Occurence**: 0..1
 - **Definition**: distinguishes the language
-- **Purpose and meaning**: Ensures that machines can unambiguously identify the language. This is listed as a required element only for the “Description” field, as a large amount of free text is entered there and it is therefore essential to specify the language used
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 
 
 ### 3.1.3 [`<givenName>`](#givenName) *optional Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 0..1
-- **Definition**: full Name of the Person
-- **Purpose and meaning**: This element stores the full name of the relevant creator. full name in the format "family name, given name".
+- **Definition**: Given name of the Person
+- **Purpose and meaning**: use only if [`@nameType`](#nameType) is `personal`
 
 
 ### 3.1.4 [`<familyName>`](#familyName) *optional Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 0..1
-- **Definition**: Family Name of the Person
-- **Purpose and meaning**:This element is used to retrieve the person’s surname from the `<creator>` or  `<contributor>` element in normalised form
+- **Definition**: Family Name of the person
+- **Purpose and meaning**: use only if [`@nameType`](#nameType) is `personal`
 
 
 ### 3.1.5 [`<nameIdentifier>`](#nameIdentifier) *optional Element*
@@ -153,7 +152,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: Uniquely identifies an individual or legal entity, according to various schemes. ORCID is pref for Person ROR is pref for Organizations
-- **Purpose and meaning**:This element contains the identifier, which is used to uniquely identify the person or organization given in the parentelement e.g. the Contributer or the Archive. Only the identifier should be entered in this field; the full URL is taken from the @schemeURI attribute and processed, so only the identifier needs to be entered here
+- **Purpose and meaning**:This element contains the identifier, which is used to uniquely identify the person or organization
 
 
 #### 3.1.5.1 [`<nameIdentifierScheme>`](#nameIdentifierScheme) *mandatory Attribute*
