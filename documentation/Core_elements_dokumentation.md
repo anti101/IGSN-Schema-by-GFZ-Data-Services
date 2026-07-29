@@ -605,4 +605,8 @@ placeholder; final structure still under discussion
 - **Definition**:Type of identifier
 
 
-## 9 [`<geoLocations>`](#geoLocations) *mandatory Element*
+## 9 [`<geoLocations>`](#geoLocations) *optional Element*
+```xml
+
+
+```
