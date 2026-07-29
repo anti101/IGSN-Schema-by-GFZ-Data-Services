@@ -120,7 +120,9 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Data type**: daci:nameType
 - **Content**: enumeration list
 - **Occurence**: 1..1
-- **Definition**: Type of name
+- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#name) element.
+- **Purpose and meaning**: It is used to distinguish the title of the registered sample from the sample’s common names.
+
 
 
 #### 3.1.2.2 [`@lang`](#lang) *optional Attribute*
@@ -129,6 +131,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Occurence**: 0..1
 - **Definition**: distinguishes the language
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+
 
 
 ### 3.1.3 [`<givenName>`](#givenName) *optional Element*
