@@ -627,12 +627,12 @@ placeholder; final structure still under discussion
 				<daci:pointLatitude>52.380524</daci:pointLatitude>
 			</igsn:polygonPoint>
 			<igsn:polygonPoint coordinateSystem="WGS84">
-				<daci:pointLongitude>13,060102</daci:pointLongitude>
-				<daci:pointLatitude>52,379664</daci:pointLatitude>
+				<daci:pointLongitude>13.060102</daci:pointLongitude>
+				<daci:pointLatitude>52.379664</daci:pointLatitude>
 			</igsn:polygonPoint>
 			<igsn:polygonPoint coordinateSystem="WGS84">
-				<daci:pointLongitude>13,06032</daci:pointLongitude>
-				<daci:pointLatitude>52,382243</daci:pointLatitude>
+				<daci:pointLongitude>13.06032</daci:pointLongitude>
+				<daci:pointLatitude>52.382243</daci:pointLatitude>
 			</igsn:polygonPoint>
 			<igsn:polygonPoint coordinateSystem="WGS84">
 				<daci:pointLongitude>13.066838</daci:pointLongitude>
