@@ -14,7 +14,7 @@
 - **Mapping**:
 
 
-## 1.1 [`@identifierType`](@identifierType) *mandatory Attribute*
+## 1.1 `@identifierType` *mandatory Attribute*
 - **Data type**: daci:relatedIdentifierType
 - **Content**: enumeration list
 - **Occurence**: 1..1
@@ -38,14 +38,14 @@
 - **Purpose and meaning**: This element is used to name and identify a resource in a technical and linguistic context. It refers to the resource by its common name and is designed to be readable by humans. The name element should be used when the common name of the resource must be specified. The primary name of the resource should be entered. Variant spellings, abbreviated forms or alternative names should only be used if they correspond to the officially used or technically authoritative name. The element does not need to be unique and may occur multiple times.
 - **aditional information**: In order to clearly distinguish between `<title>`, `<name>` and `<alternateIdentifier>` within the schema, the decision was made not to align the element identifier `<name>` with DataCite's `<title>`, even though the `<name>` element is mapped to `<daci:title>` for registration purposes. The term ‘title’ summarises the content, attracts attention and serves as a structural guide for the reader. Here, however, `<name>` is used to capture all human-readable designations for the sample and to generate the title that corresponds to the registered resource.
 
-## 2.1 [`@titleType`](#titleType)  *optional Attribute*
+## 2.1 `@titleType`  *optional Attribute*
 - **Data type**: daci:titleType
 - **Content**: enumeration list
 - **Occurence**: 0..1
-- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#name) element.
+- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#2-name-mandatory-element) element.
 - **Purpose and meaning**: It is used to distinguish the title of the registered sample from the sample’s common names.
 
-## 2.2 [`@lang`](#lang) *optional Attribute*
+## 2.2 `@lang` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
@@ -56,7 +56,7 @@
 ---
 
 
-# 3 [`<agents>`](#agents) *mandatory Element*
+# 3 `<agents>` *mandatory Element*
 ``` xml 
 <igsn:agents>
 		<igsn:creator creatorType="creator">
@@ -91,7 +91,7 @@
 - **Purpose and meaning**: This wrapper is designed to group together all the agents (people and organizations) involved in the resource and make them available in a single location within the schema
 - **aditional information**: As part of the harmonisation process, the elements relating to the people involved in the publication were grouped together to improve readability. This has made the schema easier to reuse and understand.
 
-## 3.1 [`<creator>`](#creator) *mandatory Element*
+## 3.1 `<creator>` *mandatory Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 1..n
@@ -99,7 +99,7 @@
 As a norm, IGSN ID registrants are expected to collect information about the sample owner, Principle Investigator, and/or otherwise. However, if no appropriate name is available, the property will be populated with the name of the IGSN ID Repository registrant
 - **Purpose and meaning**: This element is required for registering the sample with DataCite; it contains all the information needed to uniquely identify the collector and/or creator of the resource
 
-### 3.1.1 [`@creatorType`](#creatorType) *mandatory Attribute*
+### 3.1.1 `@creatorType` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: enumeration list
 - **Occurence**: 0..1
@@ -108,7 +108,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **aditional information**: This attribute does not exist in DataCite or in previous versions of the schema. It was designed to allow the `<collector>` and `<sample_by>` elements to be grouped within the `<creator>` element, whilst still permitting differentiation so that landing pages can be structured accordingly.
 
 
-### 3.1.2 [`<creatorName>`](#creatorName) *mandatory Element*
+### 3.1.2 `<creatorName>` *mandatory Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 1..1
@@ -125,7 +125,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 
 
 
-#### 3.1.2.2 [`@lang`](#lang) *optional Attribute*
+#### 3.1.2.2 `@lang` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
@@ -134,23 +134,23 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 
 
 
-### 3.1.3 [`<givenName>`](#givenName) *optional Element*
+### 3.1.3 `<givenName>` *optional Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: Given name of the Person
-- **Purpose and meaning**: use only if [`@nameType`](#nameType) is `personal`
+- **Purpose and meaning**: use only if [`@nameType`](#3121-nametype-mandatory-attribute) is `personal`
 
 
-### 3.1.4 [`<familyName>`](#familyName) *optional Element*
+### 3.1.4 `<familyName>` *optional Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: Family Name of the person
-- **Purpose and meaning**: use only if [`@nameType`](#nameType) is `personal`
+- **Purpose and meaning**: use only if [`@nameType`](#3121-nametype-mandatory-attribute) is `personal`
 
 
-### 3.1.5 [`<nameIdentifier>`](#nameIdentifier) *optional Element*
+### 3.1.5 `<nameIdentifier>` *optional Element*
 - **Data type**: daci:nameIdentifier
 - **Content**: free text
 - **Occurence**: 0..1
@@ -158,14 +158,14 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Purpose and meaning**:This element contains the identifier, which is used to uniquely identify the person or organization
 
 
-#### 3.1.5.1 [`<nameIdentifierScheme>`](#nameIdentifierScheme) *mandatory Attribute*
+#### 3.1.5.1 `<nameIdentifierScheme>` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 1..1
 - **Definition**: The name of the name identifier scheme.
 - **Purpose and meaning**:This attribute enables the `<nameIdentifier>` to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
 
-#### 3.1.5.2 [`<schemeURI>`](#schemeURI) *optional Attribute*
+#### 3.1.5.2 `<schemeURI>`*optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
@@ -173,28 +173,28 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
 
 
-### 3.1.6 [`<affiliation>`](#affiliation) *optional Element*
+### 3.1.6 `<affiliation>` *optional Element*
 - **Data type**: daci:affiliation
 - **Content**: free text
 - **Occurence**: 0..n
 - **Definition**: The organizational or institutional affiliation of the creator.
 - **Purpose and meaning**:This element is used to indicate the organization or institution the agent is affiliated with
 
-#### 3.1.6.1 [`<affiliationIdentifier>`](#affiliationIdentifier) *optional Attribute*
+#### 3.1.6.1 `<affiliationIdentifier>` *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: Uniquely identifies the organizational affiliation of the creator or contributer
 - **Purpose and meaning**:This attribute is used to uniquely identify the affiliation
 
-#### 3.1.6.1 [`<affiliationIdentifierScheme>`](#affiliationIdentifierScheme) *optional Attribute*
+#### 3.1.6.1 `<affiliationIdentifierScheme>` *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: The name of the affiliation identifier scheme.
 - **Purpose and meaning**:This attribute enables the `@affilationIdentifier` attribute to be interpreted unambiguously and associated with a standardised identification system.
 
-#### 3.1.6.3 [`<schemeURI>`](#schemeURI) *optional Attribute*
+#### 3.1.6.3 `<schemeURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
@@ -202,13 +202,13 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
 
 
-## 3.2 [`<contributor>`](#contributor) *optional Element*
+## 3.2 `<contributor>` *optional Element*
 - **Data type**: xs:complexType
 - **Occurence**: 0..n
 - **Definition**:A wrapper element that bundles all elements and attributes relating to specific persons with the funktion contributer
 - **Purpose and meaning**: a bundle of all the elements and attributes required to uniquely identify a contributor
 
-### 3.2.1 [`@contributorType`](#contributorType) *mandatory Attribute*
+### 3.2.1 `@contributorType` *mandatory Attribute*
 - **Data type**: daci:contributorType
 - **Content**: enumeration list
 - **Occurence**: 1..1
@@ -217,7 +217,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 
 HIER
 
-### 3.2.2 [`<contributorName>`](#contributorName) *mandatory Element*
+### 3.2.2 `<contributorName>` *mandatory Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 1..1
@@ -225,7 +225,7 @@ HIER
 - **Purpose and meaning**:The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.
 
 
-#### 3.2.2.1 [`@contributorType`](#contributorType) *mandatory Attribute*
+#### 3.2.2.1 `@contributorType` *mandatory Attribute*
 - **Data type**: daci:contributorType
 - **Content**: enumeration list
 - **Occurence**: 1..1
@@ -233,7 +233,7 @@ HIER
 - **Purpose and meaning**: Select a suitable item from the enumeration list; if a person contributes in more than one way and is to be represented, a further contributor must be created with the appropriate @contributerType
 
 
-#### 3.2.2.2 [`@lang`](#lang) *optional Attribute*
+#### 3.2.2.2 `@lang` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
@@ -241,7 +241,7 @@ HIER
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language. This is listed as a required element only for the “Description” field, as a large amount of free text is entered there and it is therefore essential to specify the language used
 
 
-### 3.2.3 [`<givenName>`](#givenName) *optional Element*
+### 3.2.3 `<givenName>` *optional Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 0..1
@@ -249,7 +249,7 @@ HIER
 - **Purpose and meaning**: This element is used to retrieve the first name of the person from the `<contributer>` element in normalised format.
 
 
-### 3.2.4 [`<familyName>`](#familyName) *optional Element*
+### 3.2.4 `<familyName>` *optional Element*
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurence**: 0..1
@@ -257,7 +257,7 @@ HIER
 - **Purpose and meaning**:This element is used to retrieve the person’s surname from `<contributor>` element in normalised form
 
 
-### 3.2.5 [`<nameIdentifier>`](#nameIdentifier) *optional Element*
+### 3.2.5 `<nameIdentifier>` *optional Element*
 - **Data type**: daci:nameIdentifier
 - **Content**: free text
 - **Occurence**: 0..1
@@ -266,14 +266,14 @@ HIER
 `@schemeURI` attribute and processed, so only the identifier needs to be entered here
 
 
-#### 3.2.5.1 [`<nameIdentifierScheme>`](#nameIdentifierScheme) *mandatory Attribute*
+#### 3.2.5.1 `<nameIdentifierScheme>` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 1..1
-- **Definition**: The name of the name identifier scheme. Only Mandatory if [`<nameIdentifier>`](#nameIdentifier) is used.
-- **Purpose and meaning**:This attribute enables the `<nameIdentifier>` to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
+- **Definition**: The name of the name identifier scheme. Only Mandatory if [`<nameIdentifier>`](#315-nameidentifier-optional-element) is used.
+- **Purpose and meaning**:This attribute enables the [`<nameIdentifier>`](#315-nameidentifier-optional-element) to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
 
-#### 3.2.5.2 [`<schemeURI>`](#schemeURI) *optional Attribute*
+#### 3.2.5.2 `<schemeURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
@@ -281,28 +281,28 @@ HIER
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
 
 
-### 3.2.6 [`<affiliation>`](#affiliation) *optional Element*
+### 3.2.6 `<affiliation>` *optional Element*
 - **Data type**: daci:affiliation
 - **Content**: free text
 - **Occurence**: 0..n
 - **Definition**: The organizational or institutional affiliation of the person.
 - **Purpose and meaning**:This element is used to indicate the organization or institution the agent is affiliated with
 
-#### 3.2.6.1 [`<affiliationIdentifier>`](#affiliationIdentifier) *optional Attribute*
+#### 3.2.6.1 `<affiliationIdentifier>` *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: Uniquely identifies the organizational affiliation of the person
 - **Purpose and meaning**:This attribute is used to uniquely identify the affiliation
 
-#### 3.2.6.1 [`<affiliationIdentifierScheme>`](#affiliationIdentifierScheme) *optional Attribute*
+#### 3.2.6.1 `<affiliationIdentifierScheme>` *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 1..1
 - **Definition**: The name of the affiliation identifier scheme.
 - **Purpose and meaning**:This attribute enables the `@affilationIdentifier` attribute to be interpreted unambiguously and associated with a standardised identification system.
 
-#### 3.2.6.3 [`<schemeURI>`](#schemeURI) *optional Attribute*
+#### 3.2.6.3[`<schemeURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
@@ -310,41 +310,41 @@ HIER
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
 
 
-## 3.3 [`<publisher>`](#publisher) *mandatory Element*
+## 3.3 `<publisher>` *mandatory Element*
 - **Data type**: xs:complexType
 - **Occurence**: 1..1
 - **Definition**:This is the organization that registered the IGSN for this resource. It is also the entity that minted and manages this IGSN record.
 - **Purpose and meaning**: necessary to provide a complete and DataCite-compliant statement identifying the publishing institution
 
-### 3.3.1 [`<publisherIdentifier>`](#publisherIdentifier) *mandatory Attribute*
+### 3.3.1 `<publisherIdentifier>` *mandatory Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 1..1
 - **Definition**: Uniquely identifies the publisher, according to various schemes.
-- **Purpose and meaning**:Similar to `<nameIdentifier>` or `<affiliationIdentifier>`, this attribute is used to store the persistent identifier.  Although [`<nameIdentifier>`](#nameIdentifier) is modelled as an element and this attribute corresponds to the same concept in terms of content, it has been defined here as an attribute because the DataCite `<publisher>` element is being reused. This does result in a conceptual inconsistency, but compliance with DataCite is maintained.
+- **Purpose and meaning**:Similar to `<nameIdentifier>` or `<affiliationIdentifier>`, this attribute is used to store the persistent identifier.  Although [`<nameIdentifier>`](#315-nameidentifier-optional-element) is modelled as an element and this attribute corresponds to the same concept in terms of content, it has been defined here as an attribute because the DataCite `<publisher>` element is being reused. This does result in a conceptual inconsistency, but compliance with DataCite is maintained.
 
-### 3.3.2 [`<publisherIdentifierScheme>`](#publisherIdentifierScheme) *mandatory Attribute*
+### 3.3.2 `<publisherIdentifierScheme>` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:the name of the publisher identifier scheme.
 - **Purpose and meaning**:Unambiguous, machine-processable mapping of the identifier schema to enable further processing. 
 
-### 3.3.3 [`<schemeURI>`](#schemeURI) *mandatory Attribute*
+### 3.3.3 `<schemeURI>` *mandatory Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 1..1
 - **Definition**: The URI of the name identifier scheme.
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
 
-### 3.3.3 [`@lang`](#lang) *optional Attribute*
+### 3.3.3 `@lang` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
 - **Definition**: distinguishes the language
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 
-# 4 [`<entityTypeClassifications>`](#entityTypeClassifications) *mandatory Element*
+# 4 `<entityTypeClassifications>` *mandatory Element*
 ``` xml 
 <igsn:entityTypeClassifications>
 		<igsn:resourceType resourceTypeGeneral="PhysicalObject">SamplingFeature</igsn:resourceType>
@@ -362,26 +362,26 @@ HIER
 - **Purpose and meaning**: Wrapper to hold all classification information about the resource
 
 
-## 4.1 [`<resourceType>`](#resourceType) *mandatory Element*
+## 4.1 `<resourceType>` *mandatory Element*
 - **Data type**: xs:complexType
 - **Occurence**: 1..1
 - **Definition**:Describe the basic form of the object that is registered.
 - **Purpose and meaning**: An element declared as mandatory by DataCite.  A description of the resource. The resourceType property may be populated with resource types from external ontologies or shared vocabularies. In the absence of an agreed vocabulary, the use of the terms **material sample** or **feature-of-interest** are strongly recommended to at least distinguish between these sampling concepts. A material sample is a specialization of a larger feature-of-interest, which is typically the collection site. For example, in the Geosciences, a feature-of-interest might be a lake, tree, cross-section, transect, or borehole.
 
-## 4.1.1 [`<resourceTypeGeneral>`](#resourceTypeGeneral) *mandatory Attribute*
+## 4.1.1 `<resourceTypeGeneral>` *mandatory Attribute*
 - **Data type**: daci:resourceType 
 - **Occurence**: 1..1
 - **Definition**:The general type of a resource.
 - **Purpose and meaning**: This attribute is required for DataCite-compliant registration. Value is fixed to "PhysicalObject"
 
 
-## 4.2 [`<sampleTypeClassificationPlaceHolder>`](#sampleTypeClassificationPlaceHolder) *optional Element*
+## 4.2 `<sampleTypeClassificationPlaceHolder>` *optional Element*
 - **Data type**: xs:sting
 - **Occurence**: 0..1
 - **Content**:placeholder for the values that will be adopted from the SampleType Classification vocabulary currently under development
 
 
-## 4.3 [`<material>`](#material) *optional Element*
+## 4.3 `<material>` *optional Element*
 - **Data type**: xs:sting
 - **Occurence**: 0..n
 - **Definition**:Subject or keyword describing the resource.
@@ -390,28 +390,28 @@ HIER
 - **additional information**:The elements `<material>`, `<classification>` and `<alternateMaterial>` are all mapped to the `<subject>` element in DataCite; however, to ensure that the elements can be correctly addressed for the creation of landing pages, they have been modelled in this schema version consistently with the element names of the previous versions. 
 
 
-### 4.3.1 [`<subjectScheme >`](#subjectScheme ) *optional Attribute*
+### 4.3.1 `<subjectScheme >` *optional Attribute*
 - **Data type**: xs:sting
 - **Occurence**: 0..1
 - **Definition**:The name of the subject scheme or authority if one is used.
 - **Content**: free text
 - **additional information**: To simplify reuse and mapping to DataCite, the attributes were not renamed; instead, they were reused in the form in which they appear in DataCite.
 
-### 4.3.2 [`<schemeURI>`](#schemeURI) *optional Attribute*
+### 4.3.2 `<schemeURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
 - **Definition**: The URI of the name identifier scheme.
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
 
-### 4.3.3 [`<valueURI>`](#valueURI) *optional Attribute*
+### 4.3.3 `<valueURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
 - **Definition**: The URI of the subject term.
 - **Purpose and meaning**:To unambiguously identify the term used in the element, the URI of the term can be stored in this attribute. If applicable, provide the direct URI or URL for the term used. If the vocabulary does not provide separate URIs for individual terms but instead uses IDs to identify them uniquely, the `@classificationCode` attribute can be used to provide this information.
 
-### 4.3.4 [`<classificationCode>`](#classificationCode) *optional Attribute*
+### 4.3.4 `<classificationCode>` *optional Attribute*
 - **Data type**: sx:string
 - **Content**: free text
 - **Occurence**: 0..1
@@ -419,7 +419,7 @@ HIER
 - **Purpose and meaning**:If applicable, provide the ID for the term used. If the vocabulary does not provide IDs for individual terms but they are presented on persistent URIs, use the @valueURI attribute to provide this information.
 - **additional information**: Different vocabularies use different identifiers for their classification codes. The information you are looking for may therefore be hidden behind the following terms: UUID, termID, vocab-term-identifier, itemNumber, conceptID, key
 
-### 4.3.5 [`@lang`](#lang) *optional Attribute*
+### 4.3.5 `@lang` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
@@ -427,7 +427,7 @@ HIER
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 
 
-## 4.4 [`<alternateMaterial>`](#alternateMaterial) *optional Element*
+## 4.4 `<alternateMaterial>` *optional Element*
 - **Data type**: xs:sting
 - **Occurence**: 0..n
 - **Content**: enumeration list
@@ -435,28 +435,28 @@ HIER
 - **Purpose and meaning**:element to alow material classification for resources that do not match the availabel material vocabulrys.
 
 
-### 4.4.1 [`<subjectScheme >`](#subjectScheme ) *optional Attribute*
+### 4.4.1 `<subjectScheme >` *optional Attribute*
 - **Data type**: xs:sting
 - **Occurence**: 0..1
 - **Definition**:The name of the subject scheme or authority if one is used.
 - **Content**: free text
 - **additional information**: To simplify reuse and mapping to DataCite, the attributes were not renamed; instead, they were reused in the form in which they appear in DataCite.
 
-### 4.4.2 [`<schemeURI>`](#schemeURI) *optional Attribute*
+### 4.4.2 `<schemeURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
 - **Definition**: The URI of the name identifier scheme.
 - **Purpose and meaning**:This attribute is used to store the identifier's URI
 
-### 4.4.3 [`<valueURI>`](#valueURI) *optional Attribute*
+### 4.4.3 `<valueURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
 - **Definition**: The URI of the subject term.
 - **Purpose and meaning**:To unambiguously identify the term used in the element, the URI of the term can be stored in this attribute. If applicable, provide the direct URI or URL for the term used. If the vocabulary does not provide separate URIs for individual terms but instead uses IDs to identify them uniquely, the `@classificationCode` attribute can be used to provide this information.
 
-### 4.4.4 [`<classificationCode>`](#classificationCode) *optional Attribute*
+### 4.4.4 `<classificationCode>` *optional Attribute*
 - **Data type**: sx:string
 - **Content**: free text
 - **Occurence**: 0..1
@@ -464,7 +464,7 @@ HIER
 - **Purpose and meaning**:If applicable, provide the ID for the term used. If the vocabulary does not provide IDs for individual terms but they are presented on persistent URIs, use the @valueURI attribute to provide this information.
 - **additional information**: Different vocabularies use different identifiers for their classification codes. The information you are looking for may therefore be hidden behind the following terms: UUID, termID, vocab-term-identifier, itemNumber, conceptID, key
 
-### 4.4.5 [`@lang`](#lang) *optional Attribute*
+### 4.4.5 `@lang` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
@@ -472,7 +472,7 @@ HIER
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 
 
-## 4.5 [`<description>`](#description) *optional Element*
+## 4.5 `<description>` *optional Element*
 - **Data type**: xs:sting
 - **Occurence**: 0..n
 - **Content**: free text
@@ -480,7 +480,7 @@ HIER
 - **Purpose and meaning**:This element is used to provide further details about the resource to be registered. All additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with. use a diffrent description element for every description you like to add, eg abstract, thethods, technical information, locality, collection. It is a best practice to supply a description.
 
 
-### 4.5.1 [`@descriptionType`](#descriptionType) *mandatory Attribute*
+### 4.5.1 `@descriptionType` *mandatory Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
@@ -488,15 +488,15 @@ HIER
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 - **additional information**: If **other** is selected, the description must clearly state what it refers to, to ensure that it is processed correctly and appears in the right place on the landing page.
 
-### 4.5.2 [`@lang`](#lang) *manatory Attribute*
+### 4.5.2 `@lang` *manatory Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
 - **Definition**: distinguishes the language
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
-- **additional information**: As the [`<description>`](#description) can be repeated and contains the largest amount of natural language text this attribute is mandotory.
+- **additional information**: As the [`<description>`](#45-description-optional-element) can be repeated and contains the largest amount of natural language text this attribute is mandotory.
 
-## 5 [`<dates>`](#dates) *mandatory Element*
+## 5 `<dates>` *mandatory Element*
 ``` xml
     <igsn:dates>
 		<igsn:date dateType="Collected">2026-10-31</igsn:date>
@@ -510,42 +510,42 @@ HIER
 - **Definition**:contains all the dates, in regads to the sampel and the metadata
 - **Purpose and meaning**:The wrapper does not contain any content of its own, but simply bundles all elements which are necessary to describe dates regarding to the sample
 
-### 5.1 [`<date>`](#date) *optional Element*
+### 5.1 `<date>` *optional Element*
 - **Data type**: xs:sting
 - **Content**: date in the format: YYYY, YYYY-MM-DD, YYYY-MM-DDThh:mm:ssTZD
 - **Occurence**: 0..n
 - **Definition**: any date relevant for the samle or the metadata entry
 
 
-#### 5.1.1 [`@dateType`](#dateType) *mandatory Attribute*
+#### 5.1.1 `@dateType` *mandatory Attribute*
 - **Data type**: daci:dateType
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**: enumeration list of possible dateTypes
 - **Purpose and meaning**: This attribute is used to provide a more detailed description of the `<date>` element in order to unambiguously identify what the `<date>` element refers to
 
-#### 5.1.1 [`@ladateInformationng`](#dateInformation) *optional Attribute*
+#### 5.1.1 `@ladateInformationng` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: free text
 - **Occurence**: 0..1
 - **Definition**: specific information about the date
-- **Purpose and meaning**: If you select **Other** for [`@dateType`](#dateType), please use this attribute specify the context of the date
+- **Purpose and meaning**: If you select **Other** for [`@dateType`](##511-datetype-mandatory-attribute), please use this attribute specify the context of the date
 
 
-### 5.1 [`<publicationYear>`](#publicationYear) *mandatory Element*
+### 5.1 `<publicationYear>` *mandatory Element*
 - **Data type**: daci:yearType
 - **Content**: Year of publikation in the format YYYY
 - **Occurence**: 1..1
 - **Definition**: year when the data was or will be made publicly availible, required for registration with Datatcite
 
 
-## 6 [`<access>`](#access) *Element*
+## 6 `<access>` *Element*
 placeholder; final structure still under discussion
 
-## 7 [`<archives>`](#archives) *Element*
+## 7 `<archives>` *Element*
 placeholder; final structure still under discussion
 
-## 8 [`<relationshipIdentifiers>`](#relationshipIdentifiers) *optional Element*
+## 8 `<relationshipIdentifiers>` *optional Element*
 ``` xml
     <igsn:relationshipIdentifiers>
 		<igsn:alternateIdentifier alternateIdentifierType="LocalSampleName">E-GEOD-34814</igsn:alternateIdentifier>
@@ -559,55 +559,55 @@ placeholder; final structure still under discussion
 - **Purpose and meaning**:This wrapper is designed to collect and consolidate all information relating to resources associated with this resource, as well as the resource’s provenance
 - **additional information**: The term `relationships` was chosen to make it clear that this wrapper encompasses all elements that serve to group together resources related to the registered resource or that represent the properties of the resource.
 
-### 8.1 [`<alternateIdentifier>`](#alternateIdentifier) *optional Element*
+### 8.1 `<alternateIdentifier>` *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..n
 - **Definition**:Identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of use. May be used for local identifiers. AlternateIdentifier should be used for another identifier of the same instance (same location, same file).
-- **Purpose and meaning**:[`<alternateIdentifier>`](#alternateIdentifier) is used to provide supplementary referencing of a resource. It enables the resource to be identified using alternative identifiers that exist alongside the actual name or a primary identification number.
+- **Purpose and meaning**:[`<alternateIdentifier>`](#81-alternateidentifier-optional-element) is used to provide supplementary referencing of a resource. It enables the resource to be identified using alternative identifiers that exist alongside the actual name or a primary identification number.
 
-#### 8.1.1 [`<alternateIdentifierType>`](#alternateIdentifierType) *mandatory Attribute*
+#### 8.1.1 `<alternateIdentifierType>` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..n
-- **Definition**:The type of the  [`<alternateIdentifier>`](#alternateIdentifier) 
-- **Purpose and meaning**:Mandatory only if  [`<alternateIdentifier>`](#alternateIdentifier) is used. This attribute is necessary to better understand the context in which the alternative identifier is used and to understand where the identifier comes from. Unlike [`@identifierType`](@identifierType), this attribute can accept free-form text to allow users to specify the exact context in which this alternative identifier is used.
+- **Definition**:The type of the  [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) 
+- **Purpose and meaning**:Mandatory only if  [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) is used. This attribute is necessary to better understand the context in which the alternative identifier is used and to understand where the identifier comes from. Unlike [`@identifierType`](@identifierType), this attribute can accept free-form text to allow users to specify the exact context in which this alternative identifier is used.
 
-### 8.2 [`<parentIdentifier>`](#parentIdentifier) *optional Element*
+### 8.2 `<parentIdentifier>` *optional Element*
 - **Data type**: xs:anyURI
 - **Content**: IGSN of the parent resource
 - **Occurence**: 0..1
 - **Definition**:IGSN of a resource from which this resource derives
 - **Purpose and meaning**: enables the unambiguous hierarchical assignment of relationships for samples.For the sake of readability and to remain consistent with previous schemas, this element has not been renamed to ‘relatedIdentifier’ as in DataCite, even though it is mapped to it.
 
-#### 8.2.1 [`<relationType>`](#relationType) *mandatory Attribute*
+#### 8.2.1 `<relationType>` *mandatory Attribute*
 - **Data type**: daci:relationType
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:This attribute is used to specify, in a machine-readable and standardised manner, the relationship.
-- **Purpose and meaning**:When used in the  [`<parentIdentifier>`](#parentIdentifier) element, this attribute is fixed to `IsPartOf`, as this element only permits this relationship type.
+- **Purpose and meaning**:When used in the  [`<parentIdentifier>`](#82-parentidentifier-optional-element) element, this attribute is fixed to `IsPartOf`, as this element only permits this relationship type.
 
-### 8.3 [`<relatedIdentifier>`](#relatedIdentifier) *optional Element*
+### 8.3 `<relatedIdentifier>` *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..n
 - **Definition**:Identifiers of related resources. These must be globally unique identifiers.
 - **Purpose and meaning**: This element is used to retrieve the ID so that resources related to this sample can be linked.
 
-#### 8.3.1 [`<relationType>`](#relationType) *mandatory Attribute*
+#### 8.3.1 `<relationType>` *mandatory Attribute*
 - **Data type**: daci:relationType
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described here.
 
-#### 8.3.2 [`<identifierType>`](#identifierType) *mandatory Attribute*
+#### 8.3.2 `<identifierType>` *mandatory Attribute*
 - **Data type**: daci:relatedIdentifierType
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:Type of identifier
 
 
-## 9 [`<geoLocations>`](#geoLocations) *optional Element*
+## 9 `<geoLocations>` *optional Element*
 ```xml
 	<igsn:geoLocations>
 		<igsn:geoLocationPlace lang="en">Potsdam</igsn:geoLocationPlace>
@@ -647,16 +647,16 @@ placeholder; final structure still under discussion
 - **Definition**:wrapper for Spatial region or named place where the sample was gathered
 - **Purpose and meaning**:aggregation of all information relating to the geographical resolution or extent of the registered sample
 
-### 8.1 [`<geoLocationPlace>`](#geoLocationPlace) *optional Element*
+### 8.1 `<geoLocationPlace>` *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..n
 - **Definition**:"Where was the sample acquired relative to the Earth (or another celestial body...). Some samples might be 'non-geographic': mineral specimen, synthetic material.
 Named place where the data was gathered or about which the data is focused."
 - **Purpose and meaning**:this element allows to enter a location without specifying coordinates, whilst still establishing a geographical reference
-- **Additional Information**: Use to name or describe a geographic location. For a detailed description of the location where the samples were collected, use the [`<description>`](#description) element
+- **Additional Information**: Use to name or describe a geographic location. For a detailed description of the location where the samples were collected, use the [`<description>`](#45-description-optional-element) element
 
-#### 9.1.1 [`@lang`](#lang) *optional Attribute*
+#### 9.1.1 `@lang` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurence**: 0..1
