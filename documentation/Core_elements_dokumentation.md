@@ -27,7 +27,7 @@
 
 
 
-# 2. [`<name>`](#name) *mandatory Element*
+# 2. `<name>` *mandatory Element*
 ``` xml 
 <igsn:name titleType="AlternativeTitle" lang="en">WR_12-15</igsn:name>
 ```
@@ -609,6 +609,58 @@ placeholder; final structure still under discussion
 
 ## 9 [`<geoLocations>`](#geoLocations) *optional Element*
 ```xml
-
+	<igsn:geoLocations>
+		<igsn:geoLocationPlace lang="en">Potsdam</igsn:geoLocationPlace>
+		<igsn:geoLocationPoint coordinateSystem="WGS84">
+			<daci:pointLongitude>52.3786120</daci:pointLongitude>
+			<daci:pointLatitude>13.06609315120018</daci:pointLatitude>
+		</igsn:geoLocationPoint>
+		<igsn:geoLocationBox coordinateSystem="WGS84">
+			<daci:westBoundLongitude>5</daci:westBoundLongitude>
+			<daci:eastBoundLongitude>13.060326321314756</daci:eastBoundLongitude>
+			<daci:southBoundLatitude>52.38339986112071</daci:southBoundLatitude>
+			<daci:northBoundLatitude>13.067579014491026</daci:northBoundLatitude>
+		</igsn:geoLocationBox>
+		<igsn:geoLocationPolygon>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>13.066838</daci:pointLongitude>
+				<daci:pointLatitude>52.380524</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>13,060102</daci:pointLongitude>
+				<daci:pointLatitude>52,379664</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>13,06032</daci:pointLongitude>
+				<daci:pointLatitude>52,382243</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>13.066838</daci:pointLongitude>
+				<daci:pointLatitude>52.380524</daci:pointLatitude>
+			</igsn:polygonPoint>
+		</igsn:geoLocationPolygon>
+	</igsn:geoLocations>
 
 ```
+- **Data type**: xs:complexType
+- **Occurence**: 0..1
+- **Definition**:wrapper for Spatial region or named place where the sample was gathered
+- **Purpose and meaning**:aggregation of all information relating to the geographical resolution or extent of the registered sample
+
+### 8.1 [`<geoLocationPlace>`](#geoLocationPlace) *optional Element*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurence**: 0..n
+- **Definition**:"Where was the sample acquired relative to the Earth (or another celestial body...). Some samples might be 'non-geographic': mineral specimen, synthetic material.
+Named place where the data was gathered or about which the data is focused."
+- **Purpose and meaning**:this element allows to enter a location without specifying coordinates, whilst still establishing a geographical reference
+- **Additional Information**: Use to name or describe a geographic location. For a detailed description of the location where the samples were collected, use the [`<description>`](#description) element
+
+#### 9.1.1 [`@lang`](#lang) *optional Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 0..1
+- **Definition**: distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+- **additional information**: As the [`<description>`](#description) can be repeated and contains the largest amount of natural language text this attribute is mandotory.
+
