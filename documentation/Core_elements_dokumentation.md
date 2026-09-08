@@ -1,6 +1,6 @@
 # IGSN Core Documentation
 
-# 1. [`<identifier>`](#identifier) *mandatory Element*
+# 1. `<identifier>` *mandatory Element*
 ``` xml 
 <igsn:identifier identifierType="DOI">GFBNO7002EXH4001</igsn:identifier>
 
@@ -116,11 +116,11 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Purpose and meaning**: This element stores the full name of the relevant creator. Full name in the format "family name, given name".
 
 
-#### 3.1.2.1 [`@nameType`](#nameType) *mandatory Attribute*
+#### 3.1.2.1 `@nameType` *mandatory Attribute*
 - **Data type**: daci:nameType
 - **Content**: enumeration list
 - **Occurence**: 1..1
-- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#name) element.
+- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#2.-name) element.
 - **Purpose and meaning**: It is used to distinguish the title of the registered sample from the sample’s common names.
 
 
