@@ -120,7 +120,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Data type**: daci:nameType
 - **Content**: enumeration list
 - **Occurence**: 1..1
-- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#2.-`<name>`) element.
+- **Definition**: This attribute is used to specify the type of entry contained within the [`<name>`](#2-name-mandatory-element) element.
 - **Purpose and meaning**: It is used to distinguish the title of the registered sample from the sample’s common names.
 
 
