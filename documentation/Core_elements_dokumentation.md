@@ -647,12 +647,12 @@ placeholder; final structure still under discussion
 - **Definition**:wrapper for Spatial region or named place where the sample was gathered
 - **Purpose and meaning**:aggregation of all information relating to the geographical resolution or extent of the registered sample
 
-### 8.1 `<geoLocationPlace>` *optional Element*
+### 9.1 `<geoLocationPlace>` *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..n
-- **Definition**:"Where was the sample acquired relative to the Earth (or another celestial body...). Some samples might be 'non-geographic': mineral specimen, synthetic material.
-Named place where the data was gathered or about which the data is focused."
+- **Definition**:Where was the sample acquired relative to the Earth (or another celestial body...). Some samples might be 'non-geographic': mineral specimen, synthetic material.
+Named place where the data was gathered or about which the data is focused.
 - **Purpose and meaning**:this element allows to enter a location without specifying coordinates, whilst still establishing a geographical reference
 - **Additional Information**: Use to name or describe a geographic location. For a detailed description of the location where the samples were collected, use the [`<description>`](#45-description-optional-element) element
 
@@ -664,3 +664,126 @@ Named place where the data was gathered or about which the data is focused."
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 - **additional information**: As the [`<description>`](#description) can be repeated and contains the largest amount of natural language text this attribute is mandotory.
 
+### 9.2 `<geoLocationPoint>` *optional Element*
+- **Data type**: daci:point
+- **Occurence**: 1..1
+- **Definition**:a geographical point described by a single pair of latitude and longitude coordinates
+- **Purpose and meaning**:This wrapper is used to group the coordinate elements
+- **Additional Information**: The elements [<polygonPoint>](#) and [<geoLocationPoint>]() are identical in terms of semantics and content. To improve readability and ensure the schema remains compliant with DataCite, two different names have been used. 
+
+#### 9.2.1 `@coordinateSystem` *mandatory Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 1..1
+- **Definition**: attribute for specifying the coordinate system to which the specified coordinates belong
+- **Purpose and meaning**: This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. 
+- **Additional information**: fixed to **WGS84**, as GFZ DataServices does not currently accept any other coordinate systems
+
+#### 9.2.2 `<pointLongitude>` *mandatory Element*
+- **Data type**: daci:longitudeType
+- **Content**: decimal
+- **Occurence**: 1..1
+- **Definition**: Longitudinal dimension of point
+- **Purpose and meaning**: Longitude of the geographic point expressed in decimal degrees (positive east) 
+- **Additional information**: mandatory only if the optional element [`<geoLocationPoint>`](#92-geolocationpoint-optional-element) is used
+
+
+#### 9.2.3 `<pointLatitude>` *mandatory Element*
+- **Data type**: daci:latitudeType
+- **Content**: decimal
+- **Occurence**: 1..1
+- **Definition**: Latitudinal dimension of point.
+- **Purpose and meaning**: Latitude of the geographic point expressed in decimal degrees (positive north) 
+- **Additional information**: mandatory only if the optional element [`<geoLocationPoint>`](#92-geolocationpoint-optional-element) is used
+
+### 9.3 `<geoLocationBox>` *optional Element*
+- **Data type**: daci:box
+- **Occurence**: 0..1
+- **Definition**:A box is defined by two geographic points. Left low corner and right upper corner. Each point is defined by its longitude and latitude.
+- **Purpose and meaning**:This element is used to define a geographical area as a rectangle. It is useful if you want to capture the location where the sample was collected, or to which it relates, as a general area rather than an exact position. This allows geographical references in metadata to be represented more precisely, whilst also making them easier to search, display and filter.
+
+#### 9.3.1 `@coordinateSystem` *mandatory Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 1..1
+- **Definition**: attribute for specifying the coordinate system to which the specified coordinates belong
+- **Purpose and meaning**: This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. 
+- **Additional information**: fixed to **WGS84**, as GFZ DataServices does not currently accept any other coordinate systems
+
+
+#### 9.3.2 `<westBoundLongitude>` *mandatory Element*
+- **Data type**: daci:longitudeType
+- **Content**: decimal
+- **Occurence**: 1..1
+- **Definition**:Determines the western boundary of the geographical area and thus specifies the easternmost longitude of the rectangle.
+- **Purpose and meaning**: This is necessary so that systems and search engines can clearly identify how far west the data extends.
+Together with <eastBoundLongitude>, it defines the width of the area in an east-west direction.
+- **Additional Information**: mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
+
+
+#### 9.3.3 `<eastBoundLongitude>` *mandatory Element*
+- **Data type**: daci:longitudeType
+- **Content**: decimal
+- **Occurence**: 1..1
+- **Definition**:Specifies the eastern boundary of the rectangle and defines the greatest longitude of the geographical area.
+- **Purpose and meaning**: This is necessary so that systems and search engines can clearly identify how far east the data extends.
+Together with <westBoundLongitude>, it defines the width of the area in an east-west direction.
+- **Additional information**: mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
+
+#### 9.3.4 `<southBoundLatitude>` *mandatory Element*
+- **Data type**: xs:language
+- **Content**: decimal
+- **Occurence**: 1..1
+- **Definition**:Defines the southern boundary of the rectangle and specifies the southernmost latitude of the area.
+- **Purpose and meaning**: Required to describe the southern extent of a data record.
+Together with <northBoundLatitude>, it determines the extent of the area in the north-south direction.
+- **Additional information**: mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
+
+#### 9.3.5 `<northBoundLatitude>` *mandatory Element*
+- **Data type**: xs:language
+- **Content**: decimal
+- **Occurence**: 1..1
+- **Definition**: Specifies the northern boundary of the rectangle and defines the highest latitude of the area.
+- **Purpose and meaning**: Required to describe the northern extent of a data record.
+Together with <southBoundLatitude>, it determines the extent of the area in the north-south direction. 
+- **Additional information**: mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
+
+### 9.4 `<geoLocationPolygon>` *optional Element*
+- **Data type**: xs:complexType
+- **Occurence**: 0..1
+- **Definition**:is used to describe a geographical area as a polygon (an irregular shape). A polygon consists of a sequence of coordinate points (<polygonePoint>) that form a closed area on the map
+- **Purpose and meaning**: enables the precise representation of administrative boundaries, natural areas, research areas or other non-rectangular areas. Whilst a [`<geoLocationBox>`](#93-geolocationbox-optional-element) always describes a square area, a polygon can, for example, accurately represent the boundaries of a national park, a river catchment area or an administrative unit.
+
+#### 9.4.1 `<polygonPoint>` *mandatory Element*
+- **Data type**: xs:language
+- **Content**: decimal
+- **Occurence**: 4..n
+- **Definition**: A point within a polygon.
+- **Purpose and meaning**: Each `<polygonPoint>` contains a pair of longitude and latitude values (`<pointLongitude>` and `<pointLatitude>`) and defines a corner of the polygon
+- **Additional information**:The wrapper does not contain any content of its own, but simply bundles the logitude und latitude elements to form a point.
+If [<geoLocationPolygon>](#94-geolocationpolygon-optional-element) is used, `<polygonPoint>` is mandatory. There must be at least 4 non-aligned points to make a closed curve, with the last point described the same as the first point.
+
+#### 9.4.1.1 `@coordinateSystem` *mandatory Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurence**: 1..1
+- **Definition**: attribute for specifying the coordinate system to which the specified coordinates belong
+- **Purpose and meaning**: This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. 
+- **Additional information**: fixed to **WGS84**, as GFZ DataServices does not currently accept any other coordinate systems
+
+#### 9.4.1.2 `<pointLongitude>` *mandatory Element*
+- **Data type**: daci:longitudeType
+- **Content**: decimal
+- **Occurence**: 1..1
+- **Definition**: Longitudinal dimension of point
+- **Purpose and meaning**: Longitude of the geographic point expressed in decimal degrees (positive east) 
+- **Additional information**: mandatory only if the optional element [`<polygonPoint>`](#941-polygonpoint-mandatory-element) is used
+
+
+#### 9.2.3 `<pointLatitude>` *mandatory Element*
+- **Data type**: daci:latitudeType
+- **Content**: decimal
+- **Occurence**: 1..1
+- **Definition**: Latitudinal dimension of point.
+- **Purpose and meaning**: Latitude of the geographic point expressed in decimal degrees (positive north) 
+- **Additional information**: mandatory only if the optional element [`<polygonPoint>`](#941-polygonpoint-mandatory-element) is used
