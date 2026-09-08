@@ -1,4 +1,4 @@
-# IGSN Core Dokumentation
+# IGSN Core Documentation
 
 # 1. [`<identifier>`](#identifier) *mandatory Element*
 ``` xml 
