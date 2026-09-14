@@ -780,7 +780,7 @@
 												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="awardNumber">
+										<xs:element name="awardNumber" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>The code assigned by the funder to a sponsored award (grant).</xs:documentation>
 											</xs:annotation>
