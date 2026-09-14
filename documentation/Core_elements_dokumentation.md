@@ -780,10 +780,101 @@ If [<geoLocationPolygon>](#94-geolocationpolygon-optional-element) is used, `<po
 - **Additional information**: mandatory only if the optional element [`<polygonPoint>`](#941-polygonpoint-mandatory-element) is used
 
 
-#### 9.2.3 `<pointLatitude>` *mandatory Element*
+#### 9.4.1.3 `<pointLatitude>` *mandatory Element*
 - **Data type**: daci:latitudeType
 - **Content**: decimal
 - **Occurence**: 1..1
 - **Definition**: Latitudinal dimension of point.
 - **Purpose and meaning**: Latitude of the geographic point expressed in decimal degrees (positive north) 
 - **Additional information**: mandatory only if the optional element [`<polygonPoint>`](#941-polygonpoint-mandatory-element) is used
+
+
+
+# 10 `<fundingReferences>` *optional Element*
+```xml
+	<igsn:fundingReferences>
+		<igsn:fundingReference>
+			<igsn:funderName>Helmholtz-Gemeinschaft</igsn:funderName>
+			<igsn:funderIdentifier funderIdentifierType="Crossref Funder ID" schemeURI="https://doi.org/">https://doi.org/10.13039/501100001656</igsn:funderIdentifier>
+			<igsn:awardTitle>Impuls- und Vernetzungsfonds (IVF)</igsn:awardTitle>
+		</igsn:fundingReference>
+		<igsn:fundingReference>
+			<funderName>European Commission</funderName>
+			<funderIdentifier funderIdentifierType="Crossref Funder ID">https://doi.org/10.13039/501100000780</funderIdentifier>
+			<awardNumber awardURI="https://cordis.europa.eu/project/rcn/100603_en.html">284382</awardNumber>
+			<awardTitle>Institutionalizing global genetic-resource commons. Global Strategies for accessing and using essential public knowledge assets in the life sciences</awardTitle>
+		</igsn:fundingReference>
+	</igsn:fundingReferences>
+
+```
+- **Data type**: xs:complexType
+- **Occurence**: 0..1
+- **Definition**Information about financial support (funding) for the resource being registered.
+- **Purpose and meaning**:The wrapper does not contain any content of its own, but simply bundles all elements which are necessary to describe the funding of the sample
+
+### 10.1 `<fundingReference>` *optional Element*
+- **Data type**: xs:complexType
+- **Occurence**: 0..n
+- **Definition**:Information about financial support (funding) for the resource being registered.
+- **Purpose and meaning**: The wrapper does not contain any content of its own, but simply bundles all elements which are necessary to describe the funding of the sample
+
+
+#### 10.1.1 `<funderName>` *mandatory Element*
+- **Data type**: xs:string
+- **Occurence**: 1..1
+- **Definition**:Name of the funding provider
+- **Purpose and meaning**: If [`<fundingReference>`](#101-fundingreference-optional-element) is used, then `<funderName>` is mandatory
+
+
+#### 10.1.2 `<funderIdentifier>` *optional Element*
+- **Data type**: xs:string
+- **Occurence**: 0..1
+- **Definition**: Uniquely identifies a funding entity, according to various types.
+
+
+##### 10.1.2.1 `@funderIdentifierType` *madatory Attribute*
+- **Data type**: xs:string
+- **Occurence**: 1..1
+- **Definition**: The type of the funderIdentifier.
+- **Additional information**: Select a value from the enumeration list (ISNI, GRID, ROR, Crossref Funder ID, Other)
+
+
+##### 10.1.2.2 `<schemeURI>` *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurence**: 0..1
+- **Definition**: The URI of the name identifier scheme.
+- **Purpose and meaning**:This attribute is used to store the identifier's URI
+
+
+#### 10.1.3 `<awardNumber>` *optional Element*
+- **Data type**: xs:string
+- **Occurence**: 0..1
+- **Definition**: The code assigned by the funder to a sponsored award (grant).
+
+
+##### 10.1.2.2 `<awardURI>` *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurence**: 0..1
+- **Definition**: The URI leading to a page provided by the funder for more information about the award (grant).
+- **Purpose and meaning**:In case the award or grant has an ID or DOI, the full URL of the grant DOI can be included here
+
+
+#### 10.1.3 `<awardTitle>` *optional Element*
+- **Data type**: xs:string
+- **Occurence**: 0..1
+- **Definition**: The human readable title or name of the award (grant).
+
+
+
+# 11 `<language>` *optional Element*
+```xml
+<igsn:language>en</igsn:language>
+
+```
+- **Data type**: xs:complexType
+- **Occurence**: 0..1
+- **Definition**The primary language of the resource.
+- **Purpose and meaning**:will continue to enable the language of the metadata record to be stored and processed in a unambiguous and machine-readable format. 
+- **Additonal Informations**: Even though some elements (particularly those that accept free text) already have ‘lang’ attributes, it is recommended that you also populate this language element. This will ensure that the metadata can continue to be displayed and interpreted correctly in the future.
