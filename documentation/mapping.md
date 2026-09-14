@@ -48,20 +48,20 @@
 | 4.3.2 | `@schemeURI`  | [`@schemeURI`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#b-schemeuri)  | -  | -  | -  |
 | 4.3.3 | `@valueURI` | [`@valueURI`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#c-valueuri) | -  | -  | -  |
 | 4.3.4 | `@classificationCode` | [`@classificationCode`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#d-classificationcode) | -  | -  | -  |
-| 4.3.5 | `@lang` |  `xml:lang`  | -  | -  | -  |
-| 4.4 | `<alternateMaterial>`   | `<subject>`   | `<alternateMaterial>` (ID 13.2.1)  | -  | -  |
-| 4.4.1 | `@subjectScheme`  | `@subjectScheme`  | -  | -  | -  |
-| 4.4.2 | `@schemeURI`  | `@schemeURI`  | -  | -  | -  |
-| 4.4.3 | `@valueURI` | `@valueURI` | -  | -  | -  |
-| 4.4.4 | `@classificationCode` | `@classificationCode` | -  | -  | -  |
-| 4.4.5 | `@lang` |  `xml:lang`  | -  | -  | -  |
-| 4.5 | `<description>` | `<description>`   | `<description>` (ID 7) | `<location_description>` (ID 23), `<locality_description>` (ID 25), `<classification_comment>` (ID 32), `<description>` (ID 44.1), `<collection_method_descr>` (ID 49), `<platform_descr>` (ID 56), `<sample_comment>` (ID 52) | -  |
-| 4.5.1 | `@descriptionType`  | `@descriptionType`  | `@descriptionScheme` (ID 44.1.1) | -  | -  |
-| 4.5.2 | `@lang` |  `xml:lang`  | -  | -  | -  |
-| 5 | `<dates>`   | `<dates>` | -  | -  | -  |
-| 5.1 | `<date>`  | `<date>`  | `<collectionTime>` (ID 15) | `<sampling_date>` (ID 20), `<collection_start_date>` (ID 61), `<collection_end_date>` (ID 62)  | -  |
-| 5.1.1 | `@dateType` | `@dateType` | -  | -  | -  |
-| 5.1.2 | `@dateInformation`  | `@dateInformation`  | -  | -  | -  |
+| 4.3.5 | `@lang` |  [`xml:lang`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#lang-xml-lang)  | -  | -  | -  |
+| 4.4 | `<alternateMaterial>`   | [`<subject>`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#subject)  | `<alternateMaterial>` (ID 13.2.1)  | -  | -  |
+| 4.4.1 | `@subjectScheme`  | [`@subjectScheme`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#a-subjectscheme)  | -  | -  | -  |
+| 4.4.2 | `@schemeURI`  | [`@schemeURI`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#a-subjectscheme)  | -  | -  | -  |
+| 4.4.3 | `@valueURI` | [`@valueURI`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#c-valueuri) | -  | -  | -  |
+| 4.4.4 | `@classificationCode` | [`@classificationCode`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#d-classificationcode) | -  | -  | -  |
+| 4.4.5 | `@lang` |  [`xml:lang`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/subject/#lang-xml-lang)  | -  | -  | -  |
+| 4.5 | `<description>` | [`<description>`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/description/#description)   | `<description>` (ID 7) | `<location_description>` (ID 23), `<locality_description>` (ID 25), `<classification_comment>` (ID 32), `<description>` (ID 44.1), `<collection_method_descr>` (ID 49), `<platform_descr>` (ID 56), `<sample_comment>` (ID 52) | -  |
+| 4.5.1 | `@descriptionType`  | [`@descriptionType`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/description/#a-descriptiontype)  | `@descriptionScheme` (ID 44.1.1) | -  | -  |
+| 4.5.2 | `@lang` |  [`xml:lang`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/description/#lang-xml-lang)  | -  | -  | -  |
+| 5 | `<dates>`   | [`<dates>`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/date/#date) | -  | -  | -  |
+| 5.1 | `<date>`  | [`<date>`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/date/#date)  | `<collectionTime>` (ID 15) | `<sampling_date>` (ID 20), `<collection_start_date>` (ID 61), `<collection_end_date>` (ID 62)  | -  |
+| 5.1.1 | `@dateType` | [`@dateType`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/date/#a-datetype) | -  | -  | -  |
+| 5.1.2 | `@dateInformation`  | [`@dateInformation`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/date/#b-dateinformation)  | -  | -  | -  |
 | 5.2 | `<publicationYear>`   | `<publicationYear>`   | -  | `<publish_date>` (ID 10), `@publishdate` (ID 79.1.4) | `@timeStamp` (ID 4.1.2)  |
 | 6 | `<access>`  | `<access>`  | `<sampleAccess>` (ID 16) | `<is_privat>` (ID 6) | -  |
 | 6.1 | `@accessType` | `@accessType` | `<sampleAccess>` (ID 16) | `<is_privat>` (ID 6) | -  |
