@@ -9,7 +9,7 @@
 | 3.1 | `<creator>`   | [`<creator>` ](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/creator/)  | `<collector>` (ID 9) | `<sampled_by>` (ID 8), `<collector>` (ID 59) | -  |
 | 3.1.1 | `@creatorType`  | - | -  | -  | -  |
 | 3.1.2 | `<creatorName>` | [`<creatorName>` ](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/creator/#creatorname)  | `<collector>` (ID 9), `<name>` (ID 9.2)  | `<sampled_by>` (ID 8), `<collector>` (ID 59) | -  |
-| 3.1.2.1 | `@nameType` | [`@nameType`(https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/creator/#a-nametype)] | `@identifier` (ID 9.3.1) | `<collector_detail>` (ID 60) | -  |
+| 3.1.2.1 | `@nameType` | [`@nameType`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/creator/#a-nametype) | `@identifier` (ID 9.3.1) | `<collector_detail>` (ID 60) | -  |
 | 3.1.2.2 | `@lang` | [`xml:lang`](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/creator/#lang-xml-lang)  | -  | -  | -  |
 | 3.1.3 | `<givenName>`   | [`<givenName>` ](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/creator/#givenname) | `<name>` (ID 9.2), `<name>` (ID 10.1.2.2)  | `<collector>` (ID 59), `<collector_detail>` (ID 60)  | -  |
 | 3.1.4 | `<familyName>`  | [`<familyName>` ](https://datacite-metadata-schema.readthedocs.io/en/4.7/properties/creator/#familyname) | `<collector>` (ID 9), `<name>` (ID 9.2), `<contributer>` (ID 10.1), `<name>` (ID 10.1.2.2) | `<collector>` (ID 59), `<collector_detail>` (ID 60)  | -  |
