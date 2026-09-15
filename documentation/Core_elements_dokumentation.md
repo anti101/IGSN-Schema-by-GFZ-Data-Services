@@ -38,7 +38,7 @@
 - **Purpose and meaning**: This element is used to name and identify a resource in a technical and linguistic context. It refers to the resource by its common name and is designed to be readable by humans. The name element should be used when the common name of the resource must be specified. The primary name of the resource should be entered. Variant spellings, abbreviated forms or alternative names should only be used if they correspond to the officially used or technically authoritative name. The element does not need to be unique and may occur multiple times.
 - **aditional information**: In order to clearly distinguish between `<title>`, `<name>` and `<alternateIdentifier>` within the schema, the decision was made not to align the element identifier `<name>` with DataCite's `<title>`, even though the `<name>` element is mapped to `<daci:title>` for registration purposes. The term ‘title’ summarises the content, attracts attention and serves as a structural guide for the reader. Here, however, `<name>` is used to capture all human-readable designations for the sample and to generate the title that corresponds to the registered resource.
 
-## 2.1 `@titleType`  *optional Attribute*
+## 2.1 `@titleType` *optional Attribute*
 - **Data type**: daci:titleType
 - **Content**: enumeration list
 - **Occurence**: 0..1
@@ -98,6 +98,7 @@
 - **Definition**:The creator wrapper contains a list of “the main researcher(s) involved...in priority order.” For IGSN IDs, this could be the sample collector/creator, chief scientist, curator, or even the person who deposited the sample into a repository. <br>
 As a norm, IGSN ID registrants are expected to collect information about the sample owner, Principle Investigator, and/or otherwise. However, if no appropriate name is available, the property will be populated with the name of the IGSN ID Repository registrant
 - **Purpose and meaning**: This element is required for registering the sample with DataCite; it contains all the information needed to uniquely identify the collector and/or creator of the resource
+- **Additional Information**: Even though it may initially seem counterintuitive that the person who collected a sample should be considered its creator, this must be viewed within the context of different frames of reference. Since the person collecting the sample is the one who first places it within the frame of reference of a “scientifically analyzable sample,” that person is therefore the creator of the sample.
 
 ### 3.1.1 `@creatorType` *mandatory Attribute*
 - **Data type**: xs:string
@@ -105,7 +106,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Occurence**: 0..1
 - **Definition**: funktion of the creator regarding the projekt.
 - **Purpose and meaning**: This type attribute is used to build the landingpages and credit the persons according to they´re function. The options are `creator` and `collector`.
-- **aditional information**: This attribute does not exist in DataCite or in previous versions of the schema. It was designed to allow the `<collector>` and `<sample_by>` elements to be grouped within the `<creator>` element, whilst still permitting differentiation so that landing pages can be structured accordingly.
+- **aditional information**: This attribute does not exist in DataCite or in previous versions of the schema. It was designed to allow the `<collector>` and `<sample_by>` elements to be grouped within the `<creator>` element, whilst still permitting differentiation so that landing pages can be structured accordingly. Enumeration list: collector, creator
 
 
 ### 3.1.2 `<creatorName>` *mandatory Element*
@@ -346,6 +347,12 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Definition**: distinguishes the language
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 
+
+---
+---
+
+
+
 # 4 `<entityTypeClassifications>` *mandatory Element*
 ``` xml 
 <igsn:entityTypeClassifications>
@@ -498,6 +505,12 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 - **additional information**: As the [`<description>`](#45-description-optional-element) can be repeated and contains the largest amount of natural language text this attribute is mandotory.
 
+
+---
+---
+
+
+
 ## 5 `<dates>` *mandatory Element*
 ``` xml
     <igsn:dates>
@@ -541,11 +554,29 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Definition**: year when the data was or will be made publicly availible, required for registration with Datatcite
 
 
+---
+---
+
+
+
+
 ## 6 `<access>` *Element*
 placeholder; final structure still under discussion
 
+
+---
+---
+
+
+
 ## 7 `<archives>` *Element*
 placeholder; final structure still under discussion
+
+
+---
+---
+
+
 
 ## 8 `<relationshipIdentifiers>` *optional Element*
 ``` xml
@@ -607,6 +638,12 @@ placeholder; final structure still under discussion
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:Type of identifier
+
+
+---
+---
+
+
 
 
 ## 9 `<geoLocations>` *optional Element*
@@ -791,6 +828,10 @@ If [<geoLocationPolygon>](#94-geolocationpolygon-optional-element) is used, `<po
 - **Additional information**: mandatory only if the optional element [`<polygonPoint>`](#941-polygonpoint-mandatory-element) is used
 
 
+---
+---
+
+
 
 # 10 `<fundingReferences>` *optional Element*
 ```xml
@@ -867,6 +908,10 @@ If [<geoLocationPolygon>](#94-geolocationpolygon-optional-element) is used, `<po
 - **Data type**: xs:string
 - **Occurence**: 0..1
 - **Definition**: The human readable title or name of the award (grant).
+
+
+---
+---
 
 
 
