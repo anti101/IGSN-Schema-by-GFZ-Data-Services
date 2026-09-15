@@ -104,7 +104,7 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Content**: enumeration list
 - **Occurence**: 0..1
 - **Definition**: funktion of the creator regarding the projekt.
-- **Purpose and meaning**: This type attribute is used to build the landingpages and credit the persons according to they´re function. This attribute is only used if `nameType` has been set to `personal`. The options are `creator` and `collector`.
+- **Purpose and meaning**: This type attribute is used to build the landingpages and credit the persons according to they´re function. The options are `creator` and `collector`.
 - **aditional information**: This attribute does not exist in DataCite or in previous versions of the schema. It was designed to allow the `<collector>` and `<sample_by>` elements to be grouped within the `<creator>` element, whilst still permitting differentiation so that landing pages can be structured accordingly.
 
 
@@ -214,8 +214,8 @@ As a norm, IGSN ID registrants are expected to collect information about the sam
 - **Occurence**: 1..1
 - **Definition**: The type of contributor of the resource.
 - **Purpose and meaning**: Select a suitable item from the enumeration list; if a person contributes in more than one way and is to be represented, a further contributor must be created with the appropriate @contributerType
+- **Additional Information**: enumeration List: ContactPerson, DataCollector, DataCurator, DataManager, Distributor, Editor, HostingInstitution, Producer, ProjectLeader, ProjectManager, ProjectMember, RegistrationAgency, RegistrationAuthority, RelatedPerson, Researcher, ResearchGroup, RightsHolder, Sponsor, Supervisor, Translator, WorkPackageLeader, Other
 
-HIER
 
 ### 3.2.2 `<contributorName>` *mandatory Element*
 - **Data type**: xs:complexType
@@ -302,7 +302,7 @@ HIER
 - **Definition**: The name of the affiliation identifier scheme.
 - **Purpose and meaning**:This attribute enables the `@affilationIdentifier` attribute to be interpreted unambiguously and associated with a standardised identification system.
 
-#### 3.2.6.3[`<schemeURI>` *optional Attribute*
+#### 3.2.6.3 `<schemeURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurence**: 0..1
@@ -328,7 +328,9 @@ HIER
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:the name of the publisher identifier scheme.
-- **Purpose and meaning**:Unambiguous, machine-processable mapping of the identifier schema to enable further processing. 
+- **Purpose and meaning**:Unambiguous, machine-processable mapping of the identifier schema to enable further processing.
+- **Additional Information**: Enumeration List: ROR, re3data, VIAF, Wikidata, Crossref Funder ID, ISNI, OpenDOAR, FAIRsharing, ISSN,
+
 
 ### 3.3.3 `<schemeURI>` *mandatory Attribute*
 - **Data type**: xs:anyURI
@@ -598,7 +600,7 @@ placeholder; final structure still under discussion
 - **Data type**: daci:relationType
 - **Content**: enumeration list
 - **Occurence**: 1..1
-- **Definition**:This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described here.
+- **Definition**: This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described here.
 
 #### 8.3.2 `<identifierType>` *mandatory Attribute*
 - **Data type**: daci:relatedIdentifierType
