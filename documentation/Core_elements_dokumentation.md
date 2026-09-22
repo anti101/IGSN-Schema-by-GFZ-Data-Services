@@ -184,7 +184,7 @@
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..1
-- **Definition**: Uniquely identifies the organizational affiliation of the creator or contributer
+- **Definition**: Uniquely identifies the organizational affiliation of the creator or contributor
 - **Purpose and meaning**: This attribute is used to uniquely identify the affiliation
 
 #### 3.1.6.1 `<affiliationIdentifierScheme>` *optional Attribute*
@@ -205,7 +205,7 @@
 ## 3.2 `<contributor>` *optional Element*
 - **Data type**: xs:complexType
 - **Occurrence**: 0..n
-- **Definition**: A wrapper element that bundles all elements and attributes relating to specific persons with the function contributer
+- **Definition**: A wrapper element that bundles all elements and attributes relating to specific persons with the function contributor
 - **Purpose and meaning**: A bundle of all the elements and attributes required to uniquely identify a contributor
 
 ### 3.2.1 `@contributorType` *mandatory Attribute*
@@ -213,7 +213,7 @@
 - **Content**: enumeration list
 - **Occurrence**: 1..1
 - **Definition**: The type of contributor of the resource.
-- **Purpose and meaning**: Select a suitable item from the enumeration list; if a person contributes in more than one way and is to be represented, a further contributor must be created with the appropriate @contributerType
+- **Purpose and meaning**: Select a suitable item from the enumeration list; if a person contributes in more than one way and is to be represented, a further contributor must be created with the appropriate @contributorType
 - **Additional information**: Enumeration List: ContactPerson, DataCollector, DataCurator, DataManager, Distributor, Editor, HostingInstitution, Producer, ProjectLeader, ProjectManager, ProjectMember, RegistrationAgency, RegistrationAuthority, RelatedPerson, Researcher, ResearchGroup, RightsHolder, Sponsor, Supervisor, Translator, WorkPackageLeader, Other
 
 
@@ -221,7 +221,7 @@
 - **Data type**: xs:complexType
 - **Content**: free text
 - **Occurrence**: 1..1
-- **Definition**: Full name of the contributer
+- **Definition**: Full name of the contributor
 - **Purpose and meaning**: The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.
 
 
@@ -246,7 +246,7 @@
 - **Content**: free text
 - **Occurrence**: 0..1
 - **Definition**: Given Name of the Person
-- **Purpose and meaning**: This element is used to retrieve the first name of the person from the `<contributer>` element in normalised format.
+- **Purpose and meaning**: This element is used to retrieve the first name of the person from the `<contributor>` element in normalised format.
 
 
 ### 3.2.4 `<familyName>` *optional Element*
@@ -262,7 +262,7 @@
 - **Content**: free text
 - **Occurrence**: 0..1
 - **Definition**: Uniquely identifies an individual or legal entity, according to various schemes. ORCID is pref for Person ROR is pref for Organizations
-- **Purpose and meaning**: This element contains the identifier, which is used to uniquely identify the person or organization given in the `<contributer>` Element. Only the identifier should be entered in this field; the full URL is taken from the `@schemeURI` attribute and processed, so only the identifier needs to be entered here
+- **Purpose and meaning**: This element contains the identifier, which is used to uniquely identify the person or organization given in the `<contributor>` Element. Only the identifier should be entered in this field; the full URL is taken from the `@schemeURI` attribute and processed, so only the identifier needs to be entered here
 
 
 #### 3.2.5.1 `<nameIdentifierScheme>` *mandatory Attribute*
