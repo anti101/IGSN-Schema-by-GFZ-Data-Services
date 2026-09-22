@@ -225,12 +225,12 @@
 - **Purpose and meaning**: The institution or person responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource. To supply multiple contributors, repeat this property.
 
 
-#### 3.2.2.1 `@contributorType` *mandatory Attribute*
-- **Data type**: daci:contributorType
+#### 3.2.2.1 `@nameType` *mandatory Attribute*
+- **Data type**: daci:nameType
 - **Content**: enumeration list
 - **Occurrence**: 1..1
-- **Definition**: The type of contributor of the resource.
-- **Purpose and meaning**: Select a suitable item from the enumeration list; if a person contributes in more than one way and is to be represented, a further contributor must be created with the appropriate @contributerType
+- **Definition**: This attribute is used to specify the type of entry contained within the [`<contributorName>`](#322-contributorname-mandatory-element) element.
+- **Purpose and meaning**: The type of name. Enumeration list values: `organizational`,`personal`
 
 
 #### 3.2.2.2 `@lang` *optional Attribute*
@@ -439,7 +439,7 @@
 - **Occurrence**: 0..n
 - **Content**: enumeration list
 - **Definition**: Subject, keyword, classification code, or key phrase describing the resource.
-- **Purpose and meaning**: Element to alow material classification for resources that do not match the availabel material vocabulrys.
+- **Purpose and meaning**: Element to alow material classification for resources that do not match the available material vocabularies.
 
 
 ### 4.4.1 `<subjectScheme >` *optional Attribute*
@@ -484,7 +484,7 @@
 - **Occurrence**: 0..n
 - **Content**: free text
 - **Definition**: Descriptive text about the sample. Free text, anything else that might be useful to know about the sample at its 'birth'. 
-- **Purpose and meaning**: This element is used to provide further details about the resource to be registered. All Additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with. use a diffrent description element for every description you like to add, eg abstract, thethods, technical information, locality, collection. It is a best practice to supply a description.
+- **Purpose and meaning**: This element is used to provide further details about the resource to be registered. All Additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with the sample. Use a diffrent description element for every description you like to add, eg abstract, thethods, technical information, locality, collection. It is a best practice to supply a description.
 
 
 ### 4.5.1 `@descriptionType` *mandatory Attribute*
@@ -501,7 +501,7 @@
 - **Occurrence**: 0..1
 - **Definition**: Distinguishes the language
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
-- **Additional information**: As the [`<description>`](#45-description-optional-element) can be repeated and contains the largest amount of natural language text this attribute is mandotory.
+- **Additional information**: As the [`<description>`](#45-description-optional-element) can be repeated and contains the largest amount of natural language text this attribute is mandatory.
 
 
 ---
@@ -545,11 +545,11 @@
 - **Purpose and meaning**: If you select **Other** for [`@dateType`](##511-datetype-mandatory-attribute), please use this attribute specify the context of the date
 
 
-### 5.1 `<publicationYear>` *mandatory Element*
+### 5.2 `<publicationYear>` *mandatory Element*
 - **Data type**: daci:yearType
 - **Content**: Year of publikation in the format YYYY
 - **Occurrence**: 1..1
-- **Definition**: Year when the data was or will be made publicly availible, required for registration with Datatcite
+- **Definition**: Year when the data was or will be made publicly available, required for registration with Datatcite
 
 
 ---
@@ -586,7 +586,7 @@ placeholder; final structure still under discussion
 ```
 - **Data type**: xs:complexType
 - **Occurrence**: 0..1
-- **Definition**: Wrapper to sort all identifiers representing resources having a relation to the registed resource
+- **Definition**: Wrapper to sort all identifiers representing resources having a relation to the registered resource
 - **Purpose and meaning**: This wrapper is designed to collect and consolidate all information relating to resources associated with this resource, as well as the resource’s provenance
 - **Additional information**: The term `relationships` was chosen to make it clear that this wrapper encompasses all elements that serve to group together resources related to the registered resource or that represent the properties of the resource.
 
@@ -681,7 +681,7 @@ placeholder; final structure still under discussion
 ```
 - **Data type**: xs:complexType
 - **Occurrence**: 0..1
-- **Definition**: Wrapper for Spatial region or named place where the sample was gathered
+- **Definition**: Wrapper for geographical area or named location where the sample was taken
 - **Purpose and meaning**: Aggregation of all information relating to the geographical resolution or extent of the registered sample
 
 ### 9.1 `<geoLocationPlace>` *optional Element*
@@ -706,7 +706,7 @@ Named place where the data was gathered or about which the data is focused.
 - **Occurrence**: 1..1
 - **Definition**: A geographical point described by a single pair of latitude and longitude coordinates
 - **Purpose and meaning**: This wrapper is used to group the coordinate elements
-- **Additional information**: The elements [<polygonPoint>](#) and [<geoLocationPoint>]() are identical in terms of semantics and content. To improve readability and ensure the schema remains compliant with DataCite, two different names have been used. 
+
 
 #### 9.2.1 `@coordinateSystem` *mandatory Attribute*
 - **Data type**: xs:language
@@ -764,7 +764,7 @@ Together with <eastBoundLongitude>, it defines the width of the area in an east-
 - **Occurrence**: 1..1
 - **Definition**:Specifies the eastern boundary of the rectangle and defines the greatest longitude of the geographical area.
 - **Purpose and meaning**: This is necessary so that systems and search engines can clearly identify how far east the data extends.
-Together with <westBoundLongitude>, it defines the width of the area in an east-west direction.
+Together with `<westBoundLongitude>`, it defines the width of the area in an east-west direction.
 - **Additional information**: Mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
 
 #### 9.3.4 `<southBoundLatitude>` *mandatory Element*
@@ -773,7 +773,7 @@ Together with <westBoundLongitude>, it defines the width of the area in an east-
 - **Occurrence**: 1..1
 - **Definition**: Defines the southern boundary of the rectangle and specifies the southernmost latitude of the area.
 - **Purpose and meaning**: Required to describe the southern extent of a data record.
-Together with <northBoundLatitude>, it determines the extent of the area in the north-south direction.
+Together with `<northBoundLatitude>`, it determines the extent of the area in the north-south direction.
 - **Additional information**: mMandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
 
 #### 9.3.5 `<northBoundLatitude>` *mandatory Element*
@@ -782,7 +782,7 @@ Together with <northBoundLatitude>, it determines the extent of the area in the 
 - **Occurrence**: 1..1
 - **Definition**: Specifies the northern boundary of the rectangle and defines the highest latitude of the area.
 - **Purpose and meaning**: Required to describe the northern extent of a data record.
-Together with <southBoundLatitude>, it determines the extent of the area in the north-south direction. 
+Together with `<southBoundLatitude>`, it determines the extent of the area in the north-south direction. 
 - **Additional information**: Mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
 
 ### 9.4 `<geoLocationPolygon>` *optional Element*
@@ -797,8 +797,8 @@ Together with <southBoundLatitude>, it determines the extent of the area in the 
 - **Occurrence**: 4..n
 - **Definition**: A point within a polygon.
 - **Purpose and meaning**: Each `<polygonPoint>` contains a pair of longitude and latitude values (`<pointLongitude>` and `<pointLatitude>`) and defines a corner of the polygon
-- **Additional information**: The wrapper does not contain any content of its own, but simply bundles the logitude und latitude elements to form a point.
-If [<geoLocationPolygon>](#94-geolocationpolygon-optional-element) is used, `<polygonPoint>` is mandatory. There must be at least 4 non-aligned points to make a closed curve, with the last point described the same as the first point.
+- **Additional information**: The wrapper does not contain any content of its own, but simply bundles the longitude und latitude elements to form a point.
+If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<polygonPoint>` is mandatory. There must be at least 4 non-aligned points to make a closed curve, with the last point described the same as the first point.
 
 #### 9.4.1.1 `@coordinateSystem` *mandatory Attribute*
 - **Data type**: xs:language
