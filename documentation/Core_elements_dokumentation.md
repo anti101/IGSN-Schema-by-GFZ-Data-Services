@@ -806,8 +806,6 @@ Named place where the data was gathered or about which the data is focused.
 - **Purpose and meaning**: Incicates whether the Sample may be reused by others or has been destroid or discarded
 
 
-
-
 ---
 ---
 
@@ -833,14 +831,14 @@ Named place where the data was gathered or about which the data is focused.
 - **Purpose and meaning**: [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) is used to provide supplementary referencing of a resource. It enables the resource to be identified using alternative identifiers that exist alongside the actual name or a primary identification number.
 
 #### 7.1.1 `<alternateIdentifierType>` *mandatory Attribute*
-- **Data type**: daci:relatedIdentifierType
+- **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..n
 - **Definition**: The type of the  [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) 
 - **Purpose and meaning**: Mandatory only if  [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) is used. This attribute is necessary to better understand the context in which the alternative identifier is used and to understand where the identifier comes from. Unlike [`@identifierType`](@identifierType), this attribute can accept free-form text to allow users to specify the exact context in which this alternative identifier is used.
 
 ### 7.2 `<parentIdentifier>` *optional Element*
-- **Data type**: xs:anyURI
+- **Data type**: xs:string
 - **Content**: IGSN of the parent resource
 - **Occurrence**: 0..1
 - **Definition**: IGSN of a resource from which this resource derives
