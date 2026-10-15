@@ -790,6 +790,13 @@ Named place where the data was gathered or about which the data is focused.
 - **Definition**: The URI of the affilation identifier scheme.
 - **Purpose and meaning**: This attribute is used to store the identifier's URI
 
+##### 6.1.4.3 `<email>` *mandatory Element*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 1..1
+- **Definition**: Allows you to enter an email address so that the person responsible for the archive can be contacted
+- **Purpose and meaning**: A central email address is preferable in order to ensure availability.
+
 
 #### 6.1.5 `<sampleCondition>` *optional Element*
 - **Data type**: xs:string
