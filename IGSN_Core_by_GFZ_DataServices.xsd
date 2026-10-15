@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von Tanja (Fachhochschule Potsdam) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:igsn="C:\Users\anti\Documents\IGSN-Schema-by-GFZ-Data-Services\IGSN_Core_by_GFZ_DataServices.xsd" xmlns:daci="http://datacite.org/schema/kernel-4" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns:ns1="http://pmd.gfz-potsdam.de/igsn/schemas/description-ext/1.3" targetNamespace="C:\Users\anti\Documents\IGSN-Schema-by-GFZ-Data-Services\IGSN_Core_by_GFZ_DataServices.xsd" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:igsn="urn:FAIR-AIMS:Core:1" xmlns:daci="http://datacite.org/schema/kernel-4" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="urn:FAIR-AIMS:Core:1" elementFormDefault="qualified" attributeFormDefault="qualified">
 	<xs:import namespace="http://datacite.org/schema/kernel-4" schemaLocation="X:\IGSN\DataCiteSchema4-7\kernel-4.7\metadata.xsd"/>
 	<xs:element name="resource">
 		<xs:annotation>
@@ -592,7 +592,7 @@
 								</xs:annotation>
 								<xs:complexType>
 									<xs:simpleContent>
-										<xs:extension base="xs:anyURI">
+										<xs:extension base="xs:string">
 											<xs:attribute name="identifierType" type="daci:relatedIdentifierType" use="required" fixed="IGSN">
 												<xs:annotation>
 													<xs:documentation>type of the Identifier, since it must be an IGSN, this value is fixed</xs:documentation>
