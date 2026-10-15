@@ -95,6 +95,7 @@ The Position column is not part of the schema and serves only to illustrate how 
 | 6.4.6.1  |                                       | `@affiliationIdentifier`       | optional   | 0..1      |
 | 6.4.6.2 |                                       | `@affiliationIdentifierScheme` | optional   | 0..1      |
 | 6.4.6.3  |                                       | `@schemeURI`                   | optional   | 0..1      |
+| 6.5 | `<sampleCondition>` ||optional | 0..1|
 | 7  | `<relationshipIdentifiers>`             |                              | optional   | 0..1      |
 | 7.1  | `<alternateIdentifier>`                 |                              | optional   | 0..n      |
 | 7.1.1  |                                       | `@alternateIdentifierType`     | mandatory  | 1..1      |
