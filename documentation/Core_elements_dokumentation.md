@@ -60,7 +60,7 @@
 ``` xml 
 <igsn:agents>
 		<igsn:creator creatorType="creator">
-			<igsn:creatorName nameType="Personal" lang="en">Antipanova, Tatjana </igsn:creatorName>
+			<igsn:creatorName nameType="Personal" lang="en">Antipanova, Tatjana</igsn:creatorName>
 			<igsn:givenName>Tatjana</igsn:givenName>
 			<igsn:familyName>Antipanova</igsn:familyName>
 			<igsn:nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org">0000-0001-5140-8602</igsn:nameIdentifier>
