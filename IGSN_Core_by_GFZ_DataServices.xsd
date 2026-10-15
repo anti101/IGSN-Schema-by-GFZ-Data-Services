@@ -433,28 +433,20 @@
 												<xs:documentation>This element allows the storage location of the sample to be specified by name</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="nameIdentifier" minOccurs="0">
-														<xs:annotation>
-															<xs:documentation>This element contains the identifier, which is used to uniquely identify the archive the Sample is stored at</xs:documentation>
-														</xs:annotation>
-														<xs:complexType>
-															<xs:simpleContent>
-																<xs:extension base="daci:nameIdentifier"/>
-															</xs:simpleContent>
-														</xs:complexType>
-													</xs:element>
-												</xs:sequence>
-												<xs:attribute name="lang" default="en">
-													<xs:annotation>
-														<xs:documentation>distinguishes the language</xs:documentation>
-													</xs:annotation>
-													<xs:simpleType>
-														<xs:restriction base="xs:language">
-															<xs:enumeration value="en"/>
-														</xs:restriction>
-													</xs:simpleType>
-												</xs:attribute>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="lang" default="en">
+															<xs:annotation>
+																<xs:documentation>distinguishes the language</xs:documentation>
+															</xs:annotation>
+															<xs:simpleType>
+																<xs:restriction base="xs:language">
+																	<xs:enumeration value="en"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="geoLocationPlace" minOccurs="0" maxOccurs="unbounded">
