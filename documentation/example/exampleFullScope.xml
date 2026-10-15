@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML-Beispieldatei von XMLSpy generiert v2026 (x64) (http://www.altova.com)-->
+<igsn:resource xmlns:daci="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:igsn="C:\Users\anti\Documents\IGSN-Schema-by-GFZ-Data-Services\IGSN_Core_by_GFZ_DataServices.xsd" xsi:schemaLocation="http://pmd.gfz-potsdam.de/igsn/schemas/description-ext/1.3 IGSN_Core_by_GFZ_DataServices.xsd">
+	<igsn:identifier identifierType="DOI">GFBN12345EXH4001</igsn:identifier>
+	<igsn:name lang="en">IGSN GFBN12345EXH4001 WR_12-15 Sampling Feature from Potsdam, Germany </igsn:name>
+	<igsn:name titleType="Other" lang="en">WR_12-15</igsn:name>
+	<igsn:agents>
+		<igsn:creator creatorType="creator">
+			<igsn:creatorName nameType="Personal">Antipanova, Tatjana</igsn:creatorName>
+			<igsn:givenName>Tatjana</igsn:givenName>
+			<igsn:familyName>Antipanova</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org">0000-0001-5140-8602</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="https://ror.org/04z8jg394" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org">GFZ Helmholtz Centre for Geosciences</igsn:affiliation>
+		</igsn:creator>
+		<igsn:creator creatorType="collector">
+			<igsn:creatorName nameType="Organizational" lang="en">GFZ Dataservices</igsn:creatorName>
+			<igsn:nameIdentifier nameIdentifierScheme="ROR" schemeURI="https://ror.org">https://ror.org/04z8jg394</igsn:nameIdentifier>
+		</igsn:creator>
+		<igsn:contributor contributorType="ContactPerson">
+			<igsn:contributorName nameType="Personal">Antipanova, Tatjana</igsn:contributorName>
+			<igsn:givenName>Tatjana</igsn:givenName>
+			<igsn:familyName>Antipanova</igsn:familyName>
+			<igsn:nameIdentifier nameIdentifierScheme="ORCID" schemeURI="https://orcid.org">0000-0001-5140-8602</igsn:nameIdentifier>
+			<igsn:affiliation affiliationIdentifier="https://ror.org/04z8jg394" affiliationIdentifierScheme="ROR" schemeURI="https://ror.org">GFZ Helmholtz Centre for Geosciences</igsn:affiliation>
+		</igsn:contributor>
+		<igsn:publisher publisherIdentifier="http://www.altova.com/" publisherIdentifierScheme="OpenDOAR" schemeURI="http://www.altova.com/" lang="en">String</igsn:publisher>
+	</igsn:agents>
+	<igsn:entityTypeClassifications>
+		<igsn:resourceType resourceTypeGeneral="PhysicalObject">SamplingFeature</igsn:resourceType>
+		<igsn:sampleTypeClassificationPlaceholder>PLACEHOLDER</igsn:sampleTypeClassificationPlaceholder>
+		<igsn:material subjectScheme="Medium Vocabulary" schemeURI="http://vocabulary.odm2.org/medium" valueURI="http://vocabulary.odm2.org/medium/liquidAqueous" lang="en">Liquid aqueous</igsn:material>
+		<igsn:alternateMaterial subjectScheme="Classification (Rock)" schemeURI="https://www.geosamples.org/vocabularies/classification-rock" lang="en">Igneous</igsn:alternateMaterial>
+		<igsn:description descriptionType="Methods" lang="de">Drill>Electric>Holesaw
+        </igsn:description>
+	</igsn:entityTypeClassifications>
+	<igsn:dates>
+		<igsn:date dateType="Collected" >2026-10-31</igsn:date>
+		<igsn:date dateType="Other" dateInformation="Destroyed">2026-11-11</igsn:date>
+		<igsn:date dateType="Available">2026-12-01</igsn:date>
+		<igsn:publicationYear>2026</igsn:publicationYear>
+	</igsn:dates>
+	<igsn:archives>
+	</igsn:archives>
+	<igsn:geoLocations>
+		<igsn:geoLocationPlace lang="en">String</igsn:geoLocationPlace>
+		<igsn:geoLocationPlace lang="en">String</igsn:geoLocationPlace>
+		<igsn:geoLocationPoint coordinateSystem="WGS84">
+			<daci:pointLongitude>-180</daci:pointLongitude>
+			<daci:pointLatitude>-90</daci:pointLatitude>
+		</igsn:geoLocationPoint>
+		<igsn:geoLocationBox coordinateSystem="WGS84">
+			<daci:westBoundLongitude>-180</daci:westBoundLongitude>
+			<daci:eastBoundLongitude>-180</daci:eastBoundLongitude>
+			<daci:southBoundLatitude>-90</daci:southBoundLatitude>
+			<daci:northBoundLatitude>-90</daci:northBoundLatitude>
+		</igsn:geoLocationBox>
+		<igsn:geoLocationPolygon>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:polygonPoint>
+			<igsn:polygonPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:polygonPoint>
+		</igsn:geoLocationPolygon>
+	</igsn:geoLocations>
+	<igsn:relationshipIdentifiers>
+		<igsn:alternateIdentifier alternateIdentifierType="String">String</igsn:alternateIdentifier>
+		<igsn:alternateIdentifier alternateIdentifierType="String">String</igsn:alternateIdentifier>
+		<igsn:parentIdentifier identifierType="IGSN" relationType="IsPartOf">http://www.altova.com/</igsn:parentIdentifier>
+		<igsn:relatedIdentifier identifierType="PURL" relationType="IsVariantFormOf">String</igsn:relatedIdentifier>
+		<igsn:relatedIdentifier identifierType="ISBN" relationType="HasMetadata">String</igsn:relatedIdentifier>
+	</igsn:relationshipIdentifiers>
+	<igsn:fundingReferences>
+		<igsn:fundingReference>
+			<igsn:funderName>String</igsn:funderName>
+			<igsn:funderIdentifier funderIdentifierType="GRID" schemeURI="http://www.altova.com/">String</igsn:funderIdentifier>
+			<igsn:awardNumber awardURI="http://www.altova.com/">String</igsn:awardNumber>
+			<igsn:awardTitle>String</igsn:awardTitle>
+		</igsn:fundingReference>
+		<igsn:fundingReference>
+			<igsn:funderName>String</igsn:funderName>
+			<igsn:funderIdentifier funderIdentifierType="ISNI" schemeURI="http://www.altova.com/">String</igsn:funderIdentifier>
+			<igsn:awardNumber awardURI="http://www.altova.com/">String</igsn:awardNumber>
+			<igsn:awardTitle>String</igsn:awardTitle>
+		</igsn:fundingReference>
+	</igsn:fundingReferences>
+	<igsn:language>en</igsn:language>
+</igsn:resource>
