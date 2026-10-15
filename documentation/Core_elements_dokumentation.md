@@ -158,14 +158,14 @@
 - **Purpose and meaning**: This element contains the identifier, which is used to uniquely identify the person or organization
 
 
-#### 3.1.5.1 `<nameIdentifierScheme>` *mandatory Attribute*
+#### 3.1.5.1 `@nameIdentifierScheme` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 1..1
 - **Definition**: The name of the name identifier scheme.
 - **Purpose and meaning**: This attribute enables the `<nameIdentifier>` to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
 
-#### 3.1.5.2 `<schemeURI>`*optional Attribute*
+#### 3.1.5.2 `@schemeURI`*optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 0..1
@@ -180,21 +180,21 @@
 - **Definition**: The organizational or institutional affiliation of the creator.
 - **Purpose and meaning**: This element is used to indicate the organization or institution the agent is affiliated with
 
-#### 3.1.6.1 `<affiliationIdentifier>` *optional Attribute*
+#### 3.1.6.1 `@affiliationIdentifier` *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..1
 - **Definition**: Uniquely identifies the organizational affiliation of the creator or contributor
 - **Purpose and meaning**: This attribute is used to uniquely identify the affiliation
 
-#### 3.1.6.1 `<affiliationIdentifierScheme>` *optional Attribute*
+#### 3.1.6.1 `@affiliationIdentifierScheme` *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..1
 - **Definition**: The name of the affiliation identifier scheme.
 - **Purpose and meaning**: This attribute enables the `@affilationIdentifier` attribute to be interpreted unambiguously and associated with a standardised identification system.
 
-#### 3.1.6.3 `<schemeURI>` *optional Attribute*
+#### 3.1.6.3 `@schemeURI` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 0..1
@@ -265,14 +265,14 @@
 - **Purpose and meaning**: This element contains the identifier, which is used to uniquely identify the person or organization given in the `<contributor>` Element. Only the identifier should be entered in this field; the full URL is taken from the `@schemeURI` attribute and processed, so only the identifier needs to be entered here
 
 
-#### 3.2.5.1 `<nameIdentifierScheme>` *mandatory Attribute*
+#### 3.2.5.1 `@nameIdentifierScheme` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 1..1
 - **Definition**: The name of the name identifier scheme. Only Mandatory if [`<nameIdentifier>`](#315-nameidentifier-optional-element) is used.
 - **Purpose and meaning**: This attribute enables the [`<nameIdentifier>`](#315-nameidentifier-optional-element) to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
 
-#### 3.2.5.2 `<schemeURI>` *optional Attribute*
+#### 3.2.5.2 `@schemeURI` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 0..1
@@ -287,21 +287,21 @@
 - **Definition**: The organizational or institutional affiliation of the person.
 - **Purpose and meaning**: This element is used to indicate the organization or institution the agent is affiliated with
 
-#### 3.2.6.1 `<affiliationIdentifier>` *optional Attribute*
+#### 3.2.6.1 `@affiliationIdentifier` *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..1
 - **Definition**: Uniquely identifies the organizational affiliation of the person
 - **Purpose and meaning**: This attribute is used to uniquely identify the affiliation
 
-#### 3.2.6.1 `<affiliationIdentifierScheme>` *optional Attribute*
+#### 3.2.6.2 `@affiliationIdentifierScheme` *optional Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 1..1
 - **Definition**: The name of the affiliation identifier scheme.
 - **Purpose and meaning**: This attribute enables the `@affilationIdentifier` attribute to be interpreted unambiguously and associated with a standardised identification system.
 
-#### 3.2.6.3 `<schemeURI>` *optional Attribute*
+#### 3.2.6.3 `@schemeURI` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 0..1
@@ -315,14 +315,14 @@
 - **Definition**: This is the organization that registered the IGSN for this resource. It is also the entity that minted and manages this IGSN record.
 - **Purpose and meaning**: Necessary to provide a complete and DataCite-compliant statement identifying the publishing institution
 
-### 3.3.1 `<publisherIdentifier>` *mandatory Attribute*
+### 3.3.1 `@publisherIdentifier` *mandatory Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 1..1
 - **Definition**: Uniquely identifies the publisher, according to various schemes.
-- **Purpose and meaning**: Similar to `<nameIdentifier>` or `<affiliationIdentifier>`, this attribute is used to store the persistent identifier.  Although [`<nameIdentifier>`](#315-nameidentifier-optional-element) is modelled as an element and this attribute corresponds to the same concept in terms of content, it has been defined here as an attribute because the DataCite `<publisher>` element is being reused. This does result in a conceptual inconsistency, but compliance with DataCite is maintained.
+- **Purpose and meaning**: Similar to `<nameIdentifier>` or `@affiliationIdentifier`, this attribute is used to store the persistent identifier.  Although [`<nameIdentifier>`](#315-nameidentifier-optional-element) is modelled as an element and this attribute corresponds to the same concept in terms of content, it has been defined here as an attribute because the DataCite `<publisher>` element is being reused. This does result in a conceptual inconsistency, but compliance with DataCite is maintained.
 
-### 3.3.2 `<publisherIdentifierScheme>` *mandatory Attribute*
+### 3.3.2 `@publisherIdentifierScheme` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: enumeration list
 - **Occurrence**: 1..1
@@ -331,7 +331,7 @@
 - **Additional information**: Enumeration List: ROR, re3data, VIAF, Wikidata, Crossref Funder ID, ISNI, OpenDOAR, FAIRsharing, ISSN,
 
 
-### 3.3.3 `<schemeURI>` *mandatory Attribute*
+### 3.3.3 `@schemeURI` *mandatory Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 1..1
@@ -355,7 +355,6 @@
 ``` xml 
 <igsn:entityTypeClassifications>
 		<igsn:resourceType resourceTypeGeneral="PhysicalObject">SamplingFeature</igsn:resourceType>
-		<igsn:sampleTypeClassificationPlaceholder>PLACEHOLDER</igsn:sampleTypeClassificationPlaceholder>
 		<igsn:material subjectScheme="Medium Vocabulary" schemeURI="http://vocabulary.odm2.org/medium" valueURI="http://vocabulary.odm2.org/medium/liquidAqueous" lang="en">Liquid aqueous</igsn:material>
 		<igsn:alternateMaterial subjectScheme="Classification (Rock)" schemeURI="https://www.geosamples.org/vocabularies/classification-rock" lang="en">Igneous</igsn:alternateMaterial>
 		<igsn:description descriptionType="Methods" lang="de">Drill>Electric>Holesaw
@@ -375,20 +374,14 @@
 - **Definition**: Describe the basic form of the object that is registered.
 - **Purpose and meaning**: An element declared as mandatory by DataCite.  A description of the resource. The resourceType property may be populated with resource types from external ontologies or shared vocabularies. In the absence of an agreed vocabulary, the use of the terms **material sample** or **feature-of-interest** are strongly recommended to at least distinguish between these sampling concepts. A material sample is a specialization of a larger feature-of-interest, which is typically the collection site. For example, in the Geosciences, a feature-of-interest might be a lake, tree, cross-section, transect, or borehole.
 
-## 4.1.1 `<resourceTypeGeneral>` *mandatory Attribute*
+## 4.1.1 `@resourceTypeGeneral` *mandatory Attribute*
 - **Data type**: daci:resourceType 
 - **Occurrence**: 1..1
 - **Definition**: The general type of a resource.
 - **Purpose and meaning**: This attribute is required for DataCite-compliant registration. Value is fixed to "PhysicalObject"
 
 
-## 4.2 `<sampleTypeClassificationPlaceHolder>` *optional Element*
-- **Data type**: xs:sting
-- **Occurrence**: 0..1
-- **Content**: Placeholder for the values that will be adopted from the SampleType Classification vocabulary currently under development
-
-
-## 4.3 `<material>` *optional Element*
+## 4.2 `<material>` *optional Element*
 - **Data type**: xs:sting
 - **Occurrence**: 0..n
 - **Definition**:Subject or keyword describing the resource.
@@ -397,28 +390,73 @@
 - **Additional information**: The elements `<material>`, `<classification>` and `<alternateMaterial>` are all mapped to the `<subject>` element in DataCite; however, to ensure that the elements can be correctly addressed for the creation of landing pages, they have been modelled in this schema version consistently with the element names of the previous versions. 
 
 
-### 4.3.1 `<subjectScheme >` *optional Attribute*
+### 4.2.1 `@subjectScheme` *optional Attribute*
 - **Data type**: xs:sting
 - **Occurrence**: 0..1
 - **Definition**: The name of the subject scheme or authority if one is used.
 - **Content**: free text
 - **Additional information**: To simplify reuse and mapping to DataCite, the attributes were not renamed; instead, they were reused in the form in which they appear in DataCite.
 
-### 4.3.2 `<schemeURI>` *optional Attribute*
+### 4.2.2 `@schemeURI` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 0..1
 - **Definition**: The URI of the name identifier scheme.
 - **Purpose and meaning**: This attribute is used to store the identifier's URI
 
-### 4.3.3 `<valueURI>` *optional Attribute*
+### 4.2.3 `@valueURI` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 0..1
 - **Definition**: The URI of the subject term.
 - **Purpose and meaning**: To unambiguously identify the term used in the element, the URI of the term can be stored in this attribute. If applicable, provide the direct URI or URL for the term used. If the vocabulary does not provide separate URIs for individual terms but instead uses IDs to identify them uniquely, the `@classificationCode` attribute can be used to provide this information.
 
-### 4.3.4 `<classificationCode>` *optional Attribute*
+### 4.2.4 `@classificationCode` *optional Attribute*
+- **Data type**: sx:string
+- **Content**: free text
+- **Occurrence**: 0..1
+- **Definition**: The classification code used for the subject term in the subject scheme.
+- **Purpose and meaning**: If applicable, provide the ID for the term used. If the vocabulary does not provide IDs for individual terms but they are presented on persistent URIs, use the @valueURI attribute to provide this information.
+- **Additional information**: Different vocabularies use different identifiers for their classification codes. The information you are looking for may therefore be hidden behind the following terms: UUID, termID, vocab-term-identifier, itemNumber, conceptID, key
+
+### 4.2.5 `@lang` *optional Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurrence**: 0..1
+- **Definition**: Distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+
+
+## 4.3 `<alternateMaterial>` *optional Element*
+- **Data type**: xs:sting
+- **Occurrence**: 0..n
+- **Content**: enumeration list
+- **Definition**: Subject, keyword, classification code, or key phrase describing the resource.
+- **Purpose and meaning**: Element to alow material classification for resources that do not match the available material vocabularies.
+
+
+### 4.3.1 `@subjectScheme` *optional Attribute*
+- **Data type**: xs:sting
+- **Occurrence**: 0..1
+- **Definition**:The name of the subject scheme or authority if one is used.
+- **Content**: free text
+- **Additional information**: To simplify reuse and mapping to DataCite, the attributes were not renamed; instead, they were reused in the form in which they appear in DataCite.
+
+### 4.3.2 `@schemeURI` *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurrence**: 0..1
+- **Definition**: The URI of the name identifier scheme.
+- **Purpose and meaning**: This attribute is used to store the identifier's URI
+
+### 4.3.3 `@valueURI` *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurrence**: 0..1
+- **Definition**: The URI of the subject term.
+- **Purpose and meaning**: To unambiguously identify the term used in the element, the URI of the term can be stored in this attribute. If applicable, provide the direct URI or URL for the term used. If the vocabulary does not provide separate URIs for individual terms but instead uses IDs to identify them uniquely, the `@classificationCode` attribute can be used to provide this information.
+
+### 4.3.4 `@classificationCode` *optional Attribute*
 - **Data type**: sx:string
 - **Content**: free text
 - **Occurrence**: 0..1
@@ -434,52 +472,7 @@
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 
 
-## 4.4 `<alternateMaterial>` *optional Element*
-- **Data type**: xs:sting
-- **Occurrence**: 0..n
-- **Content**: enumeration list
-- **Definition**: Subject, keyword, classification code, or key phrase describing the resource.
-- **Purpose and meaning**: Element to alow material classification for resources that do not match the available material vocabularies.
-
-
-### 4.4.1 `<subjectScheme >` *optional Attribute*
-- **Data type**: xs:sting
-- **Occurrence**: 0..1
-- **Definition**:The name of the subject scheme or authority if one is used.
-- **Content**: free text
-- **Additional information**: To simplify reuse and mapping to DataCite, the attributes were not renamed; instead, they were reused in the form in which they appear in DataCite.
-
-### 4.4.2 `<schemeURI>` *optional Attribute*
-- **Data type**: xs:anyURI
-- **Content**: URI
-- **Occurrence**: 0..1
-- **Definition**: The URI of the name identifier scheme.
-- **Purpose and meaning**: This attribute is used to store the identifier's URI
-
-### 4.4.3 `<valueURI>` *optional Attribute*
-- **Data type**: xs:anyURI
-- **Content**: URI
-- **Occurrence**: 0..1
-- **Definition**: The URI of the subject term.
-- **Purpose and meaning**: To unambiguously identify the term used in the element, the URI of the term can be stored in this attribute. If applicable, provide the direct URI or URL for the term used. If the vocabulary does not provide separate URIs for individual terms but instead uses IDs to identify them uniquely, the `@classificationCode` attribute can be used to provide this information.
-
-### 4.4.4 `<classificationCode>` *optional Attribute*
-- **Data type**: sx:string
-- **Content**: free text
-- **Occurrence**: 0..1
-- **Definition**: The classification code used for the subject term in the subject scheme.
-- **Purpose and meaning**: If applicable, provide the ID for the term used. If the vocabulary does not provide IDs for individual terms but they are presented on persistent URIs, use the @valueURI attribute to provide this information.
-- **Additional information**: Different vocabularies use different identifiers for their classification codes. The information you are looking for may therefore be hidden behind the following terms: UUID, termID, vocab-term-identifier, itemNumber, conceptID, key
-
-### 4.4.5 `@lang` *optional Attribute*
-- **Data type**: xs:language
-- **Content**: enumeration list
-- **Occurrence**: 0..1
-- **Definition**: Distinguishes the language
-- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
-
-
-## 4.5 `<description>` *optional Element*
+## 4.4 `<description>` *optional Element*
 - **Data type**: xs:sting
 - **Occurrence**: 0..n
 - **Content**: free text
@@ -487,7 +480,7 @@
 - **Purpose and meaning**: This element is used to provide further details about the resource to be registered. All Additional information that does not fit in any of the other categories. May be used for technical information or detailed information associated with the sample. Use a diffrent description element for every description you like to add, eg abstract, thethods, technical information, locality, collection. It is a best practice to supply a description.
 
 
-### 4.5.1 `@descriptionType` *mandatory Attribute*
+### 4.4.1 `@descriptionType` *mandatory Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurrence**: 0..1
@@ -495,7 +488,7 @@
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 - **Additional information**: If **other** is selected, the description must clearly state what it refers to, to ensure that it is processed correctly and appears in the right place on the landing page.
 
-### 4.5.2 `@lang` *manatory Attribute*
+### 4.4.2 `@lang` *manatory Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurrence**: 0..1
@@ -537,8 +530,8 @@
 - **Definition**: Enumeration list of possible dateTypes
 - **Purpose and meaning**: This attribute is used to provide a more detailed description of the `<date>` element in order to unambiguously identify what the `<date>` element refers to
 
-#### 5.1.1 `@ladateInformationng` *optional Attribute*
-- **Data type**: xs:language
+#### 5.1.1 `@dateInformation` *optional Attribute*
+- **Data type**: xs:sting
 - **Content**: free text
 - **Occurrence**: 0..1
 - **Definition**: Specific information about the date
@@ -558,25 +551,265 @@
 
 
 
-## 6 `<access>` *Element*
-placeholder; final structure still under discussion
+## 6 `<archives>` *optional Element*
+``` xml
+	<igsn:archives>
+		<igsn:archive>
+			<igsn:archiveName lang="en">String</igsn:archiveName>
+			<igsn:geoLocationPlace lang="en">String</igsn:geoLocationPlace>
+			<igsn:geoLocationPlace lang="en">String</igsn:geoLocationPlace>
+			<igsn:geoLocationPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:geoLocationPoint>
+			<igsn:contactPerson contributorType="ContactPerson">
+				<igsn:contributorName nameType="Organizational" lang="en">String</igsn:contributorName>
+				<igsn:givenName>String</igsn:givenName>
+				<igsn:familyName>String</igsn:familyName>
+				<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+				<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+				<igsn:email>String</igsn:email>
+			</igsn:contactPerson>
+			<igsn:sampleCondition>destroid</igsn:sampleCondition>
+		</igsn:archive>
+	</igsn:archives>
+```
+
+### 6.1 `<archive>` *optional  Element*
+- **Data type**: xs:complexType
+- **Occurrence**: 0..n
+- **Definition**: option to specify the archive in which the sample is stored. shows where the sample is currently located.
+
+#### 6.1.1 `<archiveName>` *mandatory Element*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 0..1
+- **Definition**: name of the archive
+- **Purpose and meaning**: The name of the archive is a mandatory field; it is recommended that you also include an identifier in the child element `<nameIdentifier>` so that the archive can be uniquely identified
+
+##### 6.1.1.1 `@lang` *optional Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurrence**: 0..1
+- **Definition**: Distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+
+
+
+##### 6.1.1.2 `<nameIdentifier>` *optional Element*
+- **Data type**: daci:nameIdentifier
+- **Content**: free text
+- **Occurrence**: 0..1
+- **Definition**: Uniquely identifies an individual or legal entity, according to various schemes. ORCID is pref for Person ROR is pref for Organizations
+- **Purpose and meaning**: This element contains the identifier, which is used to uniquely identify the person or organization given in the `<contributor>` Element. Only the identifier should be entered in this field; the full URL is taken from the `@schemeURI` attribute and processed, so only the identifier needs to be entered here
+
+###### 6.1.1.2.1 `@nameIdentifierScheme>` *mandatory Attribute*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 1..1
+- **Definition**: The name of the name identifier scheme. Only Mandatory if [`<nameIdentifier>`](#6112-nameidentifier-optional-element) is used.
+- **Purpose and meaning**: This attribute enables the [`<nameIdentifier>`](#6112-nameidentifier-optional-element) to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
+
+###### 6.1.1.2.2`@schemeURI` *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurrence**: 0..1
+- **Definition**: The URI of the name identifier scheme.
+- **Purpose and meaning**: This attribute is used to store the identifier's URI
+
+
+#### 6.1.2 `<geoLocationPlace>` *optional Element*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 0..n
+- **Definition**: Where was the sample acquired relative to the Earth (or another celestial body...). Some samples might be 'non-geographic': mineral specimen, synthetic material.
+Named place where the data was gathered or about which the data is focused.
+- **Purpose and meaning**: This element allows to enter a location without specifying coordinates, whilst still establishing a geographical reference
+- **Additional information**: Use to name or describe a geographic location. For a detailed description of the location where the samples were collected, use the [`<description>`](#44-description-optional-element) element
+
+##### 6.1.2.1 `@lang` *optional Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurrence**: 0..1
+- **Definition**: Distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
+
+##### 6.1.2.2 `<nameIdentifier>` *optional Element*
+- **Data type**: daci:nameIdentifier
+- **Content**: free text
+- **Occurrence**: 0..1
+- **Definition**: Uniquely identifies an individual or legal entity, according to various schemes. ORCID is pref for Person ROR is pref for Organizations
+- **Purpose and meaning**: This element contains the identifier, which is used to uniquely identify the person or organization given in the `<contributor>` Element. Only the identifier should be entered in this field; the full URL is taken from the `@schemeURI` attribute and processed, so only the identifier needs to be entered here
+
+###### 6.1.2.2.1 `@nameIdentifierScheme>` *mandatory Attribute*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 1..1
+- **Definition**: The name of the name identifier scheme. Only Mandatory if [`<nameIdentifier>`](#6122-nameidentifier-optional-element) is used.
+- **Purpose and meaning**: This attribute enables the [`<nameIdentifier>`](#6122-nameidentifier-optional-element) to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
+
+###### 6.1.2.2.2`@schemeURI` *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurrence**: 0..1
+- **Definition**: The URI of the name identifier scheme.
+- **Purpose and meaning**: This attribute is used to store the identifier's URI
+
+
+#### 6.1.3 `<geoLocationPoint>` *optional Element*
+- **Data type**: daci:point
+- **Occurrence**: 1..1
+- **Definition**: A geographical point described by a single pair of latitude and longitude coordinates
+- **Purpose and meaning**: This wrapper is used to group the coordinate elements
+
+##### 6.1.3.1 `@coordinateSystem` *mandatory Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurrence**: 1..1
+- **Definition**: Attribute for specifying the coordinate system to which the specified coordinates belong
+- **Purpose and meaning**: This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. 
+- **Additional information**: fixed to **WGS84**, as GFZ DataServices does not currently accept any other coordinate systems
+
+##### 6.1.3.2 `<pointLongitude>` *mandatory Element*
+- **Data type**: daci:longitudeType
+- **Content**: decimal
+- **Occurrence**: 1..1
+- **Definition**: Longitudinal dimension of point
+- **Purpose and meaning**: Longitude of the geographic point expressed in decimal degrees (positive east) 
+- **Additional information**: Mandatory only if the optional element [`<geoLocationPoint>`](#613-geolocationpoint-optional-element) is used
+
+##### 6.1.3.3 `<pointLatitude>` *mandatory Element*
+- **Data type**: daci:latitudeType
+- **Content**: decimal
+- **Occurrence**: 1..1
+- **Definition**: Latitudinal dimension of point.
+- **Purpose and meaning**: Latitude of the geographic point expressed in decimal degrees (positive north) 
+- **Additional information**: Mandatory only if the optional element [`<geoLocationPoint>`](#613-geolocationpoint-optional-element) is used
+
+
+
+#### 6.1.4 `<contactPerson>` *optional Element*
+- **Data type**: xs:complexType
+- **Occurrence**: 0..n
+- **Definition**: A wrapper element that bundles all elements and attributes relating to the contact persons for the archive
+
+##### 6.1.4.1 `@contributorType` *mandatory Attribute*
+- **Data type**: daci:contributorType
+- **Content**: enumeration list
+- **Occurrence**: 1..1
+- **Definition**: The type of contributor of the resource. fixed to ContactPerson
+
+##### 6.1.4.2 `<contributorName>` *mandatory Element*
+- **Data type**: xs:complexType
+- **Content**: free text
+- **Occurrence**: 1..1
+- **Definition**: Full name of the contact person
+- **Purpose and meaning**: may be a person or an organization
+
+
+##### 6.1.2.1 `@nameType` *mandatory Attribute*
+- **Data type**: daci:nameType
+- **Content**: enumeration list
+- **Occurrence**: 1..1
+- **Definition**: This attribute is used to specify the type of entry contained within the [`<contributorName>`](#6142-contributorname-mandatory-element) element.
+- **Purpose and meaning**: The type of name. Enumeration list values: `organizational`,`personal`
+
+
+###### 6.1.4.2.2 `@lang` *optional Attribute*
+- **Data type**: xs:language
+- **Content**: enumeration list
+- **Occurrence**: 0..1
+- **Definition**: distinguishes the language
+- **Purpose and meaning**: Ensures that machines can unambiguously identify the language. This is listed as a required element only for the “Description” field, as a large amount of free text is entered there and it is therefore essential to specify the language used
+
+
+##### 6.1.4.3 `<givenName>` *optional Element*
+- **Data type**: xs:complexType
+- **Content**: free text
+- **Occurrence**: 0..1
+- **Definition**: Given Name of the Person
+- **Purpose and meaning**: This element is used to retrieve the first name of the person from the `<contributor>` element in normalised format.
+
+
+##### 6.1.4.4 `<familyName>` *optional Element*
+- **Data type**: xs:complexType
+- **Content**: free text
+- **Occurrence**: 0..1
+- **Definition**: Family Name of the Person
+- **Purpose and meaning**: This element is used to retrieve the person’s surname from `<contributor>` element in normalised form
+
+
+##### 6.1.4.5 `<nameIdentifier>` *optional Element*
+- **Data type**: daci:nameIdentifier
+- **Content**: free text
+- **Occurrence**: 0..1
+- **Definition**: Uniquely identifies an individual or legal entity, according to various schemes. ORCID is pref for Person ROR is pref for organizations
+- **Purpose and meaning**: This element contains the identifier, which is used to uniquely identify the person or organization given in the `<contributor>` Element. Only the identifier should be entered in this field; the full URL is taken from the `@schemeURI` attribute and processed.
+
+
+###### 6.1.4.5.1 `@nameIdentifierScheme` *mandatory Attribute*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 1..1
+- **Definition**: The name of the name identifier scheme. Only Mandatory if [`<nameIdentifier>`](#6145-nameidentifier-optional-element) is used.
+- **Purpose and meaning**: This attribute enables the [`<nameIdentifier>`](#6145-nameidentifier-optional-element) to be interpreted unambiguously and associated with a standardised identification system, such as ORCID, ISNI or ROR.
+
+###### 6.1.4.5.2 `@schemeURI` *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurrence**: 0..1
+- **Definition**: The URI of the name identifier scheme.
+- **Purpose and meaning**: This attribute is used to store the identifier's URI
+
+
+##### 6.1.4.6 `<affiliation>` *optional Element*
+- **Data type**: daci:affiliation
+- **Content**: free text
+- **Occurrence**: 0..n
+- **Definition**: The organizational or institutional affiliation of the person.
+- **Purpose and meaning**: This element is used to indicate the organization or institution the agent is affiliated with
+
+###### 6.1.4.6.1 `@affiliationIdentifier` *optional Attribute*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 0..1
+- **Definition**: Uniquely identifies the organizational affiliation of the person
+- **Purpose and meaning**: This attribute is used to uniquely identify the affiliation
+
+###### 6.1.4.6.2 `@affiliationIdentifierScheme` *optional Attribute*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 1..1
+- **Definition**: The name of the affiliation identifier scheme.
+- **Purpose and meaning**: This attribute enables the `@affilationIdentifier` attribute to be interpreted unambiguously and associated with a standardised identification system.
+
+###### 6.1.4.6.3 `@schemeURI` *optional Attribute*
+- **Data type**: xs:anyURI
+- **Content**: URI
+- **Occurrence**: 0..1
+- **Definition**: The URI of the affilation identifier scheme.
+- **Purpose and meaning**: This attribute is used to store the identifier's URI
+
+##### 6.1.4.3 `<email>` *mandatory Element*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 1..1
+- **Definition**: Allows you to enter an email address so that the person responsible for the archive can be contacted
+- **Purpose and meaning**: A central email address is preferable in order to ensure availability.
+
+
+#### 6.1.5 `<sampleCondition>` *optional Element*
+- **Data type**: xs:string
+- **Content**: free text
+- **Occurrence**: 0..n
+- **Definition**: conditon of the sample
+- **Purpose and meaning**: Incicates whether the Sample may be reused by others or has been destroid or discarded
 
 
 ---
 ---
 
-
-
-## 7 `<archives>` *Element*
-placeholder; final structure still under discussion
-
-
----
----
-
-
-
-## 8 `<relationshipIdentifiers>` *optional Element*
+## 7 `<relationshipIdentifiers>` *optional Element*
 ``` xml
     <igsn:relationshipIdentifiers>
 		<igsn:alternateIdentifier alternateIdentifierType="LocalSampleName">E-GEOD-34814</igsn:alternateIdentifier>
@@ -590,48 +823,54 @@ placeholder; final structure still under discussion
 - **Purpose and meaning**: This wrapper is designed to collect and consolidate all information relating to resources associated with this resource, as well as the resource’s provenance
 - **Additional information**: The term `relationships` was chosen to make it clear that this wrapper encompasses all elements that serve to group together resources related to the registered resource or that represent the properties of the resource.
 
-### 8.1 `<alternateIdentifier>` *optional Element*
+### 7.1 `<alternateIdentifier>` *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..n
 - **Definition**: Identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of use. May be used for local identifiers. AlternateIdentifier should be used for another identifier of the same instance (same location, same file).
 - **Purpose and meaning**: [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) is used to provide supplementary referencing of a resource. It enables the resource to be identified using alternative identifiers that exist alongside the actual name or a primary identification number.
 
-#### 8.1.1 `<alternateIdentifierType>` *mandatory Attribute*
+#### 7.1.1 `<alternateIdentifierType>` *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..n
 - **Definition**: The type of the  [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) 
 - **Purpose and meaning**: Mandatory only if  [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) is used. This attribute is necessary to better understand the context in which the alternative identifier is used and to understand where the identifier comes from. Unlike [`@identifierType`](@identifierType), this attribute can accept free-form text to allow users to specify the exact context in which this alternative identifier is used.
 
-### 8.2 `<parentIdentifier>` *optional Element*
-- **Data type**: xs:anyURI
+### 7.2 `<parentIdentifier>` *optional Element*
+- **Data type**: xs:string
 - **Content**: IGSN of the parent resource
 - **Occurrence**: 0..1
 - **Definition**: IGSN of a resource from which this resource derives
 - **Purpose and meaning**: Enables the unambiguous hierarchical assignment of relationships for samples.For the sake of readability and to remain consistent with previous schemas, this element has not been renamed to ‘relatedIdentifier’ as in DataCite, even though it is mapped to it.
 
-#### 8.2.1 `<relationType>` *mandatory Attribute*
+#### 7.2.1 `<relationType>` *mandatory Attribute*
 - **Data type**: daci:relationType
 - **Content**: enumeration list
 - **Occurrence**: 1..1
 - **Definition**: This attribute is used to specify, in a machine-readable and standardised manner, the relationship.
 - **Purpose and meaning**: When used in the  [`<parentIdentifier>`](#82-parentidentifier-optional-element) element, this attribute is fixed to `IsPartOf`, as this element only permits this relationship type.
 
-### 8.3 `<relatedIdentifier>` *optional Element*
+#### 7.2.2 `<identifierType>` *mandatory Attribute*
+- **Data type**: daci:relatedIdentifierType
+- **Content**: enumeration list
+- **Occurrence**: 1..1
+- **Definition**: Type of identifier
+
+### 7.3 `<relatedIdentifier>` *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..n
 - **Definition**: Identifiers of related resources. These must be globally unique identifiers.
 - **Purpose and meaning**: This element is used to retrieve the ID so that resources related to this sample can be linked.
 
-#### 8.3.1 `<relationType>` *mandatory Attribute*
+#### 7.3.1 `<relationType>` *mandatory Attribute*
 - **Data type**: daci:relationType
 - **Content**: enumeration list
 - **Occurrence**: 1..1
 - **Definition**: This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described here.
 
-#### 8.3.2 `<identifierType>` *mandatory Attribute*
+#### 7.3.2 `<identifierType>` *mandatory Attribute*
 - **Data type**: daci:relatedIdentifierType
 - **Content**: enumeration list
 - **Occurrence**: 1..1
@@ -644,7 +883,7 @@ placeholder; final structure still under discussion
 
 
 
-## 9 `<geoLocations>` *optional Element*
+## 8 `<geoLocations>` *optional Element*
 ```xml
 	<igsn:geoLocations>
 		<igsn:geoLocationPlace lang="en">Potsdam</igsn:geoLocationPlace>
@@ -684,7 +923,7 @@ placeholder; final structure still under discussion
 - **Definition**: Wrapper for geographical area or named location where the sample was taken
 - **Purpose and meaning**: Aggregation of all information relating to the geographical resolution or extent of the registered sample
 
-### 9.1 `<geoLocationPlace>` *optional Element*
+### 8.1 `<geoLocationPlace>` *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurrence**: 0..n
@@ -693,7 +932,7 @@ Named place where the data was gathered or about which the data is focused.
 - **Purpose and meaning**: This element allows to enter a location without specifying coordinates, whilst still establishing a geographical reference
 - **Additional information**: Use to name or describe a geographic location. For a detailed description of the location where the samples were collected, use the [`<description>`](#45-description-optional-element) element
 
-#### 9.1.1 `@lang` *optional Attribute*
+#### 8.1.1 `@lang` *optional Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurrence**: 0..1
@@ -701,14 +940,14 @@ Named place where the data was gathered or about which the data is focused.
 - **Purpose and meaning**: Ensures that machines can unambiguously identify the language.
 - **Additional information**: As the [`<description>`](#description) can be repeated and contains the largest amount of natural language text this attribute is mandotory.
 
-### 9.2 `<geoLocationPoint>` *optional Element*
+### 8.2 `<geoLocationPoint>` *optional Element*
 - **Data type**: daci:point
 - **Occurrence**: 1..1
 - **Definition**: A geographical point described by a single pair of latitude and longitude coordinates
 - **Purpose and meaning**: This wrapper is used to group the coordinate elements
 
 
-#### 9.2.1 `@coordinateSystem` *mandatory Attribute*
+#### 8.2.1 `@coordinateSystem` *mandatory Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurrence**: 1..1
@@ -716,7 +955,7 @@ Named place where the data was gathered or about which the data is focused.
 - **Purpose and meaning**: This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. 
 - **Additional information**: fixed to **WGS84**, as GFZ DataServices does not currently accept any other coordinate systems
 
-#### 9.2.2 `<pointLongitude>` *mandatory Element*
+#### 8.2.2 `<pointLongitude>` *mandatory Element*
 - **Data type**: daci:longitudeType
 - **Content**: decimal
 - **Occurrence**: 1..1
@@ -725,7 +964,7 @@ Named place where the data was gathered or about which the data is focused.
 - **Additional information**: Mandatory only if the optional element [`<geoLocationPoint>`](#92-geolocationpoint-optional-element) is used
 
 
-#### 9.2.3 `<pointLatitude>` *mandatory Element*
+#### 8.2.3 `<pointLatitude>` *mandatory Element*
 - **Data type**: daci:latitudeType
 - **Content**: decimal
 - **Occurrence**: 1..1
@@ -733,13 +972,13 @@ Named place where the data was gathered or about which the data is focused.
 - **Purpose and meaning**: Latitude of the geographic point expressed in decimal degrees (positive north) 
 - **Additional information**: Mandatory only if the optional element [`<geoLocationPoint>`](#92-geolocationpoint-optional-element) is used
 
-### 9.3 `<geoLocationBox>` *optional Element*
+### 8.3 `<geoLocationBox>` *optional Element*
 - **Data type**: daci:box
 - **Occurrence**: 0..1
 - **Definition**: A box is defined by two geographic points. Left low corner and right upper corner. Each point is defined by its longitude and latitude.
 - **Purpose and meaning**: This element is used to define a geographical area as a rectangle. It is useful if you want to capture the location where the sample was collected, or to which it relates, as a general area rather than an exact position. This allows geographical references in metadata to be represented more precisely, whilst also making them easier to search, display and filter.
 
-#### 9.3.1 `@coordinateSystem` *mandatory Attribute*
+#### 8.3.1 `@coordinateSystem` *mandatory Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurrence**: 1..1
@@ -748,7 +987,7 @@ Named place where the data was gathered or about which the data is focused.
 - **Additional information**: Fixed to **WGS84**, as GFZ DataServices does not currently accept any other coordinate systems
 
 
-#### 9.3.2 `<westBoundLongitude>` *mandatory Element*
+#### 8.3.2 `<westBoundLongitude>` *mandatory Element*
 - **Data type**: daci:longitudeType
 - **Content**: decimal
 - **Occurrence**: 1..1
@@ -758,7 +997,7 @@ Together with <eastBoundLongitude>, it defines the width of the area in an east-
 - **Additional information**: Mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
 
 
-#### 9.3.3 `<eastBoundLongitude>` *mandatory Element*
+#### 8.3.3 `<eastBoundLongitude>` *mandatory Element*
 - **Data type**: daci:longitudeType
 - **Content**: decimal
 - **Occurrence**: 1..1
@@ -767,7 +1006,7 @@ Together with <eastBoundLongitude>, it defines the width of the area in an east-
 Together with `<westBoundLongitude>`, it defines the width of the area in an east-west direction.
 - **Additional information**: Mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
 
-#### 9.3.4 `<southBoundLatitude>` *mandatory Element*
+#### 8.3.4 `<southBoundLatitude>` *mandatory Element*
 - **Data type**: xs:language
 - **Content**: decimal
 - **Occurrence**: 1..1
@@ -776,7 +1015,7 @@ Together with `<westBoundLongitude>`, it defines the width of the area in an eas
 Together with `<northBoundLatitude>`, it determines the extent of the area in the north-south direction.
 - **Additional information**: mMandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
 
-#### 9.3.5 `<northBoundLatitude>` *mandatory Element*
+#### 8.3.5 `<northBoundLatitude>` *mandatory Element*
 - **Data type**: xs:language
 - **Content**: decimal
 - **Occurrence**: 1..1
@@ -785,13 +1024,13 @@ Together with `<northBoundLatitude>`, it determines the extent of the area in th
 Together with `<southBoundLatitude>`, it determines the extent of the area in the north-south direction. 
 - **Additional information**: Mandatory only if the optional element [`<geoLocationBox>`](#93-geolocationbox-optional-element) is used
 
-### 9.4 `<geoLocationPolygon>` *optional Element*
+### 8.4 `<geoLocationPolygon>` *optional Element*
 - **Data type**: xs:complexType
 - **Occurrence**: 0..1
 - **Definition**: Is used to describe a geographical area as a polygon (an irregular shape). A polygon consists of a sequence of coordinate points (<polygonePoint>) that form a closed area on the map
 - **Purpose and meaning**: Enables the precise representation of administrative boundaries, natural areas, research areas or other non-rectangular areas. Whilst a [`<geoLocationBox>`](#93-geolocationbox-optional-element) always describes a square area, a polygon can, for example, accurately represent the boundaries of a national park, a river catchment area or an administrative unit.
 
-#### 9.4.1 `<polygonPoint>` *mandatory Element*
+#### 8.4.1 `<polygonPoint>` *mandatory Element*
 - **Data type**: xs:language
 - **Content**: decimal
 - **Occurrence**: 4..n
@@ -800,7 +1039,7 @@ Together with `<southBoundLatitude>`, it determines the extent of the area in th
 - **Additional information**: The wrapper does not contain any content of its own, but simply bundles the longitude und latitude elements to form a point.
 If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<polygonPoint>` is mandatory. There must be at least 4 non-aligned points to make a closed curve, with the last point described the same as the first point.
 
-#### 9.4.1.1 `@coordinateSystem` *mandatory Attribute*
+#### 8.4.1.1 `@coordinateSystem` *mandatory Attribute*
 - **Data type**: xs:language
 - **Content**: enumeration list
 - **Occurrence**: 1..1
@@ -808,7 +1047,7 @@ If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<
 - **Purpose and meaning**: This attribute is necessary to ensure, regardless of the system used, that the coordinates can be assigned to the correct coordinate system. 
 - **Additional information**: fixed to **WGS84**, as GFZ DataServices does not currently accept any other coordinate systems
 
-#### 9.4.1.2 `<pointLongitude>` *mandatory Element*
+#### 8.4.1.2 `<pointLongitude>` *mandatory Element*
 - **Data type**: daci:longitudeType
 - **Content**: decimal
 - **Occurrence**: 1..1
@@ -817,7 +1056,7 @@ If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<
 - **Additional information**: Mandatory only if the optional element [`<polygonPoint>`](#941-polygonpoint-mandatory-element) is used
 
 
-#### 9.4.1.3 `<pointLatitude>` *mandatory Element*
+#### 8.4.1.3 `<pointLatitude>` *mandatory Element*
 - **Data type**: daci:latitudeType
 - **Content**: decimal
 - **Occurrence**: 1..1
@@ -831,7 +1070,7 @@ If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<
 
 
 
-# 10 `<fundingReferences>` *optional Element*
+# 9 `<fundingReferences>` *optional Element*
 ```xml
 	<igsn:fundingReferences>
 		<igsn:fundingReference>
@@ -853,34 +1092,34 @@ If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<
 - **Definition**: Information about financial support (funding) for the resource being registered.
 - **Purpose and meaning**: The wrapper does not contain any content of its own, but simply bundles all elements which are necessary to describe the funding of the sample
 
-### 10.1 `<fundingReference>` *optional Element*
+### 9.1 `<fundingReference>` *optional Element*
 - **Data type**: xs:complexType
 - **Occurrence**: 0..n
 - **Definition**: Information about financial support (funding) for the resource being registered.
 - **Purpose and meaning**: The wrapper does not contain any content of its own, but simply bundles all elements which are necessary to describe the funding of the sample
 
 
-#### 10.1.1 `<funderName>` *mandatory Element*
+#### 9.1.1 `<funderName>` *mandatory Element*
 - **Data type**: xs:string
 - **Occurrence**: 1..1
 - **Definition**: Name of the funding provider
 - **Purpose and meaning**: If [`<fundingReference>`](#101-fundingreference-optional-element) is used, then `<funderName>` is mandatory
 
 
-#### 10.1.2 `<funderIdentifier>` *optional Element*
+#### 9.1.2 `<funderIdentifier>` *optional Element*
 - **Data type**: xs:string
 - **Occurrence**: 0..1
 - **Definition**: Uniquely identifies a funding entity, according to various types.
 
 
-##### 10.1.2.1 `@funderIdentifierType` *madatory Attribute*
+##### 9.1.2.1 `@funderIdentifierType` *madatory Attribute*
 - **Data type**: xs:string
 - **Occurrence**: 1..1
 - **Definition**: The type of the funderIdentifier.
 - **Additional information**: Select a value from the enumeration list (ISNI, GRID, ROR, Crossref Funder ID, Other)
 
 
-##### 10.1.2.2 `<schemeURI>` *optional Attribute*
+##### 9.1.2.2 `@schemeURI` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 0..1
@@ -888,13 +1127,13 @@ If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<
 - **Purpose and meaning**: This attribute is used to store the identifier's URI
 
 
-#### 10.1.3 `<awardNumber>` *optional Element*
+#### 9.1.3 `<awardNumber>` *optional Element*
 - **Data type**: xs:string
 - **Occurrence**: 0..1
 - **Definition**: The code assigned by the funder to a sponsored award (grant).
 
 
-##### 10.1.2.2 `<awardURI>` *optional Attribute*
+##### 9.1.2.2 `<awardURI>` *optional Attribute*
 - **Data type**: xs:anyURI
 - **Content**: URI
 - **Occurrence**: 0..1
@@ -902,7 +1141,7 @@ If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<
 - **Purpose and meaning**: In case the award or grant has an ID or DOI, the full URL of the grant DOI can be included here
 
 
-#### 10.1.3 `<awardTitle>` *optional Element*
+#### 9.1.3 `<awardTitle>` *optional Element*
 - **Data type**: xs:string
 - **Occurrence**: 0..1
 - **Definition**: The human readable title or name of the award (grant).
@@ -913,7 +1152,7 @@ If [`<geoLocationPolygon>`](#94-geolocationpolygon-optional-element) is used, `<
 
 
 
-# 11 `<language>` *optional Element*
+# 10 `<language>` *optional Element*
 ```xml
 <igsn:language>en</igsn:language>
 
