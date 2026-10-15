@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- bearbeitet mit XMLSpy v2026 (x64) (https://www.altova.com) von Tanja (Fachhochschule Potsdam) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/03bd1138c07fbd82e77865d598339d21173c8a00/IGSN_GeoSamples_by_GFZ_DataServices.xsd" targetNamespace="https://github.com/anti101/IGSN-Schema-by-GFZ-Data-Services/blob/03bd1138c07fbd82e77865d598339d21173c8a00/IGSN_GeoSamples_by_GFZ_DataServices.xsd" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:enum="http://pmd.gfz-potsdam.de/igsn/schemas/enumerations" targetNamespace="http://pmd.gfz-potsdam.de/igsn/schemas/enumerations" elementFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation>
 			Shared enumeration types used across the IGSN schema.
@@ -356,7 +356,7 @@
 				</xs:attribute>
 			</xs:extension>
 		</xs:simpleContent>
-	</xs:complexType>
+		</xs:complexType>
 	<!-- affiliation complexType -->
 	<xs:complexType name="affiliation">
 		<xs:annotation>
