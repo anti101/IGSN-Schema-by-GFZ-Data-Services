@@ -577,7 +577,7 @@
 								<xs:complexType>
 									<xs:simpleContent>
 										<xs:extension base="xs:string">
-											<xs:attribute name="alternateIdentifierType" type="daci:relatedIdentifierType" use="required">
+											<xs:attribute name="alternateIdentifierType" type="xs:string" use="required">
 												<xs:annotation>
 													<xs:documentation>The type of the alternateIdentifier</xs:documentation>
 												</xs:annotation>
@@ -592,7 +592,7 @@
 								</xs:annotation>
 								<xs:complexType>
 									<xs:simpleContent>
-										<xs:extension base="xs:anyURI">
+										<xs:extension base="xs:string">
 											<xs:attribute name="identifierType" type="daci:relatedIdentifierType" use="required" fixed="IGSN">
 												<xs:annotation>
 													<xs:documentation>type of the Identifier, since it must be an IGSN, this value is fixed</xs:documentation>
