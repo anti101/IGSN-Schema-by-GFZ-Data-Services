@@ -553,7 +553,26 @@
 
 ## 6 `<archives>` *optional Element*
 ``` xml
-folgt
+	<igsn:archives>
+		<igsn:archive>
+			<igsn:archiveName lang="en">String</igsn:archiveName>
+			<igsn:geoLocationPlace lang="en">String</igsn:geoLocationPlace>
+			<igsn:geoLocationPlace lang="en">String</igsn:geoLocationPlace>
+			<igsn:geoLocationPoint coordinateSystem="WGS84">
+				<daci:pointLongitude>-180</daci:pointLongitude>
+				<daci:pointLatitude>-90</daci:pointLatitude>
+			</igsn:geoLocationPoint>
+			<igsn:contactPerson contributorType="ContactPerson">
+				<igsn:contributorName nameType="Organizational" lang="en">String</igsn:contributorName>
+				<igsn:givenName>String</igsn:givenName>
+				<igsn:familyName>String</igsn:familyName>
+				<igsn:nameIdentifier nameIdentifierScheme="String" schemeURI="http://www.altova.com/">a</igsn:nameIdentifier>
+				<igsn:affiliation affiliationIdentifier="String" affiliationIdentifierScheme="ROR" schemeURI="http://www.altova.com/">a</igsn:affiliation>
+				<igsn:email>String</igsn:email>
+			</igsn:contactPerson>
+			<igsn:sampleCondition>destroid</igsn:sampleCondition>
+		</igsn:archive>
+	</igsn:archives>
 ```
 
 ### 6.1 `<archive>` *optional  Element*
@@ -807,7 +826,7 @@ Named place where the data was gathered or about which the data is focused.
 - **Purpose and meaning**: [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) is used to provide supplementary referencing of a resource. It enables the resource to be identified using alternative identifiers that exist alongside the actual name or a primary identification number.
 
 #### 7.1.1 `<alternateIdentifierType>` *mandatory Attribute*
-- **Data type**: xs:string
+- **Data type**: daci:relatedIdentifierType
 - **Content**: free text
 - **Occurrence**: 0..n
 - **Definition**: The type of the  [`<alternateIdentifier>`](#81-alternateidentifier-optional-element) 
@@ -826,6 +845,12 @@ Named place where the data was gathered or about which the data is focused.
 - **Occurrence**: 1..1
 - **Definition**: This attribute is used to specify, in a machine-readable and standardised manner, the relationship.
 - **Purpose and meaning**: When used in the  [`<parentIdentifier>`](#82-parentidentifier-optional-element) element, this attribute is fixed to `IsPartOf`, as this element only permits this relationship type.
+
+#### 7.2.2 `<identifierType>` *mandatory Attribute*
+- **Data type**: daci:relatedIdentifierType
+- **Content**: enumeration list
+- **Occurrence**: 1..1
+- **Definition**: Type of identifier
 
 ### 7.3 `<relatedIdentifier>` *optional Element*
 - **Data type**: xs:string
