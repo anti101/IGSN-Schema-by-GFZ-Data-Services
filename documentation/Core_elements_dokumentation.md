@@ -536,13 +536,10 @@ HIER
 - **Definition**: year when the data was or will be made publicly availible, required for registration with Datatcite
 
 
-## 6 [`<access>`](#access) *Element*
+## 6 [`<archives>`](#archives) *Element*
 placeholder; final structure still under discussion
 
-## 7 [`<archives>`](#archives) *Element*
-placeholder; final structure still under discussion
-
-## 8 [`<relationshipIdentifiers>`](#relationshipIdentifiers) *optional Element*
+## 7 [`<relationshipIdentifiers>`](#relationshipIdentifiers) *optional Element*
 ``` xml
     <igsn:relationshipIdentifiers>
 		<igsn:alternateIdentifier alternateIdentifierType="LocalSampleName">E-GEOD-34814</igsn:alternateIdentifier>
@@ -556,55 +553,55 @@ placeholder; final structure still under discussion
 - **Purpose and meaning**:This wrapper is designed to collect and consolidate all information relating to resources associated with this resource, as well as the resource’s provenance
 - **additional information**: The term `relationships` was chosen to make it clear that this wrapper encompasses all elements that serve to group together resources related to the registered resource or that represent the properties of the resource.
 
-### 8.1 [`<alternateIdentifier>`](#alternateIdentifier) *optional Element*
+### 7.1 [`<alternateIdentifier>`](#alternateIdentifier) *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..n
 - **Definition**:Identifiers other than the primary Identifier applied to the resource being registered. This may be any alphanumeric string which is unique within its domain of use. May be used for local identifiers. AlternateIdentifier should be used for another identifier of the same instance (same location, same file).
 - **Purpose and meaning**:[`<alternateIdentifier>`](#alternateIdentifier) is used to provide supplementary referencing of a resource. It enables the resource to be identified using alternative identifiers that exist alongside the actual name or a primary identification number.
 
-#### 8.1.1 [`<alternateIdentifierType>`](#alternateIdentifierType) *mandatory Attribute*
+#### 7.1.1 [`<alternateIdentifierType>`](#alternateIdentifierType) *mandatory Attribute*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..n
 - **Definition**:The type of the  [`<alternateIdentifier>`](#alternateIdentifier) 
 - **Purpose and meaning**:Mandatory only if  [`<alternateIdentifier>`](#alternateIdentifier) is used. This attribute is necessary to better understand the context in which the alternative identifier is used and to understand where the identifier comes from. Unlike [`@identifierType`](@identifierType), this attribute can accept free-form text to allow users to specify the exact context in which this alternative identifier is used.
 
-### 8.2 [`<parentIdentifier>`](#parentIdentifier) *optional Element*
+### 7.2 [`<parentIdentifier>`](#parentIdentifier) *optional Element*
 - **Data type**: xs:anyURI
 - **Content**: IGSN of the parent resource
 - **Occurence**: 0..1
 - **Definition**:IGSN of a resource from which this resource derives
 - **Purpose and meaning**: enables the unambiguous hierarchical assignment of relationships for samples.For the sake of readability and to remain consistent with previous schemas, this element has not been renamed to ‘relatedIdentifier’ as in DataCite, even though it is mapped to it.
 
-#### 8.2.1 [`<relationType>`](#relationType) *mandatory Attribute*
+#### 7.2.1 [`<relationType>`](#relationType) *mandatory Attribute*
 - **Data type**: daci:relationType
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:This attribute is used to specify, in a machine-readable and standardised manner, the relationship.
 - **Purpose and meaning**:When used in the  [`<parentIdentifier>`](#parentIdentifier) element, this attribute is fixed to `IsPartOf`, as this element only permits this relationship type.
 
-### 8.3 [`<relatedIdentifier>`](#relatedIdentifier) *optional Element*
+### 7.3 [`<relatedIdentifier>`](#relatedIdentifier) *optional Element*
 - **Data type**: xs:string
 - **Content**: free text
 - **Occurence**: 0..n
 - **Definition**:Identifiers of related resources. These must be globally unique identifiers.
 - **Purpose and meaning**: This element is used to retrieve the ID so that resources related to this sample can be linked.
 
-#### 8.3.1 [`<relationType>`](#relationType) *mandatory Attribute*
+#### 7.3.1 [`<relationType>`](#relationType) *mandatory Attribute*
 - **Data type**: daci:relationType
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:This attribute is used to specify, in a machine-readable and standardised manner, the relationship between the resource specified in the element and the resource described here.
 
-#### 8.3.2 [`<identifierType>`](#identifierType) *mandatory Attribute*
+#### 7.3.2 [`<identifierType>`](#identifierType) *mandatory Attribute*
 - **Data type**: daci:relatedIdentifierType
 - **Content**: enumeration list
 - **Occurence**: 1..1
 - **Definition**:Type of identifier
 
 
-## 9 [`<geoLocations>`](#geoLocations) *optional Element*
+## 8 [`<geoLocations>`](#geoLocations) *optional Element*
 ```xml
 
 
