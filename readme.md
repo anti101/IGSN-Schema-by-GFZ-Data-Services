@@ -1,4 +1,4 @@
-# IGSN Schema by GFZ Data Services
+# IGSN Metadata Schema 2.0 by GFZ Data Services
 
 **The schema, and therefore this repository, is currently still in development.**
 
