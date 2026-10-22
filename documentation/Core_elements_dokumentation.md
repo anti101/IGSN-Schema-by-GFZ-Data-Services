@@ -11,7 +11,6 @@
 - **Occurrence**: 1..1
 -  **Definition**: The Identifier is a unique string that identifies a resource. IGSN (International GeoSample Number) registered by an IGSN member.
 - **Purpose and meaning**: This element is used to store the identifier of the resource, thereby ensuring that the resource can be uniquely identified
-- **Mapping**:
 
 
 ## 1.1 `@identifierType` *mandatory Attribute*
